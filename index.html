@@ -1,13 +1,238 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>
-      ICDE 2026 
-    </title>
-  </head>
-  <body>
-    Welcome to ICDE 2026!
+<html lang="en">
+<head>
+<script language="javascript">
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ZQ880VLVF');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+<style>
+  body{visibility:hidden}
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>42nd IEEE International Conference on Data Engineering, Montreal, Canada - May 19-23, 2026</title>
+    <meta name="description" content="" />
+
+<link rel="stylesheet" href="css/min.css">
+
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+      <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+     </figure>
+    </div>
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+          General Information
+          <div class="menu">
+            <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+            <a href="index.html%3Fofficers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+            <a href="index.html%3Finfo-registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          </div>
+      </div>
+      <div>
+        Conference Program
+        <div class="menu">
+          <a href="index.html%3Fprogram-schedule-workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div>
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="index.html%3Fcall-for-research-track.html" itemprop="url"><span itemprop="name">Research Track</span></a>
+          <a href="index.html%3Fcall-for-industrial-track.html" itemprop="url"><span itemprop="name">Industrial Track</span></a>
+
+          <hr/>
+            <a href="index.html%3Fcall-for-phd-workshop.html" itemprop="url"><span itemprop="name">PhD Workshop</span></a> 
+            <a href="index.html%3F2025-call-for-workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+            <a href="index.html%3Fcall-for-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+            <a href="index.html%3Fcall-for-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+            <a href="index.html%3Fcall-for-panels.html" itemprop="url"><span itemprop="name">Panels</span></a>
+          </div>
+        </div>
+        <div>
+          Dates &amp; Guidelines
+          <div class="menu">
+            <a href="index.html%3Fimportant-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+            <hr/>
+            <a href="index.html%3Fformatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a>
+            <a href="index.html%3Fsubmission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+          </div>
+        </div>
+        <div>
+          Sponsorship
+          <div class="menu">
+            <a href="index.html%3Fsponsorship.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          </div>
+        </div>
+        <div>
+          Participant Information
+          <div class="menu">
+            <a href="index.html%3Finfo-registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+            <a href="index.html%3Finfo-conference-venue.html" itemprop="url"><span itemprop="name">Conference Venue</span></a>
+            <a href="index.html%3Finfo-hotel-options.html" itemprop="url"><span itemprop="name">Hotel Options</span></a>                
+            <a href="index.html%3Finfo-local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          </div>
+        </div>
+    </nav>
+<section style="text-align: center;" class="carousel" 
+  data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'
+  >
+  <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
+  <span style="background: #691811;">Montréal, Canada - May 19-23, 2026</span>
+  <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
+</section>
+
+</header>
+
+<main class="body">
+    <style>
+     .boxstyle  {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius:5px;
+      }
+    </style>
+<section class="intro" style="font-size: 17px;">
+<br/>
+    <h2 style="color: #691811;">Welcome to ICDE 2026</h2>
+    <p>The annual IEEE International Conference on Data Engineering (ICDE) is one of the premier conferences in data and information engineering and addresses research issues on designing, building, managing, and evaluating advanced data intensive systems and applications. It is a leading forum for researchers, practitioners, developers, and users to explore cutting-edge ideas and to exchange techniques, tools, and experiences.</p>
+    <p>Each year, ICDE attracts researchers and practitioners from the academia, industry and government from across the world. The audience includes leading data scientists and professors, entrepreneurs, developers, talented young researchers/students and other thought leaders from major vendors and academia.</p>
+    <p>ICDE 2026 will take place in Montreal from May 19-23, 2026. Nestled between the St. Lawrence and Rivière des Prairies, Montreal is a city where nature and history come together in harmony. As one of North America’s oldest cities, it offers a unique blend of French colonial heritage, cobblestone streets, and centuries-old architecture alongside modern innovation. Surrounded by waterways and green spaces, including the iconic Mount Royal Park at its heart, the city invites visitors to explore scenic riverfronts, lush trails, and panoramic views. With its rich cultural tapestry, historic charm, and deep connection to the natural landscape, Montreal offers an unforgettable experience for every traveler.
+    </p>
+</section>
+
+<aside class="tweets">
+  <br>
+  <br>
+  <!-- Elfsight Twitter Feed | Untitled Twitter Feed -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-fac70aaf-0c7f-41b4-baf2-5b6e0520fbd5" data-elfsight-app-lazy></div>
+  <br>
+  <br>
+</aside>
+<div class="spinner"></div>
+
+</main>
+
+<footer style="text-align: center; background: #691811;">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img style="height: 180px" src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 19-23, 2026.<br>
+          © IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="css/min.css">
+<script async src="js/min.js"></script>
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+<script>
+    (function() {
+        var last = 0,
+            docBody = document.body,
+            header = document.querySelector('body>header'),
+            nav = header && header.querySelector('nav'),
+            requestAnimationFrame = window.requestAnimationFrame || function(callback, element) {
+                var now = Date.now(),
+                    next = Math.max(0, 16 - (now - last)),
+                    id = window.setTimeout(function() {
+                        callback(now + next);
+                    }, next);
+                last = now + next;
+                return id;
+            },
+            cancelAnimationFrame = window.cancelAnimationFrame || function(id) {
+                clearTimeout(id);
+            },
+            update = function () {
+                if (!nav) return;
+
+                var isStatic = docBody.classList.contains('static');
+                if (header.getBoundingClientRect().bottom > 70) {
+                    if (isStatic) docBody.classList.remove('static');
+                } else if (!isStatic) docBody.classList.add('static');
+            },
+            lid;
+
+        window.addEventListener('scroll', function(e) {
+            if (lid) cancelAnimationFrame(lid);
+            lid = requestAnimationFrame(update);
+        });
+
+        update();
+    }());
+</script>
 </body>
 </html>
