@@ -2835,3 +2835,9 @@ table.structure a:hover {
         overflow-x: auto
     }
 }
+
+.disabled-link {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+}
