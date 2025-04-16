@@ -152,3 +152,11 @@ main.body>section.intro {
         margin-left: 10px;
     }
 }
+
+.link-placeholder {
+  color: gray; /* 회색으로 표시 */
+  font-style: italic; /* 이탤릭체로 표시 */
+  /* 필요하다면 다른 스타일 추가 */
+  /* background-color: yellow; */
+  /* text-decoration: underline dotted gray; */
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script language="javascript">
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6ZQ880VLVF');
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+  <style>
+    body {
+      visibility: hidden
+    }
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <title>Research Papers</title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="css/min.css">
+  <link rel="stylesheet" href="css/extra.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+        <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+      </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <!-- <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a> -->
+        </div>
+      </div>
+      <div>
+        Conference Program
+        <!-- <div class="menu">
+          <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div> -->
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-track.html" itemprop="url"><span itemprop="name">Research Track</span></a>
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <!-- <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          <a href="venue.html" itemprop="url"><span itemprop="name">Conference Venue</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel Options</span></a>
+          <a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>
+
+        </div> -->
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <!-- <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a>
+        </div> -->
+      </div>
+
+    </nav>
+    <section style="text-align: center;" class="carousel small" data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'>
+      <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data
+        Engineering (ICDE)</span>
+      <span style="background: #691811;">Montréal, Canada - May 4-8, 2026</span>
+      <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;">
+      </div>
+    </section>
+
+  </header>
+
+  <main class="body">
+    <style>
+      .boxstyle {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    </style>
+    <section class="call-for-research-papers" style="font-size: 17px; padding: 0 50px 150px 0;">
+      <br />
+      <h2 style="color: #691811;">Call for Research Papers</h2>
+      
+      <h3 style="color: #366598;">Topics of Interest</h3>
+      <p>We invite the submission of original research contributions in the following areas as they relate to data management:</p>
+      <div class="elementor-widget-container">
+        <ul>
+          <li>AI for Database Systems and Database Systems for AI</li>
+          <li>Benchmarking, Performance Modeling, Tuning, and Testing</li>
+          <li>Cloud Data Management</li>
+          <li>Crowdsourcing and Data Management</li>
+          <li>Data Mining and Knowledge Discovery from a Data Management Perspective (where scalability and efficiency are prominent aspects of the contribution)</li>
+          <li>Data Models, Semantics, Query languages</li>
+          <li>Data Stream Systems and Edge Computing</li>
+          <li>Very Large Data Visualization and Interactive Data Exploration</li>
+          <li>Database Security and Privacy</li>
+          <li>Distributed Ledgers and Blockchains</li>
+          <li>Distributed, Parallel and P2P Data Management</li>
+          <li>Explainability, Fairness, and Trust in Data Systems and Analysis</li>
+          <li>Graphs, Networks, and Semi-structured Data Management</li>
+          <li>Information Integration and Data Quality</li>
+          <li>IoT Data Management</li>
+          <li>Modern Hardware and In-Memory Database Systems</li>
+          <li>Query Processing, Indexing, and Optimization</li>
+          <li>Transaction Management</li>
+          <li>Spatial Databases and Temporal Databases</li>
+          <li>Text, Semi-Structured Data Management, Multimedia Databases</li>
+          <li>Information Retrieval from a Data Management Perspective (where scalability and efficiency are prominent aspects of the contribution)</li>
+          <li>Uncertain, Probabilistic, and Approximate Databases</li>
+          <li>Very Large Data Science Applications/Pipelines</li>
+          <li>Workflows, Scientific Data Management</li>
+        </ul>
+      </div>
+      <p>We also welcome any original contributions that may cross the boundaries among areas or point in other novel directions of interest to the database research community.</p>
+      
+      <h3 style="color: #366598;">Important Dates</h3>
+      <p>IEEE ICDE 2026 will have two rounds of research paper submissions with each round involving two reviewing phases, the first of which leads to Revise & Resubmit, Accept or Reject and the second leads to Accept or Reject to allow for revisions.</p>
+      <p><b>Notification dates are approximate.</b></p>
+      <p><b>All deadlines are 11:59PM Anywhere on Earth (AoE).</b></p>
+      <p><b>First Round:</b></p>
+      <div class="elementor-widget-container">
+        <ul>
+          <li>Submission due:  <span class="link-placeholder">TBD</span></li>
+          <li>Notification for authors (Accept/Revise/Reject): <span class="link-placeholder">TBD</span></li>
+          <li>Revision due: <span class="link-placeholder">TBD</span></li>
+          <li>Notification to authors (Accept/Reject): <span class="link-placeholder">TBD</span></li>
+          <li>Camera-ready copy due: <span class="link-placeholder">TBD</span></li>
+        </ul>
+      </div>
+      <p><b>Second Round:</b></p>
+      <div class="elementor-widget-container">
+        <ul>
+          <li>Submission due:  <span class="link-placeholder">TBD</span></li>
+          <li>Notification for authors (Accept/Revise/Reject): <span class="link-placeholder">TBD</span></li>
+          <li>Revision due: <span class="link-placeholder">TBD</span></li>
+          <li>Notification to authors (Accept/Reject): <span class="link-placeholder">TBD</span></li>
+          <li>Camera-ready copy due: <span class="link-placeholder">TBD</span></li>
+        </ul>
+      </div>
+      <p>Paper should be submitted using the Conference Management Tool: <span class="link-placeholder">CMT submission site</span></p>
+      
+      <h3 style="color: #366598;">Notes on Research Papers</h3>
+      <p> Manuscripts must be prepared in accordance with the IEEE format available at <a href="https://www.ieee.org/conferences/publishing/templates.html">IEEE format</a>.</p>
+      <p>Research papers must not exceed 12 pages not including the references. No appendix is allowed. Only electronic submissions in PDF format will be considered.</p>  
+      <p>A paper submitted to ICDE 2026 cannot be under review for any other conference or journal during the entire time it is considered for ICDE 2026, and it must be substantially different from any previously published work.</p>
+      <p>A paper submitted to ICDE 2026 must present original work not described in any prior publication that is more than 4 double-column pages in length. A prior publication is a paper that has been accepted for presentation at a refereed conference or workshop with proceedings; or an article that has been accepted for publication in a refereed journal. If an ICDE 2026 submission has overlap with a prior publication, the submission must cite the prior publication, along with all other relevant published work, even if this prior publication is at or below the 4-page length threshold.</p>
+      <p>Any author of ICDE 2026 should not be a co-author of more than 10 submitted research papers across the two submission rounds.</p>
+      <p>Submissions will be reviewed in a single-blind manner. Submissions that are rejected in the first round of the IEEE ICDE 2026 research track are not eligible for re-submission to the second round.</p>
+      <p>The best papers (as judged by the ICDE 2026 PC) will be selected for submission as an extended version to be published in the IEEE Transactions on Knowledge and Data Engineering (TKDE).</p>
+      <p><b>IEEE reserves the right to exclude a paper from distribution (e.g., remove it from IEEE Xplore) after the conference if none of the authors attend the conference to present their paper.</b></p>
+      <h3 style="color: #366598;">Desk Rejection Policy</h3>
+      <p> ICDE research track submissions that don’t meet the following requirements may be rejected without review. </p>
+      <p> Submissions must follow the aforementioned guidelines and length requirements specified in the ICDE 2026 Call for Papers. </p>
+      <p> Submissions must be in scope of ICDE 2026. Specifically, this means that a submission must align with at least one of the above topic areas defined for ICDE 2026 and situate itself within the state of the art of current and past research in the database community in general and within the selected topic(s) in particular. For example, submissions that purely advance machine learning approaches not relating to any data management aspects (e.g. scalability and efficiency) would be considered as not in scope of ICDE.</p>
+      <p> Authors must correctly declare all conflicts of interest (COI) with members of the program committee. Both, not reporting COIs as well as frivolously defining COIs, count as a violation of this requirement. The exact definition of a COI is specified in the ICDE 2026 Call for Papers.</p>
+      <p> It is the full responsibility of all authors of a paper to identify and declare all COIs with members of the Program Committee (Area Chairs and PC members) prior to the submission deadline. Submissions with undeclared conflicts or spurious conflicts will be desk-rejected.</p>
+      <p> With stricter COI rules than before, we understand that finding COIs with a large review board requires considerable extra effort. To facilitate this process, we provide a <span class="link-placeholder">searchable spreadsheet</span> of COIs (based on DBLP data) with the review board. </p>
+      <p> Authors can use this spreadsheet as a resource when declaring COIs during submission. It is not meant to be authoritative or cover all types of COIs, so authors must still do their due diligence to identify and declare COIs missing from the list. This spreadsheet may be updated during the year as well, so please be sure to check prior to every submission.</p>
+      <p> Searchable spreadsheet with COIs for authors’ convenience: <span class="link-placeholder">searchable spreadsheet</span></p>
+      <p> After a paper is accepted, the set of authors cannot be changed.</p>
+      <p> Submissions that were desk rejected in Round 1 due to COI violations, failure to follow length and formatting instructions, or being out of scope for ICDE may be resubmitted in Round 2. The responsibility rests with the authors to ensure their paper meets all submission requirements.</p>
+      <p> <b>Conflict declaration on CMT:</b></p>
+      <p> In order to declare COIs in CMT, each author of a submission must create a CMT profile and complete it with domain and individual conflicts. If a CMT profile is missing for at least one author of a submission, the paper will be desk rejected.</p>
+      <p> You can mark your conflicts by clicking on your name (upper right-hand side on CMT) and selecting “Domain Conflicts” and “Individual Conflicts”. An author’s declared conflicts will be automatically applied to all of their submissions.</p>
+
+      <h3 style="color: #366598;">Notes on Research Papers</h3>
+      <p> <b>Review Quality</b>: ICDE 2026 papers will be stringently reviewed with at least 3 reviews per paper. The review process will be coordinated by the meta reviewer resulting in one of the decisions to either accept, reject, or revise the submission. A meta review will be provided based on the discussions about the paper. Paper revisions will go through an additional round of reviews before a final decision is made to accept or reject the paper.</p>
+      <p> <b>Revisions</b>: Papers will be invited to submit a revised version of their paper if the PC believes the papers can reasonably be improved within the allocated revision time frame. Authors will have five weeks to prepare their revisions. The revision process is intended to be a constructive interaction between reviewers and authors.</p>
+      
+      <h3 style="color: #366598;">Inclusions and Diversity in Writing</h3>
+      <p> We value Diversity and Inclusion in our community and profession. Both are important in our writing as well. Be mindful in your writing of not using language or examples that further the marginalization, stereotyping, or erasure of any group of people, especially historically marginalized and/or under-represented groups (URGs) in computing. Also be vigilant and guard against unintentionally exclusionary examples. Reviewers will be empowered to monitor and demand changes if such issues arise. Going further, also consider actively raising the representation of URGs in your writing. Diversity of representation in writing is a simple but visible avenue to celebrate and ultimately help improve our community’s diversity.</p>
+
+      <h3 style="color: #366598;">Conflict of Interest</h3>
+      <p> During submission of a research paper, the submission site will request information about Conflicts of Interest (COI) of the paper’s authors with program committee (PC) members. It is the full responsibility of all authors of a paper to identify all (and only) PC members with potential COIs as per the definition provided here. Papers with incorrect or incomplete COI information as of the submission closing time are subject to immediate rejection.</p>
+      <p> <b>Definition of Conflict of Interest (COI):</b></p>
+      <p> An <b>author X</b> of an ICDE 2026 research paper has a COI with a PC member or Area Chair Y if and only if one or more of the following conditions hold:</p>
+      <div class="elementor-widget-container">
+        <ul>
+          <li>X is a co-author of another ICDE 2026 submission together with Y.</li>
+          <li>X is a co-author of Y in a publication in the past three years.</li>
+          <li>X has been a co-author of Y for 4 (or more) publications in the last 10 years.</li>
+          <li>X has been a co-worker of Y in the same company or university within the past three years.</li>
+          <li>X has been a collaborator of Y within the past three years (e.g., held a joint grant).</li>
+          <li>X is or was Y’s primary thesis advisor or vice versa, no matter how long ago.</li>
+          <li>X is a relative or a close personal friend of Y (or vice versa).</li>
+        </ul>
+      </div>
+      <p> <b>The onus for correctly declaring COIs rests with the authors who must submit their complete set of COIs for a submission to be considered for review.</b></p>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </section>
+
+    <div class="spinner"></div>
+
+  </main>
+
+  <footer style="text-align: center; background: #691811;">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <span><img style="height: 180px" src="img/icde2026_footer.png"></span>
+      <span>
+        <p>
+          <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8,
+          2026.<br>
+          © IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the
+          <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener">IEEE Terms and
+            Conditions</a>. <br>
+          A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing
+          technology for the benefit of humanity.
+
+        </p>
+      </span>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="css/min.css">
+  <script async src="js/min.js"></script>
+
+  <script async src="https://platform.twitter.com/widgets.js"></script>
+  <script>
+    (function () {
+      var last = 0,
+        docBody = document.body,
+        header = document.querySelector('body>header'),
+        nav = header && header.querySelector('nav'),
+        requestAnimationFrame = window.requestAnimationFrame || function (callback, element) {
+          var now = Date.now(),
+            next = Math.max(0, 16 - (now - last)),
+            id = window.setTimeout(function () {
+              callback(now + next);
+            }, next);
+          last = now + next;
+          return id;
+        },
+        cancelAnimationFrame = window.cancelAnimationFrame || function (id) {
+          clearTimeout(id);
+        },
+        update = function () {
+          if (!nav) return;
+
+          var isStatic = docBody.classList.contains('static');
+          if (header.getBoundingClientRect().bottom > 70) {
+            if (isStatic) docBody.classList.remove('static');
+          } else if (!isStatic) docBody.classList.add('static');
+        },
+        lid;
+
+      window.addEventListener('scroll', function (e) {
+        if (lid) cancelAnimationFrame(lid);
+        lid = requestAnimationFrame(update);
+      });
+
+      update();
+    }());
+  </script>
+</body>
+
+</html>
