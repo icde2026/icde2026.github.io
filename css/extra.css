@@ -2,3 +2,111 @@
   color: gray; 
   font-style: italic;
 }
+
+.tablePc {
+  display: block;
+  line-height: 33px;
+}
+
+.spon_cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bronze {
+  border-color: #c96;
+}
+
+.bronze .card-header {
+  background-color: #f9fafa;
+}
+
+.silver {
+  border-color: #aaa;
+}
+
+.silver .card-header {
+  background-color: #f9fafa;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
+
+.gold .card-header {
+  background-color: #f9fafa;
+}
+
+.platinum {
+  border-color: #93c2d1;
+}
+
+.platinum .card-header {
+  background-color: #f9fafa;
+}
+
+
+.diamond {
+  border-color: #4aaed3;
+}
+
+.diamond .card-header {
+  background-color: #f9fafa;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border-top: 8px solid #1f2b50;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  flex: 1 1 calc(20% - 20px);
+  min-width: 200px;
+  height: 100%;
+}
+
+.card .card-header {
+  padding: 20px;
+  text-align: center;
+}
+
+.card ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card ul li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.card ul li::before {
+  content: "✔";
+  color: green;
+  position: absolute;
+  left: 0px;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
