@@ -255,7 +255,7 @@ header>nav {
 
 body.static header>nav {
     height: 70px;
-    background: #691811;
+    background: #c51c2b;
     /* background: linear-gradient(180deg, #f3f3f3 0, #e9e9e9 50%, #e4e4e4 51%, #e2e2e2); */
 }
 
@@ -449,20 +449,20 @@ header>nav>.logo {
 header>nav>.logo>img {
     transition: opacity .3s, height .3s, width .3s, top .3s;
     position: absolute;
-    left: 11px;
-    top: 8px
+    left: 3px;
+    top: 3px
 }
 
 header>nav>.logo>img:first-child {
-    height: 100px
+    height: 115px
 }
 
 header>nav>.logo>img:last-child {
     opacity: 0;
     top: calc(50% - 4px);
     transform: translateY(-50%);
-    min-width: 70px;
-    max-width: 70px;
+    min-width: 90px;
+    max-width: 90px;
     width: 100%
 }
 
@@ -787,17 +787,18 @@ address>* {
 
 footer {
     margin-top: 50px;
-    background: #222;
     padding: 10px 30px;
     color: #fff;
-    font-size: 15px; 
-    font-weight: 400;
+    font-size: 16px; 
+    font-weight: 500;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     position: absolute;
     width: 100%;
-    bottom: 0
+    bottom: 0;
+    text-align: center;
+    background: #26374a;
 }
 
 footer>div {
