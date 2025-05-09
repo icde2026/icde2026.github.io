@@ -288,7 +288,7 @@ header>nav>figure+div {
 }
 
 header>nav>div:after {
-    content: "";
+    /* content: ""; */
     display: inline-block;
     background: url(../img/caret.w.svg) 0 0/10px 10px;
     height: 10px;
@@ -346,7 +346,7 @@ header .hamburger:before {
 
 header .hamburger:after,
 header .hamburger:before {
-    content: "";
+    /* content: ""; */
     transform-origin: center center;
     transition: transform .3s, background .3s
 }
@@ -509,7 +509,7 @@ aside.tweets {
 }
 
 aside.tweets:after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     width: 100%;
     height: 50px;
@@ -608,7 +608,8 @@ section>h2 {
 
 @media screen and (max-width:980px) {
     main.body {
-        display: block
+        display: block;
+        padding-bottom: 300px;
     }
 
     main.body>section.intro {
@@ -740,7 +741,7 @@ section>h2 {
 }
 
 address:after {
-    content: "";
+    /* content: ""; */
     clear: both;
     display: block
 }
@@ -765,7 +766,7 @@ address>* {
 
 .address-icon:before,
 .phone-icon:before {
-    content: "";
+    /* content: ""; */
     display: block;
     width: 20px;
     height: 20px;
@@ -806,10 +807,32 @@ footer>div {
     line-height: 16px
 }
 
+footer img {
+    height: 130px;
+}
+
 @media screen and (max-width:780px) {
-    footer {
-        font-size: 11px
+    main.body {
+        display: block;
+        padding-bottom: 300px;
     }
+
+    footer {
+        font-size: 11px;        
+    }
+
+    footer>div {
+        display: flex;
+        flex-direction: column;
+    }
+
+   footer img{
+    height: 100px
+   } 
+
+   h1, h2{
+    margin: 0 0 0 0;
+   }
 }
 
 .github {
@@ -831,7 +854,7 @@ footer>div {
 }
 
 .spinner:before {
-    content: "";
+    /* content: ""; */
     border: 3px solid transparent;
     border-top-color: rgba(0, 0, 0, .8);
     border-radius: 100%;
@@ -964,17 +987,21 @@ footer>div {
 }
 
 @media screen and (max-width:500px) {
-    .important-dates table thead {
+    /* .important-dates table thead {
         display: none
-    }
+    } */
 
     .important-dates table,
     .important-dates table td,
     .important-dates tbody,
     .important-dates tr {
-        display: block;
-        border: 0;
+        /* display: block; */
+        border: 1px solid #ddd;
         padding: 0
+    }
+
+    .important-dates table tbody tr:nth-of-type(odd) {
+        background: #f2f2f2
     }
 
     .important-dates table td:first-child {
@@ -985,13 +1012,13 @@ footer>div {
         border-left: 5px solid #999
     }
 
-    .important-dates table td:nth-of-type(2) {
+    .important-dates table td:nth-of-type(1) {
         font-weight: 700
     }
 
     .important-dates table td:not(:first-child):before {
-        content: "";
-        display: block;
+        /* content: ""; */
+        /* display: block; */
         font-weight: 400;
         color: #666;
         margin-top: 10px
@@ -1007,25 +1034,25 @@ footer>div {
     }
 
     .important-dates table small:before {
-        content: ",";
+        /* content: ","; */
         position: relative;
         left: -5px
     }
 
-    .important-dates table small:after {
-        content: "";
-        display: block
-    }
+    /* .important-dates table small:after {
+         content: ""; 
+         display: block 
+    } */
 
-    .important-dates table td:nth-of-type(2):before {
+    /* .important-dates table td:nth-of-type(2):before {
         content: "Chairs:"
-    }
+    } */
 
-    .important-dates table td:nth-of-type(3):before {
+    /* .important-dates table td:nth-of-type(3):before {
         content: "Submission Open:"
-    }
+    } */
 
-    .important-dates table td:nth-of-type(4):before {
+    /* .important-dates table td:nth-of-type(4):before {
         content: "Submission Deadline:"
     }
 
@@ -1035,7 +1062,7 @@ footer>div {
 
     .important-dates table td:nth-of-type(6):before {
         content: "Camera-ready Copy:"
-    }
+    } */
 }
 
 .program-chairs small {
@@ -1084,7 +1111,7 @@ footer>div {
 }
 
 .mail-sep:after {
-    content: "@";
+    /* content: "@"; */
     color: initial
 }
 
@@ -1126,7 +1153,7 @@ footer>div {
 
 .tag:after,
 .tag:before {
-    content: "";
+    /* content: ""; */
     position: absolute
 }
 
@@ -1869,7 +1896,7 @@ ul.gallery>li>.gallery-image+div {
 }
 
 .industry-talk:after {
-    content: "";
+    /* content: ""; */
     display: block;
     clear: both
 }
@@ -1978,7 +2005,7 @@ ul.gallery>li>.gallery-image+div {
 
 @media screen and (max-width:500px) {
     .talk-person:after {
-        content: "";
+        /* content: ""; */
         display: block;
         clear: both
     }
@@ -2258,7 +2285,7 @@ ul.gallery>li>.gallery-image+div {
 }
 
 .schedule-item-has-photo:after {
-    content: "";
+    /* content: ""; */
     display: block;
     clear: both
 }
@@ -2409,7 +2436,7 @@ p+.schedule-wrap {
 
 @media screen and (max-width:500px) {
     .schedule-item-has-photo .schedule-item-people:after {
-        content: "";
+        /* content: ""; */
         display: block;
         clear: both
     }
@@ -2624,7 +2651,7 @@ p+.schedule-wrap {
 }
 
 .info-camp-vldb .camp-head .main-title:after {
-    content: "";
+    /* content: ""; */
     display: block
 }
 
@@ -2731,7 +2758,7 @@ table.structure {
 }
 
 table.structure:after {
-    content: "";
+    /* content: ""; */
     display: block;
     margin-bottom: 50px
 }
