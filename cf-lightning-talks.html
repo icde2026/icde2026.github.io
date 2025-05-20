@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script language="javascript">
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6ZQ880VLVF');
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+  <style>
+    body {
+      visibility: hidden
+    }
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <title>Research Papers</title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="css/min.css">
+  <link rel="stylesheet" href="css/extra.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+        <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+      </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <!-- <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a> -->
+        </div>
+      </div>
+      <div>
+        Conference Program
+        <!-- <div class="menu">
+          <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div> -->
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <!-- <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          <a href="venue.html" itemprop="url"><span itemprop="name">Conference Venue</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel Options</span></a>
+          <a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>
+
+        </div> -->
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <!-- <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a> -->
+        </div>
+      </div>
+
+    </nav>
+    <section style="text-align: center;" class="carousel small" data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'>
+      <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data
+        Engineering (ICDE)</span>
+      <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+      <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;">
+      </div>
+    </section>
+
+  </header>
+
+  <main class="body">
+    <style>
+      .boxstyle {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    </style>
+    <section class="call-for-research-papers" style="font-size: 17px; padding: 0 50px 150px 0;">
+      <br />
+      <h2 style="color: #c51c2b;">Call for Lightning Talks</h2>
+      
+      <h3 style="color: #366598;">Lightning Talks Track</h3>
+      <p>Following the success of the ICDE 2024 Lightning Talks Track, ICDE 2026 will also feature a mini-track with lightning talks: five-minute talks presented sequentially without interruption. 
+        The point of a lightning talk is not to give a detailed talk but rather to present briefly the main point. 
+        They cover a single topic, start with the good stuff, and end making a point. 
+        If there’s one technique or technology you wish everyone knew, one little known fact that should be well known, one tool that makes your life easier every day, 
+        or a collection of little things that you can fit into 5 minutes, you can propose a lighting talk -- and you should!</p>
+      
+      <p>We are looking for talks from experienced speakers, but also new speakers and students. The topics acceptable for talks are any subject that lies within the broad scope of ICDE.</p>
+
+      <p>Lightning Talk proposals can be submitted only through the online submission site <span class="link-placeholder">TBD</span> and must be received by the abstract submission date indicated below. 
+        By submitting an abstract, the presenting author is indicating that they will be available during any of the possible time slots.</p>
+
+      <p>Due to time constraints, only one presenter is permitted for each lightning talk presentation. 
+        The talks will be selected by the track committee and announced on the notification date indicated below. 
+        Lightning talk speakers are required to register for the conference.</p>
+
+      <h3 style="color: #366598;">Important Dates</h3>
+       <div class="elementor-widget-container">
+         <ul>
+           <li>Abstract submission due: <span class="link-placeholder">TBD</span></li>
+           <li>Notification of acceptance: <span class="link-placeholder">TBD</span></li>
+           <li>Camera-ready copy due: <span class="link-placeholder">TBD</span></li>
+           <li>All deadlines are 11:59PM Anywhere on Earth (AoE).</li>
+         </ul>
+       </div>
+
+      <h3 style="color: #366598;">General Guidelined</h3>
+      <p>Abstracts that are incomplete or received after the deadline will not be considered. 
+        All abstracts must be submitted through the submission system in order to be considered. 
+        We will not accept abstracts received by email. 
+        Please read and follow the abstract guidelines carefully. 
+        They are provided here as a guide to help you plan in advance.</p>
+
+      <h3 style="color: #366598;">Abstract Guidelines</h3>
+      <p>We invite abstracts that promote visionary ideas, report on challenging problems and share recent results and lessons learned. 
+        The body of the abstract is up to 400 words, split between the two sections (up to 200 words each): Background/Question/Methods, in which the objective of the study is clearly identified and the methods are described; and Results/Conclusions, in which specific results of the study are explicitly reported and their implications are briefly discussed. 
+        The abstract must report specific results. The results may be preliminary but they may not be vague. Abstracts without explicitly stated results will be rejected. 
+        It is understandable that abstracts describing non-traditional work may lack quantitative data; however, it is still expected that the abstract will address some question and have a “take-home message” describing specific findings.</p>
+
+      <p>Any author can be designated as the presenting author. The presenting author’s name will appear in bold text. 
+        The presenting author is also the corresponding author. In order to receive notifications from us, it is important to make sure the correct person is indicated and that their email is entered correctly. 
+        During abstract submission, you will rank a few themes to guide the grouping of your presentation into a session with similar presentations. 
+        We will use these themes as a general guide for sorting abstracts into sessions.</p>
+
+      <p>All submissions should follow ICDE 2024 Research Track guidelines on Inclusion and Diversity in Writing, and Conflicts of Interest.</p>
+
+      <h3 style="color: #366598;">One Presentation Rule</h3>
+      <p>Lightning talk presentations, like all formal presentations, are limited to one per speaker. 
+        This means that each person is allowed to submit only one abstract where they are listed as presenting author. 
+        This rule is enforced in order to encourage broad participation. Co-authors are not included in this rule. A person may serve as a coauthor on any number of abstracts.</p>
+
+      <h3 style="color: #366598;">Presentation Guidelines</h3>
+      <p>Guidelines for contributed lightning presentations: Presentations are scheduled for 5 minute timeslots. 
+        Time limits will be strictly enforced by the session presider. Please respect the audience’s time and the presenter who is following you.</p>
+
+      <p>There will be no time for individual Q&A immediately between talks. 
+        Instead, there will be 10 minutes for shared discussion time after each group of 4 talks. 
+        We are hoping this time will allow more of a dialogue between presenters and the audience. 
+        These Q&As will be managed by a session presider who has been asked to manage the session differently from traditional sessions.</p>
+
+      <p>All presenters are expected to arrive at their session room 20 minutes in advance of their session. 
+        This time is for checking in with the session presider and transferring your presentation to the laptop in the room. 
+        A student A/V volunteer will be available to assist you.</p>
+
+      <p>Participants are requested to stay for the entire session if at all possible. It is disruptive to have speakers leaving right after each set of 5 minute talks.</p>
+
+      <h3 style="color: #366598;">Technical information</h3>
+      <p>We realize that losing speaking time due to technical glitches or other problems is a frustrating and stressful experience. 
+        This information is provided to presenters in advance in order to help minimize problems on the day of the presentation. 
+        Please bring a copy of your presentation on a USB Flash drive.</p>
+
+      <p>Each meeting room will be equipped with a dedicated LCD projector and PC laptop. 
+        Microsoft PowerPoint and Adobe Acrobat are the recommended formats for slides. 
+        These file types will work most smoothly on the laptops we provide. 
+        All speakers are welcome to test their slides in advance in a Speaker Ready Room. You may sign up for a time to test your presentation at the Information Desk. 
+        We especially recommend testing your slides if you are using a format other than PowerPoint or Adobe.</p>
+
+      <p>We advise against relying on an Internet connection for any critical aspects of a presentation. 
+        Although our laptops are wireless enabled, the availability of a wireless connection varies between meeting sites. 
+        In years when it is present, the reliability may vary between rooms and over time. 
+        If your presentation will feature Internet content, be sure to have backup versions ready (screenshots, for example). 
+        You may not use your own laptop for your presentation for this format. 
+        The transition times between talks must be very short, which necessitates using the laptop provided in the room.</p>
+
+      <p>Laser pointers will be provided for each session. 
+        Slides will be advanced manually using the laptop at the podium. Remote slide advancers (clickers) will not be provided. 
+        Speakers who wish to use them are welcome to bring their own.</p>
+
+      <h3 style="color: #366598;">Lightning Talks Chair</h3>
+      <span class="link-placeholder">TBD</span>
+
+      <h3 style="color: #366598;">Program Committee</h3>
+      <span class="link-placeholder">TBD</span>
+
+    </section>
+
+    <div class="spinner"></div>
+
+  </main>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+  <link rel="stylesheet" href="css/min.css">
+  <script async src="js/min.js"></script>
+
+  <script async src="https://platform.twitter.com/widgets.js"></script>
+  <script>
+    (function () {
+      var last = 0,
+        docBody = document.body,
+        header = document.querySelector('body>header'),
+        nav = header && header.querySelector('nav'),
+        requestAnimationFrame = window.requestAnimationFrame || function (callback, element) {
+          var now = Date.now(),
+            next = Math.max(0, 16 - (now - last)),
+            id = window.setTimeout(function () {
+              callback(now + next);
+            }, next);
+          last = now + next;
+          return id;
+        },
+        cancelAnimationFrame = window.cancelAnimationFrame || function (id) {
+          clearTimeout(id);
+        },
+        update = function () {
+          if (!nav) return;
+
+          var isStatic = docBody.classList.contains('static');
+          if (header.getBoundingClientRect().bottom > 70) {
+            if (isStatic) docBody.classList.remove('static');
+          } else if (!isStatic) docBody.classList.add('static');
+        },
+        lid;
+
+      window.addEventListener('scroll', function (e) {
+        if (lid) cancelAnimationFrame(lid);
+        lid = requestAnimationFrame(update);
+      });
+
+      update();
+    }());
+  </script>
+</body>
+
+</html>
