@@ -533,6 +533,10 @@ section>h2 {
     color: #366598
 }
 
+.sponsorship{
+    width: 100%;
+}
+
 @media screen and (max-width:1320px) {
 
     body.static header>nav,
@@ -1555,7 +1559,14 @@ div.workshop-title:first-child {
     background: hsla(0, 0%, 100%, .8)
 }
 
+@media screen and (min-width:1400px) {
+    #sponsorship-body{
+        max-width: 1300px;
+    }
+}
+
 @media screen and (max-width:1180px) {
+
     .carousel {
         min-height: 175px
     }
@@ -1610,6 +1621,7 @@ div.workshop-title:first-child {
         font-size: 20px
     }
 }
+
 
 ul.gallery {
     display: flex;
