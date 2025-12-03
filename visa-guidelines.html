@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script language="javascript">
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ZQ880VLVF');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+<style>
+  body{visibility:hidden}
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Visa Guidelines</title>
+    <meta name="description" content="" />
+
+<link rel="stylesheet" href="css/min.css">
+ <link rel="stylesheet" href="css/extra.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+      <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+     </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
+        </div>
+      </div>
+      <div>
+        Conference Program
+        <!-- <div class="menu">
+          <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div> -->
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <!-- <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          <a href="venue.html" itemprop="url"><span itemprop="name">Conference Venue</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel Options</span></a>
+          <a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>
+
+        </div> -->
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <!-- <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a> -->
+        </div>
+      </div>
+
+    </nav>
+<section style="text-align: center;" class="carousel small" 
+  data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'
+  >
+  <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
+  <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+  <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
+</section>
+
+</header>
+
+<main class="body">
+    <style>
+     .boxstyle  {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius:5px;
+      }
+    </style>
+<section class="important-dates" style="font-size: 18px; padding: 0 50px 150px 0;">
+  <br />
+  
+  <h2 style="color: #c51c2b;">ICDE 2026: Visa Information</h2>
+
+  <h3 style="color: #366598;">Visa</h3>
+  <p>  
+  It is the sole responsibility of the attendee to take care of his/her visa requirements. Attendees should contact the nearest embassy or consulate to determine the appropriate timing of their visa applications. The Organizer will not directly contact embassies and consulates on behalf of visa applicants. The registration fee, minus a handling fee of <strong>150 USD</strong> will be refunded after the conference if the visa was applied for in time and official proof of the embassy confirming that a visa could not be granted, is forwarded to the Organizer in writing no later than <strong>April XX, 2026</strong>.
+
+  No refund requests will be processed after this date. Refunds will be credited only to person/entity who/which paid the original registration and after the conference.
+
+  </p>
+
+  <h3 style="color: #366598;">Letters of Invitation</h3>
+  <p>  
+    You may need a Letter of Invitation to apply for a visa to Montréal. Invitation letters for visa purposes will be issued to registered and paid delegates. Registration will be open <strong> Dec 2025</strong>. Requests can be made directly on the registration portal.  <strong>Requests for more specific letters (indicating date of birth, passport number, etc) can be made to abc@icde.org  (We need an email address).</strong> Please allow us 2-3 business days to process your request. Kindly note that an invitation letter for visa purposes does not imply any obligation, financial or otherwise, by ICDE 2026.
+
+  </p>
+
+  <h4 style="color: #c51c2b; font-size: 28px;" id="Camera-Instructions">What to apply for:</h4>
+  <h3 style="color: #366598;">Application Types</h3>
+  <p>
+    Application Types Most foreign nationals need a temporary resident visa (TRV) or an Electronic Travel Authorization (eTA) to travel to Canada. For information about the TRV and eTA application processes, see: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html?outside" target="_blank">Visit Canada</a>. To find out if you need a TRV or eTA to travel to Canada, see: <a href="https://ircc.canada.ca/english/visit/visas.asp" target="_blank">Find out if you need a visa to travel to Canada</a>.
+  </p>
+
+   <h3 style="color: #366598;">Important Information: Special Event Codes</h3>
+    <p>   
+    ICDE 2026 is registered at the Immigration, Refugees and Citizenship Canada (<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/about-visitor-visa.html" target="_blank">IRCC</a>). Events registered with IRCC are issued with a unique Special Event Code to help track and coordinate visa processing. Visa applicants must tag their applications with the ICDE 2026 Special Event Code, which can be found in the letter of invitation you have received from ICDE 2026 organizers once you have completed and fully paid your registration.
+    TRV applications are considered on a case-by-case basis based on the information presented by the applicant. The onus is on the applicant to demonstrate that they meet the requirements for a TRV. While a Special Event Code has been assigned to the event, it does not offer any advantage to the applicant in terms of a positive visa outcome. The applicant must meet all eligibility criteria to receive a visa.
+    </p>
+
+    <h4 style="color: #c51c2b; font-size: 28px;" id="Camera-Instructions">How to apply:</h4>
+    <h3 style="color: #366598;">Visa Processing Times</h3>
+    <p>       
+    If you require a visa to travel to Canada, you must verify visa processing times for your region and apply for your visa accordingly. Please note that processing times for visa applications posted online are historical, meaning they’re measured based on how long it took to process 80% of applications in the past 6 – 8 weeks. As a result, processing times may be different than those posted online at the time of application submission. Participants are strongly encouraged to apply as early as possible ahead of their departure date in order to allow sufficient time for their application to be processed and if approved, subsequent visa issuance in their passport.
+    It is important for international invitees to be familiar with the TRV and eTA application processes. Understanding the different processes will contribute to ensuring that invitees to events in Canada have a smooth application experience.
+    </p>
+
+    <h3 style="color: #366598;">Submit a TRV Application</h3>
+    <p> 
+      Participants may be automatically directed to apply via the <a href="https://portal-portail.apps.cic.gc.ca/signin?lang=en" target="_blank">IRCC Portal</a>. However, all participants applying for a visa to attend a registered event should apply for their visa via the IRCC Secure Network by clicking on this link: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/account.html" target="_blank">IRCC Secure Network</a>.  <br> <br>
+
+      Further instructions can be found here:   (link to the PDF document)
+
+    </p>
+
+    <h3 style="color: #366598;">Submit an eTA Application</h3>
+    <p> 
+      If you need an eTA, apply on the official <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html" target="_blank">Government of Canada website</a>.
+    </p>
+
+  
+    
+
+</section>
+
+</main>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="css/min.css">
+<script async src="js/min.js"></script>
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+<script>
+    (function() {
+        var last = 0,
+            docBody = document.body,
+            header = document.querySelector('body>header'),
+            nav = header && header.querySelector('nav'),
+            requestAnimationFrame = window.requestAnimationFrame || function(callback, element) {
+                var now = Date.now(),
+                    next = Math.max(0, 16 - (now - last)),
+                    id = window.setTimeout(function() {
+                        callback(now + next);
+                    }, next);
+                last = now + next;
+                return id;
+            },
+            cancelAnimationFrame = window.cancelAnimationFrame || function(id) {
+                clearTimeout(id);
+            },
+            update = function () {
+                if (!nav) return;
+
+                var isStatic = docBody.classList.contains('static');
+                if (header.getBoundingClientRect().bottom > 70) {
+                    if (isStatic) docBody.classList.remove('static');
+                } else if (!isStatic) docBody.classList.add('static');
+            },
+            lid;
+
+        window.addEventListener('scroll', function(e) {
+            if (lid) cancelAnimationFrame(lid);
+            lid = requestAnimationFrame(update);
+        });
+
+        update();
+    }());
+</script>
+</body>
+</html>
