@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script language="javascript">
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ZQ880VLVF');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+<style>
+  body{visibility:hidden}
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Registration</title>
+    <meta name="description" content="" />
+
+<link rel="stylesheet" href="css/min.css">
+ <link rel="stylesheet" href="css/extra.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+      <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+     </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
+        </div>
+      </div>
+      <div>
+        Conference Program
+        <!-- <div class="menu">
+          <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div> -->
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <!-- <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          <a href="venue.html" itemprop="url"><span itemprop="name">Conference Venue</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel Options</span></a>
+          <a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>
+
+        </div> -->
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <!-- <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a> -->
+        </div>
+      </div>
+
+    </nav>
+<section style="text-align: center;" class="carousel small" 
+  data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'
+  >
+  <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
+  <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+  <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
+</section>
+
+</header>
+
+<main class="body">
+    <style>
+     .boxstyle  {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius:5px;
+      }
+    </style>
+<section class="important-dates" style="font-size: 18px; padding: 0 50px 150px 0;">
+  <br />
+  
+  <h2 style="color: #c51c2b;">Registration</h2>
+  <!-- ==================================================================================== -->   
+    <p><a href="https://icde2026.github.io/" target="_blank">Click here to view ICDE 2026 Registration Instruction.</a></p>
+
+     <h3 style="color: #366598;">Registration &amp; Participation Guidelines</h3>
+      <div class="elementor-widget-container">
+        <ul>
+          <li>
+            Every paper accepted at the conference requires at least one author registered before <strong>23:59, April 15, 2026 (AoE)</strong> to guarantee inclusion in the proceedings and presentation at the conference.
+          </li>
+
+          <li>
+            Papers in the Research, Industrial, Demo, Future and Emerging Technologies, PhD symposium, in particular, require the registration to be <strong>full</strong> (non-student, Conference only or Conference and Workshop).
+          </li>
+
+          <li>
+            Papers in Workshops also require a <strong>full </strong>(non-student, Workshop only, or Conference and Workshops) registration.
+          </li>
+
+          <li>
+            Lightning Talks and TKDE Posters can be either <strong>student or non-student</strong> (Conference only or Conference and Workshops). 
+          </li>
+
+          <li>
+            ICDE 2026 is a fully <strong>physical </strong>conference. No online presentation options are provided. Authors are expected to present their work in person. 
+          </li>
+
+          <li>
+            Visa invitation letters are generated automatically at the end of the registration if requested during the registration process. Certain embassies may require some specific information in the visa letter (for instance passport number). In these cases, the participant is requested to add the necessary information via <a href="mailto:icde2026@gmail.com" target="_blank">icde2026@gmail.com</a>. 
+          </li>
+        </ul>
+      </div>
+
+      <h3 style="color: #366598;">Cancellation Policy</h3>
+      <p>For cancellations received prior to <strong>23:59, April 15, 2026 (AoE)</strong>, registration fees will be refunded with a service charge of 400 USD. Refunds will be made after the event. After 23:59, April 15, 2026 (AoE), no cancellation will be possible.</p>
+
+      <h3 style="color: #366598;">Students</h3>
+      <div class="elementor-widget-container">
+        <ul>
+          <li>Students will be required to upload proof of their student status at time of registration. Proof of status will be verified by ICDE 2026. Only after the status verification is completed, the student registration will become final.
+          </li>
+
+          <li>
+            Student ID's without clear dates of validity, webpage screenshots and unofficial records will NOT be accepted as proof! Validity of proof must overlap with conference dates.
+          </li>
+
+          <li>
+            Acceptable proof of student status MUST be clearly readable in English language, contain the name of the candidate and the dates of validity. Proof containing a verification code must not fail verification.
+          </li>
+
+          <li>
+            PostDocs don't qualify for student discount.
+          </li>
+
+        </ul>
+      </div>
+
+    <p>
+      In case you need registration assistance, cancellation, or any other service related to registration, please email to: <a href="mailto:icde2026@gmail.com" target="_blank">icde2026@gmail.com</a> 
+    </p>
+
+    <h3 style="color: #366598;">Registration Fee</h3>
+
+    <div class="elementor-widget-container">
+      <table style="width: 100%; text-align: center; font-size: 17px;">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th></th>
+            <th colspan="2">IEEE Members</th>
+            <th colspan="2">Non-Members</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><br></td>
+            <td></td>
+            <td> 
+              <strong>Early-Bird</strong>
+              <br>
+              by 23:59, April 25, 2026 (AoE) 
+            </td>
+            <td >
+              <strong>Late</strong> 
+            </td>
+            <td>
+              <strong>Early-Bird</strong>
+              <br>
+              by 23:59, April 25, 2026 (AoE)
+              <br>
+            </td>
+            <td>
+              <strong>Late</strong> 
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3" style="width:15%;background:#f9fafa"> <h2 style="color:#cc9966; font-size: 20px;"><strong>Full <br> (Non-Student)</strong></h2> </td>
+            <td style="width:15%;"> Conference Only </td>
+            <td>890.00 USD </td>
+            <td>1,090.00 USD </td>
+            <td>1,068.00 USD </td>
+            <td>1,308.00 USD</td>
+          </tr>
+          <tr>
+            <td>Workshop Only</td>
+            <td>390.00 USD</td>
+            <td>450.00 USD</td>
+            <td>468.00 USD</td>
+            <td>540.00 USD</td>
+          </tr>
+          <tr>
+            <td>Conference and Workshop</td>
+            <td>1,090.00 USD</td>
+            <td>1,290.00 USD</td>
+            <td>1,308.00 USD</td>
+            <td>1,548.00 USD</td>
+          </tr>
+          <tr style="background: #e5e5e5;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="3" style="background:#f9fafa"><h2 style="color:#4aaed3; font-size: 20px;">Student</h2></td>
+            <td>Conference Only</td>
+            <td>595.00 USD</td>
+            <td>740.00 USD</td>
+            <td>714.00 USD</td>
+            <td>888.00 USD</td>
+          </tr>
+          <tr>
+            <td>Workshop Only</td>
+            <td>250.00 USD</td>
+            <td>295.00 USD</td>
+            <td>300.00 USD</td>
+            <td>354.00 USD</td>
+          </tr>
+          <tr>
+            <td>Conference and Workshop</td>
+            <td>740.00 USD</td>
+            <td>880.00 USD</td>
+            <td>888.00 USD</td>
+            <td>1,056.00 USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+     <h3 style="color: #366598;">Conference Rights</h3>
+
+     <div class="elementor-widget-container">
+	<table style="width: 100%; text-align: center; font-size: 17px;">
+		<thead>
+			<tr>
+				<th rowspan="2">Category</th>
+				<th rowspan="2">Main Conference</th>
+        <th rowspan="2">Workshops</th>
+				<th colspan="5">Tea break &amp; Lunch</th>
+				<th rowspan="2">Welcome Reception<br>Day 1 (May 4)</th>
+				<th rowspan="2">Banquet<br>Day 3 (May 6)</th>
+        <th rowspan="2">Souvenirs</th>
+      </tr>
+			<tr>
+				<td>Day 1 </td>
+				<td>Day 2</td>
+				<td>Day 3</td>
+				<td>Day 4</td>
+				<td>Day 5</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>Conference Only</td>
+				<td> ✔ </td>
+				<td></td>
+				<td></td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+			</tr>
+			<tr>
+				<td> Workshop Only </td>
+				<td></td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td>✔</td>
+			</tr>
+			<tr>
+				<td>Conference and Workshop</td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+				<td> ✔ </td>
+			</tr>
+			<tr>
+				<td> Welcome Reception Ticket* </td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td> ✔ </td>
+				<td><br></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Banquet Ticket*<br></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td><br></td>
+				<td> ✔ <br></td>
+				<td><br></td>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
+  <p>
+    *Additional ticket for social events (Welcome Reception / Banquet) can be purchased by <strong>23:59 on May 10, 2026 (AoE)</strong> for yourself or accompanying person(s) when you complete your registration payment. 
+  </p>
+
+  <h3 style="color: #366598;">Methods of Payment</h3>
+  <p><strong>Credit Card:</strong> only Visa and&nbsp;Master&nbsp;credit cards are accepted<br>
+  *Please note that the merchant's name that will appear on your credit card statement will be "XXX"&nbsp;for Visa and Master Card. <br>
+
+  Please add $50 USD to the Invoice amount to be paid to cover Wire Fees.
+  </p>
+
+   <h3 style="color: #366598;">Bank Transfer</h3>
+<table style="width: 100%; text-align: center; font-size: 17px;">
+	<tbody>
+		<tr>
+			<td> Bank Name</td>
+			<td> XXX</td>
+		</tr>
+		<tr>
+			<td>Bank Address</td>
+			<td>XXX</td>
+		</tr>
+		<tr>
+			<td>Account Name</td>
+			<td>XXX</td>
+		</tr>
+		<tr>
+			<td>Account Number</td>
+			<td>XXX
+			</td>
+		</tr>
+		<tr>
+			<td>SWIFT/BIC Code</td>
+			<td>XXX
+			</td>
+		</tr>
+		<tr>
+			<td>Payment Reference</td>
+			<td>ICDE 2026 + Your Name</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td>XXX</td>
+		</tr>
+	</tbody>
+</table>
+
+</section>
+
+</main>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="css/min.css">
+<script async src="js/min.js"></script>
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+<script>
+    (function() {
+        var last = 0,
+            docBody = document.body,
+            header = document.querySelector('body>header'),
+            nav = header && header.querySelector('nav'),
+            requestAnimationFrame = window.requestAnimationFrame || function(callback, element) {
+                var now = Date.now(),
+                    next = Math.max(0, 16 - (now - last)),
+                    id = window.setTimeout(function() {
+                        callback(now + next);
+                    }, next);
+                last = now + next;
+                return id;
+            },
+            cancelAnimationFrame = window.cancelAnimationFrame || function(id) {
+                clearTimeout(id);
+            },
+            update = function () {
+                if (!nav) return;
+
+                var isStatic = docBody.classList.contains('static');
+                if (header.getBoundingClientRect().bottom > 70) {
+                    if (isStatic) docBody.classList.remove('static');
+                } else if (!isStatic) docBody.classList.add('static');
+            },
+            lid;
+
+        window.addEventListener('scroll', function(e) {
+            if (lid) cancelAnimationFrame(lid);
+            lid = requestAnimationFrame(update);
+        });
+
+        update();
+    }());
+</script>
+</body>
+</html>
