@@ -1,0 +1,224 @@
+  .timetable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #2906ee;
+    table-layout: auto; 
+    font-size: 11.5pt;
+    color: black;
+  }
+
+  .timetable thead {
+    background: #1e3a5f;
+    color: white;
+  }
+
+  .timetable th, .timetable td {
+    border: 1px solid #5f5d5d;
+    padding: 10px 6px 15px 6px;
+    text-align: center;
+    vertical-align: middle;   
+     text-wrap-mode: nowrap;   
+  }
+
+  .timetable th.time-col {
+    background: #2c4a77;
+    /* width: 110px; */
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    text-wrap-mode: nowrap;
+
+  }
+
+  .timetable th.room-col {
+    font-weight: 600;
+    font-size: 0.97rem;
+    min-width: 160px;
+  }
+
+  .timetable td.time {
+    background: #f5f7fa;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: right;
+    border-right: 2px solid #d0d0d0;
+  }
+
+  .timetable td.session {
+    font-size: 0.94rem;
+    line-height: 1.45;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 0; 
+  }
+
+  .session-type {
+    font-weight: 700;
+    color: #1e3a5f;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .daystyle{
+    color:#f5f7fa;
+    font-size:14.0pt;
+    font-weight:700;
+    /* font-family:"Aptos Display", sans-serif; */
+    text-align:center;
+    vertical-align:middle;
+    border-top:none;
+    border-right:none;
+    border-bottom:.5pt solid windowtext;
+    border-left:none;
+    background:#c51c2b;
+    text-align: center;
+}
+    .timecell{
+       background:#efefef;
+       font-weight: 400;
+    }
+
+    .rrcell{
+       background:#47D359;
+       font-weight: 600;
+    }
+
+    .panelcell{
+       background:#F7C7AC;
+       font-weight: 600;
+    }
+
+    .tutorialcell{
+       background:#FFC000;
+       font-weight: 600;
+    }
+
+    .democell{
+       background:#44B3E1;
+       font-weight: 600;
+    }    
+
+    .idecell{
+       background:#99FF66;
+       font-weight: 600;
+    }  
+
+    .sponsorcell{
+       background:#DAE9F8;
+       font-weight: 600;
+    }  
+
+
+    .deicell{
+       background:#DAF2D0;
+       font-weight: 600;
+    } 
+
+    .breakcell{
+       background:#efefef;
+       font-weight: 500;
+    } 
+
+    .notecell{
+       background:#f8eee5;
+       font-weight: 600;
+    } 
+
+    .awardcell{
+       background:#D86DCD;
+       font-weight: 600;
+    } 
+
+    .workshopcell{
+       background:#C0E6F5;
+       font-weight: 600;
+    } 
+
+    
+
+    .session-title {
+    font-weight: 500;
+  }
+
+  .session-speaker,
+  .session-location {
+    color: #555;
+    font-size: 0.92rem;
+  }
+
+  /* Special full-width / break / social rows */
+  .timetable tr.break-row td {
+    background: #f0f4f8;
+    font-style: italic;
+    text-align: center;
+    font-weight: 500;
+    padding: 14px;
+    color: #444;
+  }
+
+  .timetable tr.social-row td {
+    background: #e8f5e9;
+    font-weight: 600;
+    text-align: center;
+    padding: 16px;
+    color: #2e7d32;
+  }
+
+  /* Hover effect */
+  /* .timetable tr:hover td:not(.time):not(.break-row td):not(.social-row td):not(.daystyle) {
+    background: #f8fbff;
+  } */
+
+
+
+  /* Mobile responsive – stack columns */
+  /* @media (max-width: 960px) {
+    .timetable thead {
+      display: none;
+    }
+
+    .timetable tr {
+      display: block;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .timetable td {
+      display: block;
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 45%;
+    }
+
+    .timetable td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 12px;
+      width: 38%;
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+
+    .timetable td.time {
+      background: #2c4a77;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 1rem;
+    }
+
+    .timetable td.break-row td,
+    .timetable td.social-row td {
+      padding-left: 12px;
+    }
+  } */
