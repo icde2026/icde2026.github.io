@@ -14,7 +14,7 @@
   gap: 2rem;
   align-items: flex-start;
   /* Add more space between items */
-  margin-bottom: .5rem;          /* ← was effectively ~2.5rem (space-y-10 = 2.5rem) */
+  margin-bottom: 0rem;          /* ← was effectively ~2.5rem (space-y-10 = 2.5rem) */
 }
 
 /* If you want even more space */
@@ -71,7 +71,7 @@
   font-size: 1rem;
   color: #4338ca;              /* indigo-700 */
   line-height: 1.25;
-  margin-bottom: 0.75rem;      /* mb-3 */
+  margin-bottom: 0.3rem;      /* mb-3 */
 }
 
 .special-item .title {
