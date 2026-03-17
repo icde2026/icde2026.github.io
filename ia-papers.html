@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script language="javascript">
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ZQ880VLVF');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+<style>
+  body{visibility:hidden}
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Accepted Industry and Application Papers</title>
+    <meta name="description" content="" />
+
+ <link rel="stylesheet" href="css/min.css">
+ <link rel="stylesheet" href="css/extra.css"> 
+ <link rel="stylesheet" href="css/paper.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+      <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+     </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
+        </div>
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;Conference Program&nbsp;&nbsp;&nbsp;
+        <div class="menu">
+          <a href="program_structure.html" itemprop="url"><span itemprop="name">Program Structure</span></a>
+         <hr>
+         <!--  <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a> -->
+          <a href="accepted-papers.html" itemprop="url"><span itemprop="name">Accepted Research Papers</span></a>
+          <a href="ia-papers.html" itemprop="url"><span itemprop="name">Accepted Industry <br> and Application Papers</span></a>
+          <a href="demo-papers.html" itemprop="url"><span itemprop="name">Accepted Demo Papers</span></a>
+          <a href="tkde-papers.html" itemprop="url"><span itemprop="name">Accepted TKDE Posters</span></a>
+          <a href="deft-papers.html" itemprop="url"><span itemprop="name">Accepted DEFT Papers</span></a>
+          <a href="phd-papers.html" itemprop="url"><span itemprop="name">Accepted Ph.D. Symposium</span></a>
+          <a href="lightning-talks.html" itemprop="url"><span itemprop="name">Accepted Lightning Talks</span></a>
+          
+          <hr>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+          <a href="tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+        </div>
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+         <hr>
+          <a href="visa-guidelines.html" itemprop="url"><span itemprop="name">Visa Guidelines</span></a>
+          <hr>
+          <a href="travel.html" itemprop="url"><span itemprop="name">Travel</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel &amp; Conference Venue</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <!---<a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>-->
+        </div> 
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <!-- <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a> -->
+        </div>
+      </div>
+
+    </nav>
+<section style="text-align: center;" class="carousel small" 
+  data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'
+  >
+  <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
+  <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+  <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
+</section>
+
+</header>
+
+<main class="body">
+    <style>
+     .boxstyle  {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius:5px;
+      }
+    </style>
+<section class="important-dates" style="font-size: 18px; padding: 0 50px 150px 0;">
+  <br />
+  
+  <h2 style="color: #c51c2b;">Accepted Industry and Application Papers</h2>
+
+ <ul class="paper-list">
+
+    <li class="paper-item">
+      <div class="number-column">01</div>
+      <div>
+        <div class="title">Democratizing Tabular Data Access with an Open-Source Synthetic-Data SDK</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Ivona Krchova</span>
+            <span class="affiliation">(MostlyAI)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Mariana vargas vieyra*</span>
+            <span class="affiliation">(MostlyAI)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Mario Scriminaci</span>
+            <span class="affiliation">(MostlyAI)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Andrey Sidorenko</span>
+            <span class="affiliation">(MostlyAI)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">02</div>
+      <div>
+        <div class="title">DLRover-LM: LLM Pre-Training Framework with Thousands of Accelerators in AntGroup</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Ziling Huang*</span>
+            <span class="affiliation">(Sichuan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhengmao Ye</span>
+            <span class="affiliation">(Sichuan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Qingsong Cai</span>
+            <span class="affiliation">(Sichuan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zelong Huang</span>
+            <span class="affiliation">(Sichuan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Bo Sang</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Haitao Zhang</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jian Sha</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Tingfeng Lan</span>
+            <span class="affiliation">(University of Virginia)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hui Lu</span>
+            <span class="affiliation">(The University of Texas at Arlington)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yuanchun Zhou</span>
+            <span class="affiliation">(Chinese Academy of Science)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Mingjie Tang</span>
+            <span class="affiliation">(Sichuan University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">03</div>
+      <div>
+        <div class="title">StreamShield: A Production-Proven Resiliency Solution for Apache Flink at ByteDance</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Yong Fang</span>
+            <span class="affiliation">(ByteDance)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yuxing Han*</span>
+            <span class="affiliation">(ByteDance)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Meng Wang</span>
+            <span class="affiliation">(ByteDance)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yifan Zhang</span>
+            <span class="affiliation">(ByteDance)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yue Ma</span>
+            <span class="affiliation">(ByteDance)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chi Zhang</span>
+            <span class="affiliation">(ByteDance)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">04</div>
+      <div>
+        <div class="title">Tackling Workload Forecasting Challenges with an Offline-Online Dynamic Framework</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Jian Jiang*</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yu Liu</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jia Li</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Lu Han</span>
+            <span class="affiliation">(Nanjing University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Wei Lu</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Qiwen Deng</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhibo Zhu</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xingyu Lu</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Lintao Ma</span>
+            <span class="affiliation">(Ant Group)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">05</div>
+      <div>
+        <div class="title">OceanBase Mercury: Building a Distributed Real-time Analytical Processing Database System</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Quanqing Xu*</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chuanhui Yang</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ruijie Li</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Dongdong Xie</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hui Cao</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yi Xiao</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Junquan Chen</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yanzuo Wang</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Saitong Zhao</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Fusheng Han</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">06</div>
+      <div>
+        <div class="title">High-Fidelity and Complex Test Data Generation for Google SQL Code Generation Services</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Yeounoh Chung*</span>
+            <span class="affiliation">(Google)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Shivasankari Kannan</span>
+            <span class="affiliation">(Google)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Amita Gondi</span>
+            <span class="affiliation">(Google)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Tristan Swadell</span>
+            <span class="affiliation">(Google)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Fatma Ozcan</span>
+            <span class="affiliation">(Google)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">07</div>
+      <div>
+        <div class="title">Taxon: Hierarchical Tax Code Prediction with Semantically Aligned LLM Expert Guidance</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Jihang Li*</span>
+            <span class="affiliation">(Hong Kong University of Science and Technology (Guangzhou))</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Qing Liu</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zulong Chen</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jing Wang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Wei Wang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chuanfei Xu</span>
+            <span class="affiliation">(Guangdong Laboratory of Artificial Intelligence and Digital Economy (Shenzhen))</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zeyi Wen</span>
+            <span class="affiliation">(Hong Kong University of Science and Technology (Guangzhou))</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">08</div>
+      <div>
+        <div class="title">OceanBase CDC: A Log-Based Distributed CDC System for High Availability and Scalability</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Quanqing Xu*</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chuanhui Yang</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Sen Wang</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Fusheng Han</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">09</div>
+      <div>
+        <div class="title">TAT: Temporal-Aligned Transformer for Multi-Horizon Peak Demand Forecasting</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Zhiyuan Zhao*</span>
+            <span class="affiliation">(Georgia Institute of Technology)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Sitan Yang</span>
+            <span class="affiliation">(Keystone AI)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Stan Vitebsky</span>
+            <span class="affiliation">(Amazon)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">B. Aditya Prakash</span>
+            <span class="affiliation">(Georgia Institute of Technology)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Dmitry Efimov</span>
+            <span class="affiliation">(Amazon)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">10</div>
+      <div>
+        <div class="title">Hierarchical Industrial Demand Forecasting with Temporal and Uncertainty Explanations</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Harshavardhan Kamarthi</span>
+            <span class="affiliation">(Georgia Institute of Technology)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Shangqing Xu*</span>
+            <span class="affiliation">(Georgia Institute of Technology)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xinjie Tong</span>
+            <span class="affiliation">(Aspen Technology)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xingyu Zhou</span>
+            <span class="affiliation">(The Dow Chemical Company)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">James Peters</span>
+            <span class="affiliation">(The Dow Chemical Company)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Joseph Czyzyk</span>
+            <span class="affiliation">(The Dow Chemical Company)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">B. Aditya Prakash</span>
+            <span class="affiliation">(Georgia Institute of Technology)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">11</div>
+      <div>
+        <div class="title">Bala-Join: An Adaptive Hash Join for Balancing Communication and Computation in Geo-Distributed SQL Databases</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Wenlong Song</span>
+            <span class="affiliation">(Xidian University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hui Li*</span>
+            <span class="affiliation">(Xidian University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Bingying Zhai</span>
+            <span class="affiliation">(Xidian University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jinxing Yang</span>
+            <span class="affiliation">(Xidian University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Pinghui Wang</span>
+            <span class="affiliation">(Xi’an Jiaotong University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jiangtao Cui</span>
+            <span class="affiliation">(Xidian University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Luming Sun</span>
+            <span class="affiliation">(Yunxi Technology Company Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ming Li</span>
+            <span class="affiliation">(Shandong Inspur Database Technology Company Ltd.)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">12</div>
+      <div>
+        <div class="title">Automatic Parameter Tuning for Compaction in LSM-Tree based Databases</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Pinshan Cao</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Peng Cai*</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xuan Zhou</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jun-Peng Zhu</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Kecheng Luo</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Sijia Li</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Quanqing Xu</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chuanhui Yang</span>
+            <span class="affiliation">(OceanBase, Ant Group)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">13</div>
+      <div>
+        <div class="title">REVISION: Reflective Intent Mining and Online Reasoning Auxiliary for E-commerce Visual Search System Optimization</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Yiwen Tang*</span>
+            <span class="affiliation">(Shanghai AI Laboratory, Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Qiuyu Zhao</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zenghui Sun</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jinsong Lan</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiaoyong Zhu</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Bo Zheng</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">14</div>
+      <div>
+        <div class="title">DBdoctor: A Fine-grained and Non-intrusive Performance Diagnosis Platform for Databases</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Xinyue Shi*</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Quanqi Xin</span>
+            <span class="affiliation">(Juhaokan Technology, Hisense)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhengjin Wang</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xinyi Zhang</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Haoqiong Bian</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Wei Lu</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Qiyu Zhuang</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Shuang Liu</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jikuan Zhang</span>
+            <span class="affiliation">(Juhaokan Technology, Hisense)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiang Zheng</span>
+            <span class="affiliation">(Juhaokan Technology, Hisense)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yunpeng Chai</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiaoyong Du</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">15</div>
+      <div>
+        <div class="title">CCD–Level and Load-Aware Thread Orchestration for In-Memory Vector ANNS on Multi-Core CPUs</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Yuchen Huang</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Baiteng Ma</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yiping Sun</span>
+            <span class="affiliation">(Xiaohongshu Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yang Shi</span>
+            <span class="affiliation">(Xiaohongshu Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiao Chen</span>
+            <span class="affiliation">(Xiaohongshu Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiaocheng Zhong</span>
+            <span class="affiliation">(Xiaohongshu Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhiyong Wang</span>
+            <span class="affiliation">(Xiaohongshu Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yao Hu</span>
+            <span class="affiliation">(Xiaohongshu Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chuliang Weng*</span>
+            <span class="affiliation">(East China Normal University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">16</div>
+      <div>
+        <div class="title">REG4Rec: Reasoning-Enhanced Generative Model for Large-Scale Recommendation Systems</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Haibo Xing*</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hao Deng</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yucheng Mao</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Lingyu Mu</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jinxin Hu</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yi Xu</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hao Zhang</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jiahao Wang</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Shizhun Wang</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yu Zhang</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiaoyi Zeng</span>
+            <span class="affiliation">(Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jing Zhang</span>
+            <span class="affiliation">(Wuhan University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">17</div>
+      <div>
+        <div class="title">Graph Query Generation with Constraint-guided Large Language Agents</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Mengying Wang*</span>
+            <span class="affiliation">(Case Western Reserve University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Nicolaas Jedema</span>
+            <span class="affiliation">(Amazon)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Rahul Pandey</span>
+            <span class="affiliation">(Amazon)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">RaviKiran Krishnan</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jens Lehmann</span>
+            <span class="affiliation">(Amazon)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yinghui Wu</span>
+            <span class="affiliation">(Case Western Reserve University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">18</div>
+      <div>
+        <div class="title">JITPrune: An Efficient Online Feature Pruning Framework for Embedding-based DLRM Training</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Hongzheng Li*</span>
+            <span class="affiliation">(Beijing University of Posts and Telecommunications)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yucheng Wu</span>
+            <span class="affiliation">(Peking University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Junjie Zhai</span>
+            <span class="affiliation">(Tencent)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Anan Liu</span>
+            <span class="affiliation">(Tencent)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yuekui Yang</span>
+            <span class="affiliation">(Tencent)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yingxia Shao</span>
+            <span class="affiliation">(Beijing University of Posts and Telecommunications)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">19</div>
+      <div>
+        <div class="title">D2SQA: An Edge–Cloud Collaborative Slow Query Analysis Framework Deployed at DBAPPSecurity</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Ziquan Fang*</span>
+            <span class="affiliation">(Zhejiang university)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiangheng Wang</span>
+            <span class="affiliation">(Zhejiang university)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zijun Jia</span>
+            <span class="affiliation">(Beihang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Bo Liu</span>
+            <span class="affiliation">(DBAPPSecurity Co., Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yuan Fan</span>
+            <span class="affiliation">(DBAPPSecurity Co., Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Haichuan Zhang</span>
+            <span class="affiliation">(DBAPPSecurity Co., Ltd.)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">20</div>
+      <div>
+        <div class="title">GALA: Generative Aligned Learning for Adaptive Multimodal Representation in the Eleme Recommender System</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">JiPing Liu*</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhongmin Zhang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zisen Sang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhijia Fang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Tao Ouyang</span>
+            <span class="affiliation">(Central South University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ma Jiang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">shaopeng liang</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zeyang Hou</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Guodong Cao</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">jia jia</span>
+            <span class="affiliation">(Alibaba Group)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">21</div>
+      <div>
+        <div class="title">KScaNN: Scalable Approximate Nearest Neighbor Search on Kunpeng</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Oleg Senkevich</span>
+            <span class="affiliation">(Huawei Technologies Ltd)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Siyang Xu</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Tianyi Jiang</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Alexander Radionov</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jan Tabaszewski</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Dmitriy Malyshev</span>
+            <span class="affiliation">(Higher School of Economics)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zijian Li*</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Daihao Xue</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Licheng Yu</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Weidi Zeng</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Meiling Wang</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xin Yao</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Siyu Huang</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Gleb Neshchetkin</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Qiuling Pan</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yaoyao Fu</span>
+            <span class="affiliation">(Huawei Technologies Ltd.)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">22</div>
+      <div>
+        <div class="title">Efficient Data Processing using On-the-Fly Host-PIM Interactions in a Commodity PIM System</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Hyojune Kim</span>
+            <span class="affiliation">(Hanyang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jeonghyeon Joo</span>
+            <span class="affiliation">(Hanyang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">TaeHyeong Park</span>
+            <span class="affiliation">(Yonsei University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yongjun Park</span>
+            <span class="affiliation">(Yonsei University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hyuck Han</span>
+            <span class="affiliation">(FuriosaAI)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Sooyong Kang*</span>
+            <span class="affiliation">(Hanyang University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">23</div>
+      <div>
+        <div class="title">RedParrot: Accelerating NL-to-DSL for Business Analytics via Query Semantic Caching</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Tong Wang*</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yongqin Xu</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jianfeng Zhang</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Lingxi Cui</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Wenqing Wei</span>
+            <span class="affiliation">(Xiaohongshu)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Suzhou Chen</span>
+            <span class="affiliation">(Xiaohongshu)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Huan Li</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ke Chen</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Lidan Shou</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">24</div>
+      <div>
+        <div class="title">CoLIBRi: Supporting quotation through multi-modal retrieval and conversational search on manufacturing drawings</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Jacob Pollack*</span>
+            <span class="affiliation">(Leipzig University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Lucas Peter</span>
+            <span class="affiliation">(Leipzig University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Matthias Täschner</span>
+            <span class="affiliation">(Leipzig University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Carmen Ahnert</span>
+            <span class="affiliation">(CPT Präzisionstechnik GmbH)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">25</div>
+      <div>
+        <div class="title">Building and Benchmarking Large Language Models for Machine Translation in Social Network Services</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Hongcheng Guo</span>
+            <span class="affiliation">(Fudan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Fei Zhao</span>
+            <span class="affiliation">(Xiaohongshu Inc.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Shaosheng Cao*</span>
+            <span class="affiliation">(Xiaohongshu Inc.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xinze Lyu</span>
+            <span class="affiliation">(Xiaohongshu Inc.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zijie Meng</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yue Wang</span>
+            <span class="affiliation">(Nanjing University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yao Hu</span>
+            <span class="affiliation">(Xiaohongshu Inc.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhoujun Li</span>
+            <span class="affiliation">(Xiaohongshu Inc.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zuozhu Liu</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">26</div>
+      <div>
+        <div class="title">FELA: A Multi-Agent Evolutionary System for Feature Engineering of Industrial Event Log Data</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Kun Ouyang*</span>
+            <span class="affiliation">(LIGHTSPEED STUDIOS, Tencent)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Haoyu Wang</span>
+            <span class="affiliation">(Tsinghua University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Dong Fang</span>
+            <span class="affiliation">(LIGHTSPEED STUDIOS)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">27</div>
+      <div>
+        <div class="title">Cascading Relevance-driven Recommendation Network for CTR Prediction in Trigger-Introduced Recommendation</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Kaixuan Chen*</span>
+            <span class="affiliation">(Taobao & Tmall Group of Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Wenwen Wang</span>
+            <span class="affiliation">(Taobao & Tmall Group of Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xing Fang</span>
+            <span class="affiliation">(Taobao & Tmall Group of Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yang Huang</span>
+            <span class="affiliation">(Taobao & Tmall Group of Alibaba)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jing Wang</span>
+            <span class="affiliation">(Taobao & Tmall Group of Alibaba)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">28</div>
+      <div>
+        <div class="title">Accurate and Efficient Multi-channel Time Series Forecasting via Sparse Attention Mechanism</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Hengda Bao</span>
+            <span class="affiliation">(SF Express)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jingfei Fang</span>
+            <span class="affiliation">(SF Express)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">guangzheng wu*</span>
+            <span class="affiliation">(Zhejiang University of Technology)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Weihua Zhou</span>
+            <span class="affiliation">(Zhejiang University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">29</div>
+      <div>
+        <div class="title">From Benchmarks to Production: Transferring Time Series Anomaly Detection Methods for Electricity Production Monitoring</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Nicolas Vautier*</span>
+            <span class="affiliation">(EDF Lab Paris Saclay)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Paul Caron</span>
+            <span class="affiliation">(EDF DOAAT)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Nardi Xhepi</span>
+            <span class="affiliation">(EDF DOAAT)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Félicie Bizeul</span>
+            <span class="affiliation">(EDF Lab Paris Saclay)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Manel Boumghar</span>
+            <span class="affiliation">(EDF Lab Paris Saclay)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Christophe Degouy</span>
+            <span class="affiliation">(EDF DOAAT)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Paul Boniol</span>
+            <span class="affiliation">(INRIA)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">30</div>
+      <div>
+        <div class="title">OpenZL: Using Graphs to Compress Smaller and Faster</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Yann Collet</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Nick Terrell</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Winston Felix Handte</span>
+            <span class="affiliation">(Meta Platforms)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Danielle Rozenblit</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Victor Zhang*</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Kevin Zhang</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yaelle Goldschlag</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jennifer Lee</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Elliot Gorokhovsky</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yonatan Komornik</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Daniel Riegel</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Stan Angelov</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Nadav Rotem</span>
+            <span class="affiliation">(Meta)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">31</div>
+      <div>
+        <div class="title">GaV: Guess and Verification of Column Semantic Meanings</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Davide Di Stefano</span>
+            <span class="affiliation">(TU Wien & Unlimidata Ltd)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jinsong Guo*</span>
+            <span class="affiliation">(Unlimidata Ltd)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yang Hu</span>
+            <span class="affiliation">(University of Leicester)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Matteo Capalbo</span>
+            <span class="affiliation">(University of Calabria)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Davide Mario Longo</span>
+            <span class="affiliation">(University of Calabria)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Georg Gottlob</span>
+            <span class="affiliation">(University of Calabria)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">32</div>
+      <div>
+        <div class="title">User-Adaptive Meta-Learning for Cold-Start Medication Recommendation with Uncertainty Filtering</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Arya Hadizadeh Moghaddam</span>
+            <span class="affiliation">(University of Kansas)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Mohsen Nayebi Kerdabadi</span>
+            <span class="affiliation">(University of Kansas)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Dongjie Wang</span>
+            <span class="affiliation">(University of Kansas)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Mei Liu</span>
+            <span class="affiliation">(UF Health)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zijun Yao*</span>
+            <span class="affiliation">(University of Kansas)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">33</div>
+      <div>
+        <div class="title">On Efficient Materialization in Data Lakes</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Andrew Harn</span>
+            <span class="affiliation">(Google Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Herald Kllapi*</span>
+            <span class="affiliation">(Google Inc)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhepeng Yan</span>
+            <span class="affiliation">(Google Inc)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">34</div>
+      <div>
+        <div class="title">Billion-scale Fintech Analytics: Scalable Data Management and Anomaly Detection at NPCI</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Bharadwaj Dasari</span>
+            <span class="affiliation">(National Payments Corporation of India)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Turaga Sai Dhiraj</span>
+            <span class="affiliation">(National Payments Corporation of India)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ganesh Jambhrunkar</span>
+            <span class="affiliation">(National Payments Corporation of India)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Thirumalai Kailasam</span>
+            <span class="affiliation">(National Payments Corporation of India)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Charu Vikram</span>
+            <span class="affiliation">(National Payments Corporation of India)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Saurav Singla</span>
+            <span class="affiliation">(National Payments Corporation of India)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Pranjal Naman</span>
+            <span class="affiliation">(Indian Institute of Science (IISc), Bangalore)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yogesh Simmhan*</span>
+            <span class="affiliation">(Indian Institute of Science (IISc), Bangalore)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">35</div>
+      <div>
+        <div class="title">Decoupled Multimodal Fusion for User Interest Modeling in Click-Through Rate Prediction</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Alin Fan*</span>
+            <span class="affiliation">(Alibaba International Digital Commerce Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Hanqing Li</span>
+            <span class="affiliation">(Alibaba International Digital Commerce Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Sihan Lu</span>
+            <span class="affiliation">(Renmin University of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jingsong Yuan</span>
+            <span class="affiliation">(Alibaba International Digital Commerce Group)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jiandong Zhang</span>
+            <span class="affiliation">(Alibaba International Digital Commerce Group)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">36</div>
+      <div>
+        <div class="title">GalaxyRAG: Graph Retrieval-Augmented Generation for Enterprise Knowledge Systems</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Bing Tong*</span>
+            <span class="affiliation">(The Hong Kong University of Science and Technology (Guangzhou))</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Yan Zhou</span>
+            <span class="affiliation">(Zhejiang Chuanglin Technology Co., Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chen Zhang</span>
+            <span class="affiliation">(Zhejiang Chuanglin Technology Co., Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhaojie Yin</span>
+            <span class="affiliation">(Zhejiang Chuanglin Technology Co., Ltd.)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jia Li</span>
+            <span class="affiliation">(The Hong Kong University of Science and Technology (Guangzhou))</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">37</div>
+      <div>
+        <div class="title">OEPO: Online Experience-based Preference Optimization for CTR Prediction</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Zhichao Liao*</span>
+            <span class="affiliation">(University of Electronic Science and Technology of China)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ziheng Ni</span>
+            <span class="affiliation">(JD.com)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Congcong Liu</span>
+            <span class="affiliation">(JD.com)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Zhiwei Fang</span>
+            <span class="affiliation">(JD.com)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Changping Peng</span>
+            <span class="affiliation">(JD.com)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">38</div>
+      <div>
+        <div class="title">DM-RAG: Enhancing User Support in Dameng Databases with Retrieval-Augmented Generation</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Qiang Huang*</span>
+            <span class="affiliation">(Wuhan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Ke Liu</span>
+            <span class="affiliation">(Wuhan Dameng Database Co., Ltd)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Liang Deng</span>
+            <span class="affiliation">(Wuhan Dameng Database Co., Ltd)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Sijing Zhang</span>
+            <span class="affiliation">(Wuhan Dameng Database Co., Ltd)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Chuang Hu</span>
+            <span class="affiliation">(Wuhan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Tieyun Qian</span>
+            <span class="affiliation">(Wuhan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Xiao Yan</span>
+            <span class="affiliation">(Wuhan University)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jiawei Jiang</span>
+            <span class="affiliation">(Wuhan University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">39</div>
+      <div>
+        <div class="title">Relevance Matters: A Multi-Task and Multi-Stage Large Language Model Approach for E-commerce Query Rewriting</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Aijun Dai*</span>
+            <span class="affiliation">(Jingdong)</span>
+          </div>
+          <div class="author-line">
+            <span class="author-name">Jixiang Zhang</span>
+            <span class="affiliation">(Tsinghua University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+
+</section>
+
+</main>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="css/min.css">
+<script async src="js/min.js"></script>
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+<script>
+    (function() {
+        var last = 0,
+            docBody = document.body,
+            header = document.querySelector('body>header'),
+            nav = header && header.querySelector('nav'),
+            requestAnimationFrame = window.requestAnimationFrame || function(callback, element) {
+                var now = Date.now(),
+                    next = Math.max(0, 16 - (now - last)),
+                    id = window.setTimeout(function() {
+                        callback(now + next);
+                    }, next);
+                last = now + next;
+                return id;
+            },
+            cancelAnimationFrame = window.cancelAnimationFrame || function(id) {
+                clearTimeout(id);
+            },
+            update = function () {
+                if (!nav) return;
+
+                var isStatic = docBody.classList.contains('static');
+                if (header.getBoundingClientRect().bottom > 70) {
+                    if (isStatic) docBody.classList.remove('static');
+                } else if (!isStatic) docBody.classList.add('static');
+            },
+            lid;
+
+        window.addEventListener('scroll', function(e) {
+            if (lid) cancelAnimationFrame(lid);
+            lid = requestAnimationFrame(update);
+        });
+
+        update();
+    }());
+</script>
+</body>
+</html>
