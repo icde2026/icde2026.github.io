@@ -179,22 +179,49 @@
   <main class="body">
     
     <style>
-      .session-container { text-align: left; }
-      .session-box {
+      details.session-box {
         background: #fdfdfd;
         border: 1px solid #e1e8ed;
         border-left: 5px solid #c51c2b; 
         border-radius: 6px;
-        padding: 20px;
         margin-bottom: 25px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        transition: all 0.3s ease;
       }
-      .session-box.industry { border-left-color: #e67e22; }
-      .session-box.demo { border-left-color: #27ae60; }
+      details.session-box.industry { border-left-color: #e67e22; }
+      details.session-box.demo { border-left-color: #27ae60; }
       
-      .session-box h3 { margin-top: 0; color: #2c3e50; font-size: 1.3em; margin-bottom: 5px; }
+      details.session-box summary {
+        padding: 20px;
+        font-size: 1.25em;
+        font-weight: bold;
+        color: #2c3e50;
+        cursor: pointer;
+        list-style: none; 
+        outline: none;
+      }
+      details.session-box summary::-webkit-details-marker { display: none; }
+
+      details.session-box summary::after {
+        content: ' ▼';
+        float: right;
+        color: #7f8c8d;
+        font-size: 0.8em;
+        margin-top: 5px;
+      }
+      details[open].session-box summary::after {
+        content: ' ▲';
+        color: #c51c2b;
+      }
+
+      .session-content {
+        padding: 0 20px 20px 20px;
+        border-top: 1px dashed #ecf0f1;
+        margin-top: 5px;
+        padding-top: 15px;
+      }
+      
       .session-meta { font-size: 0.95em; color: #7f8c8d; margin-bottom: 15px; font-weight: 500; }
-      
       .paper-list { list-style: none; padding-left: 0; margin: 0; }
       .paper-item { padding: 12px 0; border-bottom: 1px dashed #ecf0f1; display: flex; align-items: flex-start; }
       .paper-item:last-child { border-bottom: none; padding-bottom: 0; }
@@ -211,13 +238,6 @@
         text-align: center;
       }
       .paper-title { font-weight: 500; font-size: 1.05em; color: #2c3e50; }
-      
-      .track-header {
-        color: #2980b9;
-        margin-top: 40px;
-        border-bottom: 2px solid #ecf0f1;
-        padding-bottom: 5px;
-        text-align: left;
       }
     </style>
 
@@ -228,67 +248,154 @@
       
       <h2 class="track-header">Research Papers</h2>
       
-      <div class="session-box" id="R-15">
-        <h3>[R-15] NL2SQL: Methods and Architectures</h3>
-        <div class="session-meta">Track: AI for Data Management | 7 Papers</div>
-        <ul class="paper-list">
-          <li class="paper-item">
-            <span class="paper-id">#161</span>
-            <span class="paper-title">OsmT: Bridging OpenStreetMap Queries and Natural Language with Open-source Tag-aware Language Models</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#167</span>
-            <span class="paper-title">Knapsack Optimization-based Schema Linking for LLM-based Text-to-SQL Generation</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#326</span>
-            <span class="paper-title">CYANSQL: Unlock the Power of NL2SQL via Clustering-based Test-Time Scaling</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#570</span>
-            <span class="paper-title">Text2VectorSQL: Towards a Unified Interface for Vector Search and SQL Queries</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#918</span>
-            <span class="paper-title">LEAF-SQL: Level-wise Exploration with Adaptive Fine-graining for Text-to-SQL Skeleton Prediction</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#929</span>
-            <span class="paper-title">Boosting Small Language Models for Text-to-SQL with Fine-Grained Execution Feedback and Cost-Efficient Rewards</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#1222</span>
-            <span class="paper-title">Text2SQL-Flow: A Robust SQL-Aware Data Augmentation Framework for Text-to-SQL</span>
-          </li>
-        </ul>
-      </div>
+      <details class="session-box" id="R-1">
+        <summary>[R-1] Query Processing and Optimization 1</summary>
+        <div class="session-content">
+          <div class="session-meta">Track: Query Processing | 5 Papers | Room-1</div>
+          <ul class="paper-list">
+            <li class="paper-item">
+              <span class="paper-id">#102</span>
+              <span class="paper-title">Efficient Distributed Query Processing in Serverless Environments</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#145</span>
+              <span class="paper-title">Learned Cost Models: A Meta-Learning Approach</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#210</span>
+              <span class="paper-title">Adaptive Cardinality Estimation with Deep Autoregressive Models</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#315</span>
+              <span class="paper-title">Optimizing Sub-query Reuse in Complex Analytical Workloads</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#422</span>
+              <span class="paper-title">Robust Query Execution on Heterogeneous Hardware</span>
+            </li>
+          </ul>
+        </div>
+      </details>
 
-      <div class="session-box" id="R-30">
-        <h3>[R-30] NL2SQL: Systems, Evaluation and Benchmarking</h3>
-        <div class="session-meta">Track: AI for Data Management | 5 Papers</div>
-        <ul class="paper-list">
-          <li class="paper-item">
-            <span class="paper-id">#682</span>
-            <span class="paper-title">Hexgen-Flow: Optimizing LLM Inference Request Scheduling for Agentic Text-to-SQL</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#925</span>
-            <span class="paper-title">An Efficient and Effective Evaluator for Text2SQL Models on Unseen and Unlabeled Data</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#985</span>
-            <span class="paper-title">[Experiment, Analysis, and Benchmark] SQLMorph: Query Mutation and Fine-Grained Metrics for Text-to-SQL Evaluation</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#1056</span>
-            <span class="paper-title">Elena: An Explainability-aided Online Query Optimization Framework</span>
-          </li>
-          <li class="paper-item">
-            <span class="paper-id">#1165</span>
-            <span class="paper-title">MM2SQL: A Benchmark and Method for Visually-Grounded SQL Generation</span>
-          </li>
-        </ul>
-      </div>
+      <details class="session-box" id="R-2">
+        <summary>[R-2] Data Mining and Analytics 1</summary>
+        <div class="session-content">
+          <div class="session-meta">Track: Data Mining | 5 Papers | Room-2</div>
+          <ul class="paper-list">
+            <li class="paper-item">
+              <span class="paper-id">#88</span>
+              <span class="paper-title">Scalable Periodic Pattern Mining over Massive Time-Series Data</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#176</span>
+              <span class="paper-title">Graph Neural Networks for Dynamic Fraud Detection</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#234</span>
+              <span class="paper-title">Efficient Subgraph Matching using Condensed Trie Structures</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#389</span>
+              <span class="paper-title">Unsupervised Anomaly Detection in Multidimensional Data Streams</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#511</span>
+              <span class="paper-title">Fast and Accurate Density-Based Clustering for Spatial Data</span>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="session-box" id="R-3">
+        <summary>[R-3] Machine Learning for Database Systems</summary>
+        <div class="session-content">
+          <div class="session-meta">Track: ML for DB | 6 Papers | Room-3</div>
+          <ul class="paper-list">
+            <li class="paper-item">
+              <span class="paper-id">#55</span>
+              <span class="paper-title">Auto-Tuning Database Configurations using Reinforcement Learning</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#129</span>
+              <span class="paper-title">Learned Index Structures: From Theory to Practice</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#288</span>
+              <span class="paper-title">Predictive Buffer Management driven by Lightweight Neural Networks</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#345</span>
+              <span class="paper-title">A Hybrid Approach to Query Workload Forecasting</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#467</span>
+              <span class="paper-title">Self-Driving Databases: Challenges and Opportunities</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#590</span>
+              <span class="paper-title">Optimizing Storage Layouts with Generative Adversarial Networks</span>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="session-box" id="R-4">
+        <summary>[R-4] Privacy, Security, and Trust</summary>
+        <div class="session-content">
+          <div class="session-meta">Track: Security | 5 Papers | Room-4</div>
+          <ul class="paper-list">
+            <li class="paper-item">
+              <span class="paper-id">#77</span>
+              <span class="paper-title">Differentially Private Query Release for Relational Data</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#190</span>
+              <span class="paper-title">Verifiable Oblivious Data Access in Cloud Environments</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#255</span>
+              <span class="paper-title">Federated Learning with Byzantine Robustness in Data Silos</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#412</span>
+              <span class="paper-title">Secure Multi-Party Computation for Graph Analytics</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#602</span>
+              <span class="paper-title">Detecting Data Poisoning Attacks in Distributed Systems</span>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="session-box" id="R-5">
+        <summary>[R-5] Graph and Network Data 1</summary>
+        <div class="session-content">
+          <div class="session-meta">Track: Graph Data | 5 Papers | Room-5</div>
+          <ul class="paper-list">
+            <li class="paper-item">
+              <span class="paper-id">#42</span>
+              <span class="paper-title">Efficient Core Maintenance in Dynamic Temporal Graphs</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#163</span>
+              <span class="paper-title">Scalable Motif Discovery in Attributed Networks</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#301</span>
+              <span class="paper-title">Distributed Shortest Path Computation: A Communication-Efficient Approach</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#450</span>
+              <span class="paper-title">Graph Partitioning for Highly Skewed Workloads</span>
+            </li>
+            <li class="paper-item">
+              <span class="paper-id">#522</span>
+              <span class="paper-title">Continuous Reachability Queries on Evolving Graphs</span>
+            </li>
+          </ul>
+        </div>
+      </details>
 
       <h2 class="track-header">Industry & Applications (I&A) Papers</h2>
 
