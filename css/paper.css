@@ -1,0 +1,108 @@
+.subtitle {
+  color: #4b5563;              /* gray-600 */
+  margin-bottom: 1.5rem;
+}
+
+.paper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paper-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  /* Add more space between items */
+  margin-bottom: 0rem;          /* ← was effectively ~2.5rem (space-y-10 = 2.5rem) */
+}
+
+/* If you want even more space */
+.paper-item + .paper-item {
+  margin-top: .5rem;             /* or 3rem, 3.5rem, 4rem etc. */
+}
+
+/* Alternative: use gap on the ul instead of margin on li */
+.paper-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;                      /* ← try 2.5rem, 3rem, 3.5rem, 4rem */
+}
+
+@media (min-width: 768px) {
+  .paper-item {
+    gap: 3rem;                 /* md:gap-12 */
+  }
+}
+
+.number-column {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #c7d2fe;              /* indigo-200 */
+  width: 2rem;                 /* w-16 */
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 3.8rem;
+  transition: color 0.2s ease;
+}
+
+.paper-item:hover .number-column {
+  color: #a5b4fc;              /* indigo-300 on hover */
+}
+
+@media (min-width: 768px) {
+  .number-column {
+    width: 2rem;               /* md:w-20 */
+  }
+}
+
+.special-item .number-column {
+  color: #fcd34d;              /* amber-300 */
+}
+
+.special-item:hover .number-column {
+  color: #fbbf24;              /* amber-400 */
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4338ca;              /* indigo-700 */
+  line-height: 1.25;
+  margin-bottom: 0.3rem;      /* mb-3 */
+}
+
+.special-item .title {
+  font-weight: 700;
+  font-size: 1.125rem;         /* 18px – slight emphasis */
+  color: #d97706;              /* amber-600 */
+}
+
+.authors {
+  font-size: 1rem;
+  color: #374151;              /* gray-700 */
+  line-height: 1.5;
+}
+
+.author-line {
+  margin-bottom: 0.25rem;      /* space-y-1 → ~4px gap */
+}
+
+.author-name {
+  font-weight: 500;
+}
+
+.affiliation {
+  color: #6b7280;              /* gray-500 */
+  font-weight: 400;
+}
+
+.special-item {
+  background-color: rgba(255, 251, 235, 0.4); /* amber-50/40 */
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}

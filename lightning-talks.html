@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script language="javascript">
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ZQ880VLVF');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+<style>
+  body{visibility:hidden}
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Accepted Lightning Talks</title>
+    <meta name="description" content="" />
+
+ <link rel="stylesheet" href="css/min.css">
+ <link rel="stylesheet" href="css/extra.css"> 
+ <link rel="stylesheet" href="css/paper.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+      <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+     </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        <a href="index.html" itemprop="url"><span itemprop="name">Home</span></a>
+      </div>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
+        </div>
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;Conference Program&nbsp;&nbsp;&nbsp;
+        <div class="menu">
+          <a href="program_structure.html" itemprop="url"><span itemprop="name">Program Structure</span></a>
+         <hr>
+         <!--  <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a> -->
+          <a href="accepted-papers.html" itemprop="url"><span itemprop="name">Accepted Research Papers</span></a>
+          <a href="ia-papers.html" itemprop="url"><span itemprop="name">Accepted Industry <br> and Application Papers</span></a>
+          <a href="demo-papers.html" itemprop="url"><span itemprop="name">Accepted Demo Papers</span></a>
+          <a href="tkde-papers.html" itemprop="url"><span itemprop="name">Accepted TKDE Posters</span></a>
+          <a href="deft-papers.html" itemprop="url"><span itemprop="name">Accepted DEFT Papers</span></a>          
+          <a href="lightning-talks.html" itemprop="url"><span itemprop="name">Accepted Lightning Talks</span></a>
+          <a href="tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="phd-papers.html" itemprop="url"><span itemprop="name">Accepted Ph.D. Symposium</span></a>
+          <hr>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div>
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+         <hr>
+          <a href="visa-guidelines.html" itemprop="url"><span itemprop="name">Visa Guidelines</span></a>
+          <hr>
+          <a href="travel.html" itemprop="url"><span itemprop="name">Travel</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel &amp; Conference Venue</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <!---<a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>-->
+        </div> 
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <!-- <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a> -->
+        </div>
+      </div>
+
+    </nav>
+<section style="text-align: center;" class="carousel small" 
+  data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'
+  >
+  <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
+  <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+  <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
+</section>
+
+</header>
+
+<main class="body">
+    <style>
+     .boxstyle  {
+        border: 0;
+        background: #eee;
+        color: #383838;
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        padding: 5px;
+        border-radius:5px;
+      }
+    </style>
+<section class="important-dates" style="font-size: 18px; padding: 0 50px 150px 0;">
+  <br />
+  
+  <h2 style="color: #c51c2b;">Accepted Lightning Talks</h2>
+  <ul class="paper-list">
+
+    <li class="paper-item">
+      <div class="number-column">01</div>
+      <div>
+        <div class="title">MDSD: Multi-turn Diverse Synthetic Dialog Generation for Domain Specific Incomplete Requests Understanding</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Xi Li*</span>
+            <span class="affiliation">(Apple)</span>,
+            <span class="author-name">Xiaoxu Wu</span>
+            <span class="affiliation">(Apple)</span>,
+            <span class="author-name">Lijuan Xiao</span>
+            <span class="affiliation">(Apple)</span>,
+            <span class="author-name">Tao Liu</span>
+            <span class="affiliation">(Apple)</span>,
+            <span class="author-name">Ping Huang</span>
+            <span class="affiliation">(Apple)</span>,
+            <span class="author-name">Jiulong Shan</span>
+            <span class="affiliation">(Apple)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">02</div>
+      <div>
+        <div class="title">Model Slicing: a Data Engineering Perspective</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Parke Godfrey</span>
+            <span class="affiliation">(York University)</span>,
+            <span class="author-name">Lukasz Golab*</span>
+            <span class="affiliation">(University of Waterloo)</span>,
+            <span class="author-name">Divesh Srivastava</span>
+            <span class="affiliation">(AT&T Chief Data Office)</span>,
+            <span class="author-name">Jarek Szlichta</span>
+            <span class="affiliation">(York University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">03</div>
+      <div>
+        <div class="title">Responsible Entity Resolution over Streaming Data</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Kostas Stefanidis*</span>
+            <span class="affiliation">(Tampere University)</span>,
+            <span class="author-name">Vasilis Efthymiou</span>
+            <span class="affiliation">(Harokopio University of Athens)</span>,
+            <span class="author-name">Tiago Brasileiro Araújo</span>
+            <span class="affiliation">(Tampere University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">04</div>
+      <div>
+        <div class="title">Tuning IBM Db2 with Explainable AI</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Andrew Chai*</span>
+            <span class="affiliation">(York University and IBM CAS)</span>,
+            <span class="author-name">Alexander Bianchi</span>
+            <span class="affiliation">(IBM Canada Ltd.)</span>,
+            <span class="author-name">Vincent Corvinelli</span>
+            <span class="affiliation">(IBM Canada Ltd.)</span>,
+            <span class="author-name">Parke Godfrey</span>
+            <span class="affiliation">(York University and IBM CAS)</span>,
+            <span class="author-name">Lukasz Golab</span>
+            <span class="affiliation">(University of Waterloo)</span>,
+            <span class="author-name">Jarek Szlichta</span>
+            <span class="affiliation">(York University and IBM CAS)</span>,
+            <span class="author-name">Calisto Zuzarte</span>
+            <span class="affiliation">(IBM Canada Ltd.)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">05</div>
+      <div>
+        <div class="title">From Polystores to PolyDBMS: The Polypheny Experience</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Marco Vogt*</span>
+            <span class="affiliation">(University of Basel)</span>,
+            <span class="author-name">David Lengweiler</span>
+            <span class="affiliation">(University of Basel)</span>,
+            <span class="author-name">Martin Vahlensieck</span>
+            <span class="affiliation">(University of Basel)</span>,
+            <span class="author-name">Yiming Wu</span>
+            <span class="affiliation">(University of Basel)</span>,
+            <span class="author-name">Heiko Schuldt</span>
+            <span class="affiliation">(University of Basel)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">06</div>
+      <div>
+        <div class="title">Recovering Structure in Unstructured LLM Outputs</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Joel Rorseth*</span>
+            <span class="affiliation">(University of Waterloo)</span>,
+            <span class="author-name">Parke Godfrey</span>
+            <span class="affiliation">(York University)</span>,
+            <span class="author-name">Lukasz Golab</span>
+            <span class="affiliation">(University of Waterloo)</span>,
+            <span class="author-name">Divesh Srivastava</span>
+            <span class="affiliation">(AT&T Chief Data Office)</span>,
+            <span class="author-name">Szlichta Szlichta</span>
+            <span class="affiliation">(York University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">07</div>
+      <div>
+        <div class="title">Rethinking BFT Consensus via Transaction-Level  Protocol Construction for Optimal Performance</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">BINGXU ZHU*</span>
+            <span class="affiliation">(Concordia University)</span>,
+            <span class="author-name">Gengrui Zhang</span>
+            <span class="affiliation">(Concordia University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">08</div>
+      <div>
+        <div class="title">SENTINEL: Evaluating Pipeline Robustness to Distributional Shifts</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Jahid Hasan*</span>
+            <span class="affiliation">(Purdue University)</span>,
+            <span class="author-name">Jingya Wang</span>
+            <span class="affiliation">(Purdue University)</span>,
+            <span class="author-name">Romila Pradhan</span>
+            <span class="affiliation">(Purdue University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">09</div>
+      <div>
+        <div class="title">SPLICE: An Efficient Framework for Selecting Sources for Machine Learning Tasks</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Ambarish Singh*</span>
+            <span class="affiliation">(Purdue University)</span>,
+            <span class="author-name">Romila Pradhan</span>
+            <span class="affiliation">(Purdue University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">10</div>
+      <div>
+        <div class="title">When Text-to-SQL Evaluation Misleads: Rethinking Benchmarking Practices</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Oktie Hassanzadeh*</span>
+            <span class="affiliation">(IBM Research)</span>,
+            <span class="author-name">Nhan Pham</span>
+            <span class="affiliation">(IBM Research)</span>,
+            <span class="author-name">Timothy Dinger</span>
+            <span class="affiliation">(IBM Research)</span>,
+            <span class="author-name">Tanvi Kaple</span>
+            <span class="affiliation">(IBM Research)</span>,
+            <span class="author-name">Long Vu</span>
+            <span class="affiliation">(IBM Research)</span>,
+            <span class="author-name">Michael Glass</span>
+            <span class="affiliation">(IBM Research)</span>,
+            <span class="author-name">Shankar Subramanian</span>
+            <span class="affiliation">(IBM Research)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">11</div>
+      <div>
+        <div class="title">Are Dedicated Vector Databases Necessary? Benchmarking Vector Search in Relational and Analytical Systems for Enterprise Workloads</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Archan Dutta*</span>
+            <span class="affiliation">(Aisera)</span>,
+            <span class="author-name">Thais Poi</span>
+            <span class="affiliation">(San Joaquin Delta College)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">12</div>
+      <div>
+        <div class="title">Is Quantum Computing Ready for Real-Time Database Optimization?</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Hanwen Liu*</span>
+            <span class="affiliation">(University of Southern California)</span>,
+            <span class="author-name">Ibrahim Sabek</span>
+            <span class="affiliation">(University of Southern California)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">13</div>
+      <div>
+        <div class="title">On Breaking the Scalability Barrier in Data Cleaning</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">El Kindi Rezig*</span>
+            <span class="affiliation">(University of Utah)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">14</div>
+      <div>
+        <div class="title">GNN Explainers 2.0: A Paradigm for User-Oriented, Data-Guided Explanations</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Arijit Khan*</span>
+            <span class="affiliation">(Bowling Green State University)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="paper-item">
+      <div class="number-column">15</div>
+      <div>
+        <div class="title">SalesforceDB: Built on one LSM to rule them all !</div>
+        <div class="authors">
+          <div class="author-line">
+            <span class="author-name">Vaibhav Arora*</span>
+            <span class="affiliation">(Salesforce)</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</section>
+
+</main>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="css/min.css">
+<script async src="js/min.js"></script>
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+<script>
+    (function() {
+        var last = 0,
+            docBody = document.body,
+            header = document.querySelector('body>header'),
+            nav = header && header.querySelector('nav'),
+            requestAnimationFrame = window.requestAnimationFrame || function(callback, element) {
+                var now = Date.now(),
+                    next = Math.max(0, 16 - (now - last)),
+                    id = window.setTimeout(function() {
+                        callback(now + next);
+                    }, next);
+                last = now + next;
+                return id;
+            },
+            cancelAnimationFrame = window.cancelAnimationFrame || function(id) {
+                clearTimeout(id);
+            },
+            update = function () {
+                if (!nav) return;
+
+                var isStatic = docBody.classList.contains('static');
+                if (header.getBoundingClientRect().bottom > 70) {
+                    if (isStatic) docBody.classList.remove('static');
+                } else if (!isStatic) docBody.classList.add('static');
+            },
+            lid;
+
+        window.addEventListener('scroll', function(e) {
+            if (lid) cancelAnimationFrame(lid);
+            lid = requestAnimationFrame(update);
+        });
+
+        update();
+    }());
+</script>
+</body>
+</html>
