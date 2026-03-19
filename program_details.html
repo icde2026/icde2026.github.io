@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script language="javascript">
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6ZQ880VLVF');
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+
+  <style>
+    body {
+      visibility: hidden
+    }
+  </style>
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <title>Conference Program</title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="css/min.css">
+  <link rel="stylesheet" href="css/extra.css"> 
+   <link rel="stylesheet" href="css/table.css"> 
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+        <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+      </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        <a href="index.html" itemprop="url"><span itemprop="name">Home</span></a>
+      </div>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
+        </div>
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;Conference Program&nbsp;&nbsp;&nbsp;
+        <div class="menu">
+          <a href="program_structure.html" itemprop="url"><span itemprop="name">Program Structure</span></a>
+         <hr>
+         <!--  <a href="program.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+          <a href="panel.html" itemprop="url"><span itemprop="name">Panel</span></a>
+          <a href="phdsymposium.html" itemprop="url"><span itemprop="name">PhD Symposium</span></a> -->
+          <a href="accepted-papers.html" itemprop="url"><span itemprop="name">Accepted Research Papers</span></a>
+          <a href="ia-papers.html" itemprop="url"><span itemprop="name">Accepted Industry <br> and Application Papers</span></a>
+          <a href="demo-papers.html" itemprop="url"><span itemprop="name">Accepted Demo Papers</span></a>
+          <a href="tkde-papers.html" itemprop="url"><span itemprop="name">Accepted TKDE Posters</span></a>
+          <a href="deft-papers.html" itemprop="url"><span itemprop="name">Accepted DEFT Papers</span></a>          
+          <a href="lightning-talks.html" itemprop="url"><span itemprop="name">Accepted Lightning Talks</span></a>
+          <a href="tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="phd-papers.html" itemprop="url"><span itemprop="name">Accepted Ph.D. Symposium</span></a>
+          <hr>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+        </div>
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+          <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          <hr>
+          <a href="visa-guidelines.html" itemprop="url"><span itemprop="name">Visa Guidelines</span></a>
+          <hr>
+          <a href="travel.html" itemprop="url"><span itemprop="name">Travel</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel &amp; Conference Venue</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+          <!---<a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
+          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>-->
+        </div> 
+      </div>
+
+      <div>
+        Dates &amp; Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <!-- <a href="sponsorship-faq.html" itemprop="url"><span itemprop="name">Sponsorship FAQ</span></a> -->
+        </div>
+      </div>
+
+    </nav>
+    <section style="text-align: center;" class="carousel small" data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"},
+    {"i":"./img/montreal/4.jpg"},
+    {"i":"./img/montreal/5.jpg"},
+    {"i":"./img/montreal/6.jpg"}
+  ]'>
+      <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data
+        Engineering (ICDE)</span>
+      <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+      <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;">
+      </div>
+    </section>
+
+  </header>
+
+  <main class="body">
+    
+    <style>
+      .session-container { text-align: left; }
+      .session-box {
+        background: #fdfdfd;
+        border: 1px solid #e1e8ed;
+        border-left: 5px solid #c51c2b; 
+        border-radius: 6px;
+        padding: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      }
+      .session-box.industry { border-left-color: #e67e22; }
+      .session-box.demo { border-left-color: #27ae60; }
+      
+      .session-box h3 { margin-top: 0; color: #2c3e50; font-size: 1.3em; margin-bottom: 5px; }
+      .session-meta { font-size: 0.95em; color: #7f8c8d; margin-bottom: 15px; font-weight: 500; }
+      
+      .paper-list { list-style: none; padding-left: 0; margin: 0; }
+      .paper-item { padding: 12px 0; border-bottom: 1px dashed #ecf0f1; display: flex; align-items: flex-start; }
+      .paper-item:last-child { border-bottom: none; padding-bottom: 0; }
+      
+      .paper-id {
+        background: #34495e;
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: bold;
+        margin-right: 15px;
+        min-width: 45px;
+        text-align: center;
+      }
+      .paper-title { font-weight: 500; font-size: 1.05em; color: #2c3e50; }
+      
+      .track-header {
+        color: #2980b9;
+        margin-top: 40px;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 5px;
+        text-align: left;
+      }
+    </style>
+
+    <section class="call-for-demonstrations session-container" style="font-size: 17px; padding: 0 50px 150px 0;">
+      <br />
+      <h2 style="color: #c51c2b; text-align: left;">ICDE 2026: Detailed Program</h2>
+      <h3 style="text-align: left;">Program last updated on March 19, 2026.</h3>
+      
+      <h2 class="track-header">Research Papers</h2>
+      
+      <div class="session-box" id="R-15">
+        <h3>[R-15] NL2SQL: Methods and Architectures</h3>
+        <div class="session-meta">Track: AI for Data Management | 7 Papers</div>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <span class="paper-id">#161</span>
+            <span class="paper-title">OsmT: Bridging OpenStreetMap Queries and Natural Language with Open-source Tag-aware Language Models</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#167</span>
+            <span class="paper-title">Knapsack Optimization-based Schema Linking for LLM-based Text-to-SQL Generation</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#326</span>
+            <span class="paper-title">CYANSQL: Unlock the Power of NL2SQL via Clustering-based Test-Time Scaling</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#570</span>
+            <span class="paper-title">Text2VectorSQL: Towards a Unified Interface for Vector Search and SQL Queries</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#918</span>
+            <span class="paper-title">LEAF-SQL: Level-wise Exploration with Adaptive Fine-graining for Text-to-SQL Skeleton Prediction</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#929</span>
+            <span class="paper-title">Boosting Small Language Models for Text-to-SQL with Fine-Grained Execution Feedback and Cost-Efficient Rewards</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1222</span>
+            <span class="paper-title">Text2SQL-Flow: A Robust SQL-Aware Data Augmentation Framework for Text-to-SQL</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="session-box" id="R-30">
+        <h3>[R-30] NL2SQL: Systems, Evaluation and Benchmarking</h3>
+        <div class="session-meta">Track: AI for Data Management | 5 Papers</div>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <span class="paper-id">#682</span>
+            <span class="paper-title">Hexgen-Flow: Optimizing LLM Inference Request Scheduling for Agentic Text-to-SQL</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#925</span>
+            <span class="paper-title">An Efficient and Effective Evaluator for Text2SQL Models on Unseen and Unlabeled Data</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#985</span>
+            <span class="paper-title">[Experiment, Analysis, and Benchmark] SQLMorph: Query Mutation and Fine-Grained Metrics for Text-to-SQL Evaluation</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1056</span>
+            <span class="paper-title">Elena: An Explainability-aided Online Query Optimization Framework</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1165</span>
+            <span class="paper-title">MM2SQL: A Benchmark and Method for Visually-Grounded SQL Generation</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="track-header">Industry & Applications (I&A) Papers</h2>
+
+      <div class="session-box industry" id="I-A-1">
+        <h3>[I&A-1] LLMs and AI for Database Operations</h3>
+        <div class="session-meta">Track: Industry & Applications | 7 Papers</div>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <span class="paper-id">#471</span>
+            <span class="paper-title">Democratizing Tabular Data Access with an Open-Source Synthetic-Data SDK</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#516</span>
+            <span class="paper-title">High-Fidelity and Complex Test Data Generation for Google SQL Code Generation Services</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#984</span>
+            <span class="paper-title">Graph Query Generation with Constraint-guided Large Language Agents</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1118</span>
+            <span class="paper-title">D2SQA: An Edge–Cloud Collaborative Slow Query Analysis Framework Deployed at DBAPPSecurity</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1195</span>
+            <span class="paper-title">RedParrot: Accelerating NL-to-DSL for Business Analytics via Query Semantic Caching</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1475</span>
+            <span class="paper-title">GalaxyRAG: Graph Retrieval-Augmented Generation for Enterprise Knowledge Systems</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#1482</span>
+            <span class="paper-title">DM-RAG: Enhancing User Support in Dameng Databases with Retrieval-Augmented Generation</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="track-header">Demos</h2>
+
+      <div class="session-box demo" id="Demo-A">
+        <h3>Demo A</h3>
+        <div class="session-meta">System Demonstrations</div>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <span class="paper-id">#11</span>
+            <span class="paper-title">BClean+: A Bayesian Data Cleaning System with Automated Prior Generation</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-id">#14</span>
+            <span class="paper-title">LazyVLM: Neuro-Symbolic Approach to Video Analytics</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="track-header">Tutorials</h2>
+
+      <div class="session-box" id="Tutorial-1">
+        <h3>Tutorial 1 (90-min)</h3>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <span class="paper-id" style="background: #8e44ad;">T-1</span>
+            <span class="paper-title">Evolution of LSM-Tree Key-Value Stores: A Tutorial on State-of-the-Art and Future Directions</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+<footer>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span><img src="img/icde2026_footer.png"></span>
+    <span>
+      <p>
+        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+
+      </p>      
+    </span>
+  </div>
+</footer>
+
+  <link rel="stylesheet" href="css/min.css">
+  <script async src="js/min.js"></script>
+
+  <script async src="https://platform.twitter.com/widgets.js"></script>
+  <script>
+    (function () {
+      var last = 0,
+        docBody = document.body,
+        header = document.querySelector('body>header'),
+        nav = header && header.querySelector('nav'),
+        requestAnimationFrame = window.requestAnimationFrame || function (callback, element) {
+          var now = Date.now(),
+            next = Math.max(0, 16 - (now - last)),
+            id = window.setTimeout(function () {
+              callback(now + next);
+            }, next);
+          last = now + next;
+          return id;
+        },
+        cancelAnimationFrame = window.cancelAnimationFrame || function (id) {
+          clearTimeout(id);
+        },
+        update = function () {
+          if (!nav) return;
+
+          var isStatic = docBody.classList.contains('static');
+          if (header.getBoundingClientRect().bottom > 70) {
+            if (isStatic) docBody.classList.remove('static');
+          } else if (!isStatic) docBody.classList.add('static');
+        },
+        lid;
+
+      window.addEventListener('scroll', function (e) {
+        if (lid) cancelAnimationFrame(lid);
+        lid = requestAnimationFrame(update);
+      });
+
+      update();
+    }());
+  </script>
+</body>
+
+</html>
