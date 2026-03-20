@@ -2774,21 +2774,11 @@
     });
   }
   function parseTimeLine(meta){
-  const txt = (meta.innerText || meta.textContent || '').replace(/\n/g,' ');
-  const tm = txt.match(/Time\s*:\s*([^\n]+)/i); if(!tm) return null;
-  const line = tm[1];
-  const dm = line.match(/([^,]+,\s*May\s*\d+)/i); if(!dm) return null; const dayRaw = dm[1];
-  const ranges = []; const re = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
-  while((m = re.exec(line))){ ranges.push(m[1]); }
-  // Parse Location / Track / Session Chair (fallbacks if missing)
-  const loc = txt.match(/Location\s*:\s*([^\n<]+)/i);
-  const trk = txt.match(/Track\s*:\s*([^\n<]+)/i);
-  const chr = txt.match(/Session\s*Chair\s*:\s*([^\n<]+)/i);
-  const location = loc ? loc[1].trim() : '';
-  const track = trk ? trk[1].trim() : '';
-  const chair = chr ? chr[1].trim() : '';
-  return { dayRaw, ranges, location, track, chair };
-}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
+    const txt = (meta.innerText || meta.textContent || '').replace(/\n/g,' ');
+    const tm = txt.match(/Time\s*:\s*([^\n]+)/i); if(!tm) return null;
+    const line = tm[1];
+    const dm = line.match(/([^,]+,\s*May\s*\d+)/i); if(!dm) return null; const dayRaw = dm[1];
+    const ranges = []; const re = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
     while((m = re.exec(line))){ ranges.push(m[1]); }
     // Room
     const rm = txt.match(/Room\s*:\s*([^\n|]+)/i); const room = rm ? rm[1].trim() : '';
@@ -2854,31 +2844,15 @@
           const content = ensureElt('div'); content.className = 'content';
 
           // Build left rail content
-  const label = info.label || '';
-  const time = (dayObj.short ? (dayObj.short + ' ') : '') + (slot.pretty || slot.key);
-  const locLine = info.location ? info.location : '';
-  const trackLine = info.track ? info.track : '';
-  meta.innerHTML = `
-<div class="label">${label}</div>
-` +
-                 `<div class="time">${time}</div>
-` +
-                 (locLine?`<div class="room">${locLine}</div>`:'') +
-                 (trackLine?`<div class="room">${trackLine}</div>`:'');
+          const label = info.label || '';
+          const time = (dayObj.short ? (dayObj.short + ' ') : '') + (slot.pretty || slot.key);
+          const room = info.room ? ('Room: ' + info.room) : '';
+          meta.innerHTML = `<div class="label">${label}</div>`+
+                           `<div class="time">${time}</div>`+
+                           (room?`<div class="room">${room}</div>`:'');
 
-  // Move session box into content
-  content.appendChild(node);
-
-  // Keep only Session Chair in right-side meta
-  try {
-    const sessionMeta = node.querySelector('.session-meta');
-    if (sessionMeta) {
-      const chairText = (info.chair && info.chair.trim()) ? info.chair.trim() : '[To Be Announced]';
-      sessionMeta.innerHTML = `<strong>Session Chair:</strong> ${chairText}`;
-    }
-  } catch (e) { /* no-op */ }
-
-content.appendChild(node);
+          // Move session box into content
+          content.appendChild(node);
 
           row.appendChild(meta); row.appendChild(content);
           stack.appendChild(row);
