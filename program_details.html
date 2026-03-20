@@ -2749,149 +2749,115 @@
   </script>
 
 <!-- Copilot script (sticky meta per session): group by day/time (all tracks); wrap each session into meta+content; robust nav -->
+<!-- removed sticky builder script -->
+
+
 <script>
 (function(){
-  function textToTimeKey(s){
-    const m = s.trim().match(/(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})/);
-    if(!m) return [0,0,s.trim(), s.trim()];
-    const hh1 = parseInt(m[1],10), mm1 = parseInt(m[2],10);
-    const hh2 = parseInt(m[3],10), mm2 = parseInt(m[4],10);
-    const pretty = `${m[1]}:${m[2]}–${m[3]}:${m[4]}`;
-    return [hh1*60+mm1, hh2*60+mm2, `${m[1]}:${m[2]} - ${m[3]}:${m[4]}`, pretty];
+  function q(el, sel){ return (el||document).querySelector(sel); }
+  function qa(el, sel){ return Array.from((el||document).querySelectorAll(sel)); }
+  function text(el){ return (el && (el.innerText||el.textContent)||'').replace(/\s+/g,' ').trim(); }
+  function dayKeyFromTime(tline){
+    // Expect: "Tuesday, May 5, 10:00 - 12:00"
+    var m = tline.match(/(Tuesday|Wednesday|Thursday|Friday),\s*May\s*(\d+)/i);
+    if(!m) return null;
+    var day = m[1].toLowerCase();
+    return { id: 'day-' + day, label: m[1] + ', May ' + m[2], short: m[1].slice(0,3) };
   }
-  function ensureElt(tag, attrs){ const el = document.createElement(tag); if(attrs){ for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,v);} return el; }
-  function normalizeDayName(s){
-    const d = s.trim();
-    if(/Tuesday,\s*May\s*5/i.test(d)) return {id:'day-tuesday', label:'Tuesday, May 5', short:'Tue'};
-    if(/Wednesday,\s*May\s*6/i.test(d)) return {id:'day-wednesday', label:'Wednesday, May 6', short:'Wed'};
-    if(/Thursday,\s*May\s*7/i.test(d)) return {id:'day-thursday', label:'Thursday, May 7', short:'Thu'};
-    if(/Friday,\s*May\s*8/i.test(d)) return {id:'day-friday', label:'Friday, May 8', short:'Fri'};
-    const id = 'day-' + d.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$|--+/g,'');
-    return {id, label:d, short:d.split(',')[0] || d};
-  }
-  function renameResearchTitles(){
-    document.querySelectorAll('.session-box[id^="R-"] .session-title').forEach(function(t){
-      t.textContent = t.textContent.replace(/\[R-(\d+)\]/, function(_, n){ return `Research ${n}:`; });
-    });
-  }
-  function parseTimeLine(meta){
-  const txt = (meta.innerText || meta.textContent || '').replace(/\n/g,' ');
-  const tm = txt.match(/Time\s*:\s*([^\n]+)/i); if(!tm) return null;
-  const line = tm[1];
-  const dm = line.match(/([^,]+,\s*May\s*\d+)/i); if(!dm) return null; const dayRaw = dm[1];
-  const ranges = []; const reRng = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
-  while((m = reRng.exec(line))){ ranges.push(m[1]); }
-  let loc = ''; const lm = txt.match(/(?:Location|Room)\s*:\s*([^\n<]+)/i); if(lm) loc = lm[1].trim();
-  let track = ''; const trm = txt.match(/Track\s*:\s*([^\n<]+)/i); if(trm) track = trm[1].trim();
-  let chair = ''; const chm = txt.match(/Session\s*Chair\s*:\s*([^\n<]+)/i); if(chm) chair = chm[1].trim();
-  return { dayRaw, ranges, location: loc, track, chair };
-}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
-    while((m = re.exec(line))){ ranges.push(m[1]); }
-    // Room
-    const rm = txt.match(/Room\s*:\s*([^\n|]+)/i); const room = rm ? rm[1].trim() : '';
-    return { dayRaw, ranges, room };
-  }
-  function sessionLabelFromTitle(box){
-    const t = box.querySelector('.session-title'); if(!t) return '';
-    // Expect formats like "Research 17: ...", "Industry 2: ...", "Demo A1: ...", "Tutorial 3: ..."
-    const s = t.textContent.trim();
-    const m = s.match(/^([^:]+?):/); // capture part before first colon
-    return m ? m[1].trim() : s;
+  function prettyRange(tline){
+    var m = tline.match(/(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
+    return m ? (m[1]+'–'+m[2]) : tline;
   }
 
-  function buildSticky(){
-    const root = document.getElementById('program-by-day'); if(!root) return;
-    // Hide original track headers
-    document.querySelectorAll('h2.track-header').forEach(function(h){ h.style.display = 'none'; });
+  function extractMeta(metaEl){
+    var t = text(metaEl);
+    function grab(label){
+      var r = new RegExp(label+"\\s*:\\s*([^\n<]+)", 'i');
+      var m = t.match(r); return m ? m[1].trim() : '';
+    }
+    var timeLine = grab('Time');
+    var track = grab('Track');
+    var loc = grab('Location') || grab('Room');
+    var chair = grab('Session\\s*Chair');
+    return { timeLine: timeLine, track: track, location: loc, chair: chair };
+  }
 
-    const boxes = Array.from(document.querySelectorAll('.session-box'));
-    const dayMap = new Map();
+  function ensureDayAnchor(root, day){
+    if(!document.getElementById(day.id)){
+      var a = document.createElement('a'); a.id = day.id;
+      var h2 = document.createElement('h2'); h2.className='day-header'; h2.textContent = day.label;
+      root.parentNode.insertBefore(a, root);
+      root.parentNode.insertBefore(h2, root.nextSibling);
+    }
+  }
 
-    // Pre-parse all, keep mapping box -> info
-    const infoByBox = new Map();
+  function build(){
+    var container = q(document, 'main.body section.session-container');
+    if(!container) return;
+    // Insert static anchors for all days we will see
+    var boxes = qa(container, '.session-box');
+    var seenDays = {};
+
     boxes.forEach(function(box){
-      const meta = box.querySelector('.session-meta'); if(!meta) return;
-      const info = parseTimeLine(meta); if(!info) return;
-      info.label = sessionLabelFromTitle(box);
-      infoByBox.set(box, info);
-      const day = normalizeDayName(info.dayRaw);
-      if(!dayMap.has(day.id)) dayMap.set(day.id, { label: day.label, short: day.short, slots: new Map() });
-      const d = dayMap.get(day.id);
-      info.ranges.forEach(function(rg, idx){
-        const [startM, endM, slotKey, prettyRange] = textToTimeKey(rg);
-        if(!d.slots.has(slotKey)) d.slots.set(slotKey, { start:startM, end:endM, pretty: prettyRange, items: [] });
-        let node;
-        if(idx === 0){ node = box; }
-        else { node = box.cloneNode(true); if(node.id) node.removeAttribute('id'); }
-        d.slots.get(slotKey).items.push({ node, info });
-      });
-    });
+      var titleEl = q(box, '.session-title');
+      var metaEl  = q(box, '.session-meta');
+      if(!metaEl) return;
+      var m = extractMeta(metaEl);
+      var dk = dayKeyFromTime(m.timeLine);
+      if(dk && !seenDays[dk.id]){
+        // Insert anchor/header before the first session of that day
+        var a = document.createElement('a'); a.id = dk.id;
+        var h2 = document.createElement('h2'); h2.className='day-header'; h2.textContent = dk.label;
+        box.parentNode.insertBefore(a, box);
+        box.parentNode.insertBefore(h2, box);
+        seenDays[dk.id] = true;
+      }
 
-    const dayOrder = ['day-tuesday','day-wednesday','day-thursday','day-friday'];
-    const orderedDays = Array.from(dayMap.entries()).sort(function(a,b){
-      const ai = dayOrder.indexOf(a[0]); const bi = dayOrder.indexOf(b[0]);
-      return (ai<0?999:ai) - (bi<0?999:bi);
-    });
+      // Wrap into two-column row
+      var row = document.createElement('section');
+      row.className = 'session-row';
+      var left = document.createElement('aside'); left.className = 'meta';
+      var rightWrap = document.createElement('div'); rightWrap.className = 'content';
 
-    orderedDays.forEach(function([dayId, dayObj]){
-      const dayAnchor = ensureElt('a', { id: dayId });
-      const dayHeader = ensureElt('h2'); dayHeader.className = 'day-header'; dayHeader.textContent = dayObj.label;
-      root.appendChild(dayAnchor); root.appendChild(dayHeader);
+      // Label: try to normalize prefix like "[R-1] ..." => "Research 1"
+      var label = '';
+      var ttxt = text(titleEl);
+      var mId = ttxt.match(/^\[(R|IA|Demo|TKDE|DEFT|Tutorial)-?([A-Za-z0-9]+)\]/i);
+      if(mId && mId[1].toUpperCase()==='R'){ label = 'Research ' + mId[2].replace(/[^0-9]/g,''); }
+      else if(mId && mId[1].toUpperCase()==='IA'){ label = 'Industry ' + mId[2]; }
+      else if(mId && mId[1].toUpperCase()==='Demo'){ label = 'Demo ' + mId[2]; }
+      else if(mId && mId[1].toUpperCase()==='TKDE'){ label = 'TKDE ' + mId[2]; }
+      else if(mId && mId[1].toUpperCase()==='DEFT'){ label = 'DEFT'; }
+      else if(ttxt){ label = ttxt.split(':')[0].trim(); }
 
-      const slots = Array.from(dayObj.slots.entries()).map(([k,v])=>({ key:k, ...v })).sort((a,b)=>a.start-b.start);
-      slots.forEach(function(slot){
-        const h3 = ensureElt('h3'); h3.className='timeslot-header'; h3.textContent = slot.pretty || slot.key;
-        const stack = ensureElt('div'); stack.className='timeslot-stack';
-        root.appendChild(h3); root.appendChild(stack);
+      var timePretty = '';
+      if(dk && m.timeLine) timePretty = dk.short + ' ' + prettyRange(m.timeLine);
+      else timePretty = m.timeLine;
 
-        slot.items.forEach(function(rec){
-          const { node, info } = rec;
-          const row = ensureElt('section'); row.className = 'session-row';
-          const meta = ensureElt('aside'); meta.className = 'meta';
-          const content = ensureElt('div'); content.className = 'content';
+      left.innerHTML = ''
+        + '<div class="label">' + (label||'') + '</div>'
+        + (timePretty?'<div class="time">'+ timePretty +'</div>':'')
+        + (m.track?'<div class="track">Track: '+ m.track +'</div>':'')
+        + (m.location?'<div class="room">Location: '+ m.location +'</div>':'');
 
-          // Build left rail content
-          const label = info.label || '';
-          const time = (dayObj.short ? (dayObj.short + ' ') : '') + (slot.pretty || slot.key);
-          const trackLine = info.track ? ('Track: ' + info.track) : '';
-          const locationLine = info.location ? ('Location: ' + info.location) : '';
-          meta.innerHTML = `<div class="label">${label}</div>`+
-                           `<div class="time">${time}</div>`+
-                           (room?`<div class="room">${room}</div>`:'');
+      // Right: keep only Session Chair
+      if(m.chair){ metaEl.innerHTML = '<strong>Session Chair:</strong> ' + m.chair; }
+      else { metaEl.innerHTML = ''; }
 
-          // Move session box into content
-          // Trim right column meta to only Session Chair
-          try {
-            const mdiv = node.querySelector('.session-meta');
-            if(mdiv){
-              const ch = (info && info.chair) ? info.chair : '';
-              mdiv.innerHTML = ch ? `<strong>Session Chair:</strong> ${ch}` : '';
-            }
-          } catch(e){}
-          content.appendChild(node);
-
-          row.appendChild(meta); row.appendChild(content);
-          stack.appendChild(row);
-        });
-      });
+      // Move the session box into rightWrap
+      rightWrap.appendChild(box);
+      row.appendChild(left); row.appendChild(rightWrap);
+      // Inject before rightWrap (so we keep original order)
+      rightWrap.parentNode ? rightWrap.parentNode.insertBefore(row, rightWrap) : container.insertBefore(row, box);
+      // Replace original position with row
+      container.insertBefore(row, box);
+      // Now remove original box (moved inside rightWrap)
+      // But we already appended box into rightWrap, so the original in DOM is the same node; container.insertBefore(row, box) puts row before box; then rightWrap.appendChild(box) moved it; we're fine.
     });
   }
 
-  function setupNav(){
-    const nav = document.querySelector('.day-nav'); if(!nav) return;
-    nav.addEventListener('click', function(e){
-      const a = e.target.closest('a[href^="#"]'); if(!a) return;
-      const id = a.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if(target){ e.preventDefault(); try { target.scrollIntoView({behavior:'smooth', block:'start'}); } catch(_){ target.scrollIntoView(true);} if(history.pushState){ history.pushState(null, '', '#' + id); } else { location.hash = '#' + id; } }
-    }, {passive:false});
-  }
-
-  document.addEventListener('DOMContentLoaded', function(){
-    renameResearchTitles();
-    buildSticky();
-    setupNav();
-  });
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+  else build();
 })();
 </script>
 
