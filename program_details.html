@@ -63,22 +63,27 @@
   <link rel="stylesheet" href="css/extra.css"> 
    <link rel="stylesheet" href="css/table.css"> 
 
-<!-- Copilot overrides (all tracks): improve readability and contrast; add day/time grid styles -->
+<!-- Copilot overrides (single column): follow top-conference style, no columns -->
 <style id="copilot-overrides">
   body { visibility: visible !important; }
-  .session-meta { font-size: 1.0rem !important; color: #2c3e50 !important; line-height: 1.45; }
-  .session-meta strong { color: #0f1a2a !important; font-weight: 700; letter-spacing: .2px; }
-  .session-title { font-size: 1.15em !important; color: #1f2d3d !important; }
-
-  /* By-day organization for ALL tracks */
+  h2.day-header { margin: 28px 0 10px; border-left: 5px solid #c51c2b; padding-left: 10px; color: #0f172a; }
+  h3.timeslot-header { margin: 16px 0 8px; color: #1f2937; font-size: 1.05rem; font-weight: 600; }
   .by-day-note { margin: 8px 0 16px; color: #475569; font-size: 0.95rem; }
   .day-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
   .day-nav a { text-decoration: none; padding: 6px 10px; border: 1px solid #e2e8f0; border-radius: 6px; color: #0f172a; background: #f8fafc; }
-  .day-header { margin: 28px 0 10px; border-left: 5px solid #c51c2b; padding-left: 10px; color: #0f172a; }
-  .timeslot-header { margin: 12px 0 8px; color: #1f2937; font-size: 1.05rem; }
-  .timeslot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
 
-  .track-header.hidden-by-day { display: none !important; }
+  /* Single-column list: each session stacked, full width */
+  .timeslot-list { display: block; }
+  .timeslot-list .session-box { display: block; width: 100% !important; max-width: 1200px; }
+  .timeslot-sep { border: none; border-top: 1px solid #e5e7eb; margin: 16px 0; }
+
+  /* Improve meta/text contrast */
+  .session-meta { font-size: 1.0rem !important; color: #334155 !important; line-height: 1.45; }
+  .session-meta strong { color: #0f172a !important; font-weight: 700; letter-spacing: .2px; }
+  .session-title { font-size: 1.15em !important; color: #1f2d3d !important; margin: 0 0 4px; }
+
+  /* Hide original per-track headers to avoid duplicate content */
+  h2.track-header { display: none !important; }
 </style>
 
 </head>
@@ -220,7 +225,7 @@
       }
 
       .session-content {
-        padding: 15px; 
+        padding: 15px;
       }
       
       .session-meta { font-size: 0.85em; color: #7f8c8d; margin-bottom: 12px; font-weight: 500; }
@@ -246,7 +251,9 @@
     <section class="call-for-demonstrations session-container" style="font-size: 17px; padding: 0 50px 150px 0;">
       <br />
       <h2 style="color: #c51c2b; text-align: left;">ICDE 2026: Detailed Program</h2>
+
       <h3>Program last updated on March 20, 2026.</h3>
+
 <nav class="day-nav">
   <a href="#day-tuesday">Tue, May 5</a>
   <a href="#day-wednesday">Wed, May 6</a>
@@ -2732,7 +2739,7 @@
     }());
   </script>
 
-<!-- Copilot script (all tracks): group ALL .session-box by day/time; keep anchors intact; handle multi-slot sessions; robust hash nav -->
+<!-- Copilot script (single column): group by day/time (all tracks), stack sessions vertically, add robust nav -->
 <script>
 (function(){
   function textToTimeKey(s){
@@ -2767,9 +2774,11 @@
     if(ranges.length === 0) return null;
     return { dayRaw, ranges };
   }
-  function buildByDayAll(){
+  function buildSingleColumn(){
     const root = document.getElementById('program-by-day'); if(!root) return;
-    document.querySelectorAll('h2.track-header').forEach(function(h){ h.classList.add('hidden-by-day'); });
+    // Hide original track headers
+    document.querySelectorAll('h2.track-header').forEach(function(h){ h.style.display = 'none'; });
+
     const boxes = Array.from(document.querySelectorAll('.session-box'));
     const dayMap = new Map();
     boxes.forEach(function(box){
@@ -2787,32 +2796,35 @@
         d.slots.get(slotKey).items.push(node);
       });
     });
+
     const dayOrder = ['day-tuesday','day-wednesday','day-thursday','day-friday'];
     const orderedDays = Array.from(dayMap.entries()).sort(function(a,b){
       const ai = dayOrder.indexOf(a[0]); const bi = dayOrder.indexOf(b[0]);
       return (ai<0?999:ai) - (bi<0?999:bi);
     });
+
     orderedDays.forEach(function([dayId, dayObj]){
       const dayAnchor = ensureElt('a', { id: dayId });
       const dayHeader = ensureElt('h2'); dayHeader.className = 'day-header'; dayHeader.textContent = dayObj.label;
       root.appendChild(dayAnchor); root.appendChild(dayHeader);
+
       const slots = Array.from(dayObj.slots.entries()).map(([k,v])=>({ key:k, ...v })).sort((a,b)=>a.start-b.start);
       slots.forEach(function(slot){
         const h3 = ensureElt('h3'); h3.className='timeslot-header'; h3.textContent = slot.key;
-        const grid = ensureElt('div'); grid.className='timeslot-grid';
-        root.appendChild(h3); root.appendChild(grid);
-        slot.items.forEach(function(node){ grid.appendChild(node); });
+        const list = ensureElt('div'); list.className='timeslot-list';
+        root.appendChild(h3); root.appendChild(list);
+        slot.items.forEach(function(node, idx){
+          list.appendChild(node);
+          if(idx < slot.items.length - 1){ list.appendChild(ensureElt('hr', {class:'timeslot-sep'})); }
+        });
       });
     });
   }
 
-  // Robust click handler for day-nav to avoid router/server 404
   function setupNavHandler(){
-    const nav = document.querySelector('.day-nav');
-    if(!nav) return;
+    const nav = document.querySelector('.day-nav'); if(!nav) return;
     nav.addEventListener('click', function(e){
-      const a = e.target.closest('a[href^="#"]');
-      if(!a) return;
+      const a = e.target.closest('a[href^="#"]'); if(!a) return;
       const id = a.getAttribute('href').slice(1);
       const target = document.getElementById(id);
       if(target){
@@ -2827,7 +2839,7 @@
 
   document.addEventListener('DOMContentLoaded', function(){
     renameResearchTitles();
-    buildByDayAll();
+    buildSingleColumn();
     setupNavHandler();
   });
 })();
