@@ -179,51 +179,34 @@
   <main class="body">
     
     <style>
-      details.session-box {
+      div.session-box {
         background: #fdfdfd;
         border: 1px solid #e1e8ed;
         border-left: 5px solid #c51c2b; 
         border-radius: 6px;
         margin-bottom: 25px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        transition: all 0.3s ease;
       }
-      details.session-box.industry { border-left-color: #e67e22; }
-      details.session-box.demo { border-left-color: #27ae60; }
+      div.session-box.industry { border-left-color: #e67e22; }
+      div.session-box.demo { border-left-color: #27ae60; }
       
-      details.session-box summary {
-        padding: 20px;
-        font-size: 1.25em;
+      .session-title {
+        padding: 15px; 
+        font-size: 1.1em; 
         font-weight: bold;
         color: #2c3e50;
-        cursor: pointer;
-        list-style: none; 
-        outline: none;
-      }
-      details.session-box summary::-webkit-details-marker { display: none; }
-
-      details.session-box summary::after {
-        content: ' ▼';
-        float: right;
-        color: #7f8c8d;
-        font-size: 0.8em;
-        margin-top: 5px;
-      }
-      details[open].session-box summary::after {
-        content: ' ▲';
-        color: #c51c2b;
+        background-color: #f7f9fa; 
+        border-radius: 6px 6px 0 0;
+        border-bottom: 1px solid #ecf0f1;
       }
 
       .session-content {
-        padding: 0 20px 20px 20px;
-        border-top: 1px dashed #ecf0f1;
-        margin-top: 5px;
-        padding-top: 15px;
+        padding: 15px; /* 여백 축소 */
       }
       
-      .session-meta { font-size: 0.95em; color: #7f8c8d; margin-bottom: 15px; font-weight: 500; }
+      .session-meta { font-size: 0.85em; color: #7f8c8d; margin-bottom: 12px; font-weight: 500; }
       .paper-list { list-style: none; padding-left: 0; margin: 0; }
-      .paper-item { padding: 12px 0; border-bottom: 1px dashed #ecf0f1; display: flex; align-items: flex-start; }
+      .paper-item { padding: 10px 0; border-bottom: 1px dashed #ecf0f1; display: flex; align-items: flex-start; }
       .paper-item:last-child { border-bottom: none; padding-bottom: 0; }
       
       .paper-id {
@@ -231,14 +214,14 @@
         color: #fff;
         padding: 3px 8px;
         border-radius: 4px;
-        font-size: 0.85em;
+        font-size: 0.8em; 
         font-weight: bold;
         margin-right: 15px;
         min-width: 45px;
         text-align: center;
       }
-      .paper-title { font-weight: 500; font-size: 1.05em; color: #2c3e50; }
-      }
+      .paper-title { font-weight: 500; font-size: 0.95em; color: #2c3e50; }
+      .paper-authors { font-size: 0.85em; color: #7f8c8d; margin-top: 5px; } 
     </style>
 
     <section class="call-for-demonstrations session-container" style="font-size: 17px; padding: 0 50px 150px 0;">
@@ -248,8 +231,8 @@
       
       <h2 class="track-header">Research Papers</h2>
       
-      <details class="session-box" id="R-1">
-        <summary>[R-1] Indexing Structures and Physical Database Design</summary>
+      <div class="session-box" id="R-1">
+        <div class="session-title">[R-1] Indexing Structures and Physical Database Design</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -288,10 +271,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-2">
-        <summary>[R-2] Spatiotemporal Prediction and Urban Computing</summary>
+      <div class="session-box" id="R-2">
+        <div class="session-title">[R-2] Spatiotemporal Prediction and Urban Computing</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -330,10 +313,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-3">
-        <summary>[R-3] Benchmarking, Testing and Evaluation of DB Systems</summary>
+      <div class="session-box" id="R-3">
+        <div class="session-title">[R-3] Benchmarking, Testing and Evaluation of DB Systems</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -372,10 +355,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-4">
-        <summary>[R-4] Data Quality, Repair and Outlier Detection</summary>
+      <div class="session-box" id="R-4">
+        <div class="session-title">[R-4] Data Quality, Repair and Outlier Detection</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -414,10 +397,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-5">
-        <summary>[R-5] Blockchain Protocols, Storage and Smart Contracts</summary>
+      <div class="session-box" id="R-5">
+        <div class="session-title">[R-5] Blockchain Protocols, Storage and Smart Contracts</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -456,10 +439,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-6">
-        <summary>[R-6] LLMs for Database Optimization and Administration</summary>
+      <div class="session-box" id="R-6">
+        <div class="session-title">[R-6] LLMs for Database Optimization and Administration</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
@@ -490,10 +473,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-7">
-        <summary>[R-7] Approximate, Vector and Pub-Sub Query Processing</summary>
+      <div class="session-box" id="R-7">
+        <div class="session-title">[R-7] Approximate, Vector and Pub-Sub Query Processing</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
@@ -524,10 +507,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-8">
-        <summary>[R-8] Table Integration, Schema Matching and Data Markets</summary>
+      <div class="session-box" id="R-8">
+        <div class="session-title">[R-8] Table Integration, Schema Matching and Data Markets</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
@@ -558,10 +541,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-9">
-        <summary>[R-9] Edge Computing, IoT and Streaming Applications</summary>
+      <div class="session-box" id="R-9">
+        <div class="session-title">[R-9] Edge Computing, IoT and Streaming Applications</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
@@ -592,10 +575,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-10">
-        <summary>[R-10] Memory-Efficient Storage and In-Memory Data Systems</summary>
+      <div class="session-box" id="R-10">
+        <div class="session-title">[R-10] Memory-Efficient Storage and In-Memory Data Systems</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
@@ -626,10 +609,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-11">
-        <summary>[R-11] Graph Indexing and Optimization</summary>
+      <div class="session-box" id="R-11">
+        <div class="session-title">[R-11] Graph Indexing and Optimization</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
@@ -660,10 +643,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-12">
-        <summary>[R-12] Query Optimization and Rewriting</summary>
+      <div class="session-box" id="R-12">
+        <div class="session-title">[R-12] Query Optimization and Rewriting</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
@@ -694,10 +677,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-13">
-        <summary>[R-13] Federated and Distributed Learning Systems</summary>
+      <div class="session-box" id="R-13">
+        <div class="session-title">[R-13] Federated and Distributed Learning Systems</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
@@ -728,10 +711,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-14">
-        <summary>[R-14] Stream Processing Engines and Architectures</summary>
+      <div class="session-box" id="R-14">
+        <div class="session-title">[R-14] Stream Processing Engines and Architectures</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
@@ -762,10 +745,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-15">
-        <summary>[R-15] NL2SQL: Methods and Architectures</summary>
+      <div class="session-box" id="R-15">
+        <div class="session-title">[R-15] NL2SQL: Methods and Architectures</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -804,10 +787,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
-      <details class="session-box" id="R-16">
-      <summary>[R-16] Spatial Queries, Road Networks and Indexing</summary>
+      <div class="session-box" id="R-16">
+      <div class="session-title">[R-16] Spatial Queries, Road Networks and Indexing</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -846,10 +829,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-17">
-      <summary>[R-17] Learned Models for Query Optimization and Cost Estimation</summary>
+    <div class="session-box" id="R-17">
+      <div class="session-title">[R-17] Learned Models for Query Optimization and Cost Estimation</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -888,10 +871,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-18">
-      <summary>[R-18] Log Analytics, Anomaly Detection and Tensor Methods</summary>
+    <div class="session-box" id="R-18">
+      <div class="session-title">[R-18] Log Analytics, Anomaly Detection and Tensor Methods</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -930,10 +913,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-19">
-      <summary>[R-19] Graph Neural Networks, Knowledge Graph Learning and Reasoning</summary>
+    <div class="session-box" id="R-19">
+      <div class="session-title">[R-19] Graph Neural Networks, Knowledge Graph Learning and Reasoning</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -972,10 +955,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-20">
-      <summary>[R-20] Dense Subgraph and Core Decomposition</summary>
+    <div class="session-box" id="R-20">
+      <div class="session-title">[R-20] Dense Subgraph and Core Decomposition</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
@@ -1006,10 +989,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-      <details class="session-box" id="R-21">
-      <summary>[R-21] LLM-Assisted and AI-Augmented Query Processing</summary>
+      <div class="session-box" id="R-21">
+      <div class="session-title">[R-21] LLM-Assisted and AI-Augmented Query Processing</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
@@ -1040,10 +1023,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-22">
-      <summary>[R-22] Time Series Cleaning and Imputation</summary>
+    <div class="session-box" id="R-22">
+      <div class="session-title">[R-22] Time Series Cleaning and Imputation</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
@@ -1074,10 +1057,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-23">
-      <summary>[R-23] Differential Privacy and Local Privacy Mechanisms</summary>
+    <div class="session-box" id="R-23">
+      <div class="session-title">[R-23] Differential Privacy and Local Privacy Mechanisms</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
@@ -1108,10 +1091,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-24">
-      <summary>[R-24] Vector Databases, Embeddings and ML Data Infrastructure</summary>
+    <div class="session-box" id="R-24">
+      <div class="session-title">[R-24] Vector Databases, Embeddings and ML Data Infrastructure</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -1150,10 +1133,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
     
-    <details class="session-box" id="R-25">
-      <summary>[R-25] Community Search on Diverse Graph Types</summary>
+    <div class="session-box" id="R-25">
+      <div class="session-title">[R-25] Community Search on Diverse Graph Types</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -1192,10 +1175,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-      <details class="session-box" id="R-26">
-      <summary>[R-26] Tabular Data, Community Search and Knowledge Discovery</summary>
+      <div class="session-box" id="R-26">
+      <div class="session-title">[R-26] Tabular Data, Community Search and Knowledge Discovery</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -1234,10 +1217,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-    <details class="session-box" id="R-27">
-          <summary>[R-27] Sketches, Approximate Queries and Data Streams</summary>
+    <div class="session-box" id="R-27">
+          <div class="session-title">[R-27] Sketches, Approximate Queries and Data Streams</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -1276,10 +1259,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-28">
-          <summary>[R-28] Transaction Management, Distributed Storage and Serverless Systems</summary>
+    <div class="session-box" id="R-28">
+          <div class="session-title">[R-28] Transaction Management, Distributed Storage and Serverless Systems</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -1318,10 +1301,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-29">
-          <summary>[R-29] GPU-Accelerated and Hardware-Optimized Query Processing</summary>
+    <div class="session-box" id="R-29">
+          <div class="session-title">[R-29] GPU-Accelerated and Hardware-Optimized Query Processing</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -1352,10 +1335,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-30">
-          <summary>[R-30] NL2SQL: Systems, Evaluation and Benchmarking</summary>
+    <div class="session-box" id="R-30">
+          <div class="session-title">[R-30] NL2SQL: Systems, Evaluation and Benchmarking</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -1386,10 +1369,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
 
-      <details class="session-box" id="R-31">
-      <summary>[R-31] Graph Pattern Matching, Hypergraphs and Subgraph Queries</summary>
+      <div class="session-box" id="R-31">
+      <div class="session-title">[R-31] Graph Pattern Matching, Hypergraphs and Subgraph Queries</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -1420,10 +1403,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-    <details class="session-box" id="R-32">
-          <summary>[R-32] Graph-Based RAG, Queries and Entity Tasks</summary>
+    <div class="session-box" id="R-32">
+          <div class="session-title">[R-32] Graph-Based RAG, Queries and Entity Tasks</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -1454,10 +1437,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-33">
-          <summary>[R-33] Explainability, Fairness and Trust in Data Systems</summary>
+    <div class="session-box" id="R-33">
+          <div class="session-title">[R-33] Explainability, Fairness and Trust in Data Systems</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -1488,10 +1471,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-34">
-          <summary>[R-34] Dynamic Graphs and Temporal Graph Processing</summary>
+    <div class="session-box" id="R-34">
+          <div class="session-title">[R-34] Dynamic Graphs and Temporal Graph Processing</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
@@ -1522,10 +1505,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-35">
-          <summary>[R-35] Learned Data Systems and AI-Driven Analysis</summary>
+    <div class="session-box" id="R-35">
+          <div class="session-title">[R-35] Learned Data Systems and AI-Driven Analysis</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
@@ -1556,10 +1539,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
 
-      <details class="session-box" id="R-36">
-      <summary>[R-36] Time Series and Temporal Data Analysis</summary>
+      <div class="session-box" id="R-36">
+      <div class="session-title">[R-36] Time Series and Temporal Data Analysis</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
@@ -1590,10 +1573,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-    <details class="session-box" id="R-37">
-          <summary>[R-37] Secure Query Processing and Access Control</summary>
+    <div class="session-box" id="R-37">
+          <div class="session-title">[R-37] Secure Query Processing and Access Control</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
@@ -1624,10 +1607,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-38">
-          <summary>[R-38] Storage Management and LSM-tree Systems</summary>
+    <div class="session-box" id="R-38">
+          <div class="session-title">[R-38] Storage Management and LSM-tree Systems</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 10:00 - 12:00<br>
@@ -1666,10 +1649,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-39">
-          <summary>[R-39] Trajectory, POI Recommendation and Spatial Crowdsourcing</summary>
+    <div class="session-box" id="R-39">
+          <div class="session-title">[R-39] Trajectory, POI Recommendation and Spatial Crowdsourcing</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 10:00 - 12:00<br>
@@ -1708,10 +1691,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-40">
-          <summary>[R-40] Spatiotemporal Forecasting, Urban Analytics and Recommendations</summary>
+    <div class="session-box" id="R-40">
+          <div class="session-title">[R-40] Spatiotemporal Forecasting, Urban Analytics and Recommendations</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 10:00 - 12:00<br>
@@ -1750,10 +1733,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
 
-      <details class="session-box" id="R-41">
-      <summary>[R-41] Table Question Answering and Discovery</summary>
+      <div class="session-box" id="R-41">
+      <div class="session-title">[R-41] Table Question Answering and Discovery</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Friday, May 8, 10:00 - 12:00<br>
@@ -1784,10 +1767,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-    <details class="session-box" id="R-42">
-          <summary>[R-42] AI-Powered Querying and RAG Systems</summary>
+    <div class="session-box" id="R-42">
+          <div class="session-title">[R-42] AI-Powered Querying and RAG Systems</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
@@ -1818,10 +1801,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-43">
-          <summary>[R-43] Spatial Graphs and Road Network Analytics</summary>
+    <div class="session-box" id="R-43">
+          <div class="session-title">[R-43] Spatial Graphs and Road Network Analytics</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
@@ -1852,10 +1835,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-44">
-          <summary>[R-44] Distributed Storage, Consensus and Infrastructure</summary>
+    <div class="session-box" id="R-44">
+          <div class="session-title">[R-44] Distributed Storage, Consensus and Infrastructure</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
@@ -1886,10 +1869,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="R-45">
-          <summary>[R-45] Knowledge Graph Completion and Reasoning</summary>
+    <div class="session-box" id="R-45">
+          <div class="session-title">[R-45] Knowledge Graph Completion and Reasoning</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
@@ -1920,12 +1903,12 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
 
       <h2 class="track-header">Industry & Applications (I&A) Papers</h2>
 
-      <details class="session-box" id="IA-1">
-      <summary>[I&A-1] LLMs and AI for Database Operations</summary>
+      <div class="session-box" id="IA-1">
+      <div class="session-title">[I&A-1] LLMs and AI for Database Operations</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -1964,10 +1947,10 @@
           </li>
         </ul>
       </div>
-    </details>
+    </div>
 
-    <details class="session-box" id="IA-2">
-          <summary>[I&A-2] Recommendation Systems and CTR Prediction</summary>
+    <div class="session-box" id="IA-2">
+          <div class="session-title">[I&A-2] Recommendation Systems and CTR Prediction</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
@@ -1998,10 +1981,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="IA-3">
-          <summary>[I&A-3] E-commerce, Search and Feature Engineering</summary>
+    <div class="session-box" id="IA-3">
+          <div class="session-title">[I&A-3] E-commerce, Search and Feature Engineering</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
@@ -2032,10 +2015,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="IA-4">
-          <summary>[I&A-4] Scalable Data Systems and Infrastructure</summary>
+    <div class="session-box" id="IA-4">
+          <div class="session-title">[I&A-4] Scalable Data Systems and Infrastructure</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -2074,10 +2057,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="IA-5">
-          <summary>[I&A-5] Time Series Analysis and Forecasting</summary>
+    <div class="session-box" id="IA-5">
+          <div class="session-title">[I&A-5] Time Series Analysis and Forecasting</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
@@ -2108,10 +2091,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="IA-6">
-          <summary>[I&A-6] Large-Scale ML Systems and Data Science Applications</summary>
+    <div class="session-box" id="IA-6">
+          <div class="session-title">[I&A-6] Large-Scale ML Systems and Data Science Applications</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -2142,10 +2125,10 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
     
-    <details class="session-box" id="IA-7">
-          <summary>[I&A-7] Hardware-Accelerated Search, Compression and Data Integration</summary>
+    <div class="session-box" id="IA-7">
+          <div class="session-title">[I&A-7] Hardware-Accelerated Search, Compression and Data Integration</div>
           <div class="session-content">
             <div class="session-meta">
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
@@ -2176,12 +2159,12 @@
               </li>
             </ul>
           </div>
-        </details>
+        </div>
 
       <h2 class="track-header">Lightning Talks</h2>
 
-      <details class="session-box" id="Lightning-Talks">
-      <summary>[Lightning Talks] Lightning Talks Session</summary>
+      <div class="session-box" id="Lightning-Talks">
+      <div class="session-title">[Lightning Talks] Lightning Talks Session</div>
       <div class="session-content">
         <div class="session-meta">
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -2252,11 +2235,11 @@
           </li>
         </ul>
       </div>
-      </details>
+      </div>
 
       <h2 class="track-header">Demos</h2>
-        <details class="session-box" id="Demo-A">
-        <summary>[Demo A] Accepted Demo Papers - Group A</summary>
+        <div class="session-box" id="Demo-A">
+        <div class="session-title">[Demo A] Accepted Demo Papers - Group A</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00 & 15:30 - 17:00<br>
@@ -2307,10 +2290,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Demo-B">
-        <summary>[Demo B] Accepted Demo Papers - Group B</summary>
+      <div class="session-box" id="Demo-B">
+        <div class="session-title">[Demo B] Accepted Demo Papers - Group B</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00 & Wednesday, May 6, 10:00 - 12:00<br>
@@ -2361,11 +2344,11 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
       <h2 class="track-header">TKDE Posters</h2>
-        <details class="session-box" id="TKDE-Poster-A">
-        <summary>[TKDE Poster A] Accepted TKDE Posters - Group A</summary>
+        <div class="session-box" id="TKDE-Poster-A">
+        <div class="session-title">[TKDE Poster A] Accepted TKDE Posters - Group A</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00 & 15:30 - 17:00<br>
@@ -2412,10 +2395,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="TKDE-Poster-B">
-        <summary>[TKDE Poster B] Accepted TKDE Posters - Group B</summary>
+      <div class="session-box" id="TKDE-Poster-B">
+        <div class="session-title">[TKDE Poster B] Accepted TKDE Posters - Group B</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00 & Wednesday, May 6, 10:00 - 12:00<br>
@@ -2462,11 +2445,11 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
       <h2 class="track-header">DEFT</h2>
-        <details class="session-box" id="DEFT">
-        <summary>[DEFT] Data Engineering Future Technologies</summary>
+        <div class="session-box" id="DEFT">
+        <div class="session-title">[DEFT] Data Engineering Future Technologies</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -2501,11 +2484,11 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
       <h2 class="track-header">Tutorials</h2>
-        <details class="session-box" id="Tutorial-1">
-        <summary>[Tutorial-1] Evolution of LSM-Tree Key-Value Stores: A Tutorial on State-of-the-Art and Future Directions</summary>
+        <div class="session-box" id="Tutorial-1">
+        <div class="session-title">[Tutorial-1] Evolution of LSM-Tree Key-Value Stores: A Tutorial on State-of-the-Art and Future Directions</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
@@ -2525,10 +2508,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Tutorial-2">
-        <summary>[Tutorial-2] Large Language Models for Spatial Analysis Queries</summary>
+      <div class="session-box" id="Tutorial-2">
+        <div class="session-title">[Tutorial-2] Large Language Models for Spatial Analysis Queries</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
@@ -2547,10 +2530,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Tutorial-3">
-        <summary>[Tutorial-3] Data Discovery in Data Lakes: Operations, Indexes, Systems</summary>
+      <div class="session-box" id="Tutorial-3">
+        <div class="session-title">[Tutorial-3] Data Discovery in Data Lakes: Operations, Indexes, Systems</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00 (Part I) & 15:30 - 17:00 (Part II)<br>
@@ -2569,10 +2552,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Tutorial-4">
-        <summary>[Tutorial-4] The Virtuous Cycle: AI-Powered Vector Search and Vector Search-Augmented AI</summary>
+      <div class="session-box" id="Tutorial-4">
+        <div class="session-title">[Tutorial-4] The Virtuous Cycle: AI-Powered Vector Search and Vector Search-Augmented AI</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
@@ -2591,10 +2574,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Tutorial-5">
-        <summary>[Tutorial-5] Query Rewrite in the Learning Age: From Rules to ML-Based and LLM-Driven Techniques</summary>
+      <div class="session-box" id="Tutorial-5">
+        <div class="session-title">[Tutorial-5] Query Rewrite in the Learning Age: From Rules to ML-Based and LLM-Driven Techniques</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
@@ -2615,10 +2598,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Tutorial-6">
-        <summary>[Tutorial-6] Data-Centric Foundations of Agentic AI</summary>
+      <div class="session-box" id="Tutorial-6">
+        <div class="session-title">[Tutorial-6] Data-Centric Foundations of Agentic AI</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
@@ -2638,10 +2621,10 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
       
-      <details class="session-box" id="Tutorial-7">
-        <summary>[Tutorial-7] Model Slicing: A Data Engineering Perspective</summary>
+      <div class="session-box" id="Tutorial-7">
+        <div class="session-title">[Tutorial-7] Model Slicing: A Data Engineering Perspective</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
@@ -2661,7 +2644,7 @@
             </li>
           </ul>
         </div>
-      </details>
+      </div>
 
     </section>
   </main>
