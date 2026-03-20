@@ -81,7 +81,7 @@
   .session-row .meta .time { color: #334155; font-size: .95rem; margin-bottom: 2px; }
   .session-row .meta .room { color: #475569; font-size: .95rem; }
   .session-row .content .session-title { font-size: 1.15em !important; color: #1f2d3d !important; margin: 0 0 6px; }
-  .session-row .content .session-meta { font-size: 1.0rem !important; color: #334155 !important; line-height: 1.45; }
+  .session-row .content .session-meta { display: none !important; }
   .session-row .content .session-meta strong { color: #0f172a !important; font-weight: 700; letter-spacing: .2px; }
 
   /* Keep whole page single flow: no side-by-side sessions across the page */
@@ -2774,15 +2774,28 @@
     });
   }
   function parseTimeLine(meta){
-    const txt = (meta.innerText || meta.textContent || '').replace(/\n/g,' ');
-    const tm = txt.match(/Time\s*:\s*([^\n]+)/i); if(!tm) return null;
+    const txt = meta.innerText || meta.textContent || '';
+    
+    const tm = txt.match(/Time\s*:\s*([^\n]+)/i); 
+    if(!tm) return null;
+    
     const line = tm[1];
-    const dm = line.match(/([^,]+,\s*May\s*\d+)/i); if(!dm) return null; const dayRaw = dm[1];
-    const ranges = []; const re = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
+    const dm = line.match(/([^,]+,\s*May\s*\d+)/i); 
+    if(!dm) return null; 
+    
+    const dayRaw = dm[1];
+    const ranges = []; 
+    const re = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; 
+    let m;
     while((m = re.exec(line))){ ranges.push(m[1]); }
-    // Room
-    const rm = txt.match(/Room\s*:\s*([^\n|]+)/i); const room = rm ? rm[1].trim() : '';
-    return { dayRaw, ranges, room };
+    
+    const locMatch = txt.match(/Location\s*:\s*([^\n]+)/i); 
+    const location = locMatch ? locMatch[1].trim() : '';
+    
+    const trackMatch = txt.match(/Track\s*:\s*([^\n]+)/i);
+    const track = trackMatch ? trackMatch[1].trim() : '';
+    
+    return { dayRaw, ranges, location, track };
   }
   function sessionLabelFromTitle(box){
     const t = box.querySelector('.session-title'); if(!t) return '';
@@ -2844,12 +2857,16 @@
           const content = ensureElt('div'); content.className = 'content';
 
           // Build left rail content
+          // Build left rail content
           const label = info.label || '';
           const time = (dayObj.short ? (dayObj.short + ' ') : '') + (slot.pretty || slot.key);
-          const room = info.room ? ('Room: ' + info.room) : '';
+          const locationHtml = info.location ? `<div class="room">Location: ${info.location}</div>` : '';
+          const trackHtml = info.track ? `<div class="room">Track: ${info.track}</div>` : '';
+
           meta.innerHTML = `<div class="label">${label}</div>`+
                            `<div class="time">${time}</div>`+
-                           (room?`<div class="room">${room}</div>`:'');
+                           locationHtml + 
+                           trackHtml;
 
           // Move session box into content
           content.appendChild(node);
