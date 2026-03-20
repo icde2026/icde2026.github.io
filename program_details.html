@@ -246,7 +246,6 @@
     <section class="call-for-demonstrations session-container" style="font-size: 17px; padding: 0 50px 150px 0;">
       <br />
       <h2 style="color: #c51c2b; text-align: left;">ICDE 2026: Detailed Program</h2>
-<div class="by-day-note">All tracks are organized below by <strong>day</strong> and <strong>time</strong>. Track-specific sections remain on this page for reference, but are hidden in the default view.</div>
 <nav class="day-nav">
   <a href="#day-tuesday">Tue, May 5</a>
   <a href="#day-wednesday">Wed, May 6</a>
@@ -2732,25 +2731,17 @@
     }());
   </script>
 
-<!-- Copilot script (all tracks): group ALL .session-box by day/time; keep anchors intact; handle multi-slot sessions -->
+<!-- Copilot script (all tracks): group ALL .session-box by day/time; keep anchors intact; handle multi-slot sessions; robust hash nav -->
 <script>
 (function(){
   function textToTimeKey(s){
-    // returns [startMinutes, endMinutes, normalized]
     const m = s.trim().match(/(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})/);
     if(!m) return [0,0,s.trim()];
     const hh1 = parseInt(m[1],10), mm1 = parseInt(m[2],10);
     const hh2 = parseInt(m[3],10), mm2 = parseInt(m[4],10);
-    const norm = `${m[1]}:${m[2]} - ${m[3]}:${m[4]}`;
-    return [hh1*60+mm1, hh2*60+mm2, norm];
+    return [hh1*60+mm1, hh2*60+mm2, `${m[1]}:${m[2]} - ${m[3]}:${m[4]}`];
   }
-
-  function ensureElt(tag, attrs){
-    const el = document.createElement(tag);
-    if(attrs){ for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,v); }
-    return el;
-  }
-
+  function ensureElt(tag, attrs){ const el = document.createElement(tag); if(attrs){ for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,v);} return el; }
   function normalizeDayName(s){
     const d = s.trim();
     if(/Tuesday,\s*May\s*5/i.test(d)) return {id:'day-tuesday', label:'Tuesday, May 5'};
@@ -2760,81 +2751,50 @@
     const id = 'day-' + d.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$|--+/g,'');
     return {id, label:d};
   }
-
   function renameResearchTitles(){
     document.querySelectorAll('.session-box[id^="R-"] .session-title').forEach(function(t){
       t.textContent = t.textContent.replace(/\[R-(\d+)\]/, function(_, n){ return `Research ${n}:`; });
     });
   }
-
   function parseTimeLine(meta){
     const txt = (meta.innerText || meta.textContent || '').replace(/\n/g,' ');
-    // Get the part after "Time:" only
-    const tm = txt.match(/Time\s*:\s*([^\n]+)/i);
-    if(!tm) return null;
+    const tm = txt.match(/Time\s*:\s*([^\n]+)/i); if(!tm) return null;
     const line = tm[1];
-    // Extract day: e.g., "Tuesday, May 5" before the first comma+MayX pattern
-    const dm = line.match(/([^,]+,\s*May\s*\d+)/i);
-    if(!dm) return null;
-    const dayRaw = dm[1];
-    // Find all time ranges in the line (supports multiple via & or commas)
-    const ranges = [];
-    const re = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g;
-    let m;
+    const dm = line.match(/([^,]+,\s*May\s*\d+)/i); if(!dm) return null; const dayRaw = dm[1];
+    const ranges = []; const re = /(\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2})/g; let m;
     while((m = re.exec(line))){ ranges.push(m[1]); }
     if(ranges.length === 0) return null;
     return { dayRaw, ranges };
   }
-
   function buildByDayAll(){
-    const root = document.getElementById('program-by-day');
-    if(!root) return;
-
-    // Hide ALL track headers for cleaner by-day view
+    const root = document.getElementById('program-by-day'); if(!root) return;
     document.querySelectorAll('h2.track-header').forEach(function(h){ h.classList.add('hidden-by-day'); });
-
     const boxes = Array.from(document.querySelectorAll('.session-box'));
-
     const dayMap = new Map();
-
     boxes.forEach(function(box){
-      const meta = box.querySelector('.session-meta');
-      if(!meta) return;
-      const info = parseTimeLine(meta);
-      if(!info) return;
+      const meta = box.querySelector('.session-meta'); if(!meta) return;
+      const info = parseTimeLine(meta); if(!info) return;
       const day = normalizeDayName(info.dayRaw);
-
       if(!dayMap.has(day.id)) dayMap.set(day.id, { label: day.label, slots: new Map() });
       const d = dayMap.get(day.id);
-
       info.ranges.forEach(function(rg, idx){
         const [startM, endM, slotKey] = textToTimeKey(rg);
         if(!d.slots.has(slotKey)) d.slots.set(slotKey, { start:startM, end:endM, items: [] });
-        // For the first range, move the original node; for additional ranges, clone without id
         let node;
-        if(idx === 0){
-          node = box; // original node keeps its id for anchor compatibility
-        } else {
-          node = box.cloneNode(true);
-          // Avoid duplicate ids on clones
-          if(node.id) node.removeAttribute('id');
-        }
+        if(idx === 0){ node = box; }
+        else { node = box.cloneNode(true); if(node.id) node.removeAttribute('id'); }
         d.slots.get(slotKey).items.push(node);
       });
     });
-
     const dayOrder = ['day-tuesday','day-wednesday','day-thursday','day-friday'];
     const orderedDays = Array.from(dayMap.entries()).sort(function(a,b){
-      const ai = dayOrder.indexOf(a[0]);
-      const bi = dayOrder.indexOf(b[0]);
+      const ai = dayOrder.indexOf(a[0]); const bi = dayOrder.indexOf(b[0]);
       return (ai<0?999:ai) - (bi<0?999:bi);
     });
-
     orderedDays.forEach(function([dayId, dayObj]){
       const dayAnchor = ensureElt('a', { id: dayId });
       const dayHeader = ensureElt('h2'); dayHeader.className = 'day-header'; dayHeader.textContent = dayObj.label;
       root.appendChild(dayAnchor); root.appendChild(dayHeader);
-
       const slots = Array.from(dayObj.slots.entries()).map(([k,v])=>({ key:k, ...v })).sort((a,b)=>a.start-b.start);
       slots.forEach(function(slot){
         const h3 = ensureElt('h3'); h3.className='timeslot-header'; h3.textContent = slot.key;
@@ -2845,9 +2805,29 @@
     });
   }
 
+  // Robust click handler for day-nav to avoid router/server 404
+  function setupNavHandler(){
+    const nav = document.querySelector('.day-nav');
+    if(!nav) return;
+    nav.addEventListener('click', function(e){
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if(target){
+        e.preventDefault();
+        try { target.scrollIntoView({behavior:'smooth', block:'start'}); }
+        catch(_) { target.scrollIntoView(true); }
+        if(window.history && history.pushState){ history.pushState(null, '', '#' + id); }
+        else { location.hash = '#' + id; }
+      }
+    }, {passive:false});
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
     renameResearchTitles();
     buildByDayAll();
+    setupNavHandler();
   });
 })();
 </script>
