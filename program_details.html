@@ -81,7 +81,7 @@
   .session-row .meta .time { color: #334155; font-size: .95rem; margin-bottom: 2px; }
   .session-row .meta .room { color: #475569; font-size: .95rem; }
   .session-row .content .session-title { font-size: 1.15em !important; color: #1f2d3d !important; margin: 0 0 6px; }
-  .session-row .content .session-meta { display: none !important; }
+  .session-row .content .session-meta { font-size: 1.0rem !important; color: #334155 !important; line-height: 1.45; }
   .session-row .content .session-meta strong { color: #0f172a !important; font-weight: 700; letter-spacing: .2px; }
 
   /* Keep whole page single flow: no side-by-side sessions across the page */
@@ -2867,6 +2867,17 @@
                            `<div class="time">${time}</div>`+
                            locationHtml + 
                            trackHtml;
+
+          // Move session box into content
+          const rightMeta = node.querySelector('.session-meta');
+          if (rightMeta) {
+            const chairMatch = rightMeta.innerHTML.match(/(<strong>Session Chair:<\/strong>.*?)(?:<br>|<|$)/i);
+            if (chairMatch) {
+              rightMeta.innerHTML = chairMatch[1];
+            } else {
+              rightMeta.style.display = 'none';
+            }
+          }
 
           // Move session box into content
           content.appendChild(node);
