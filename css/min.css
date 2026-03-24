@@ -524,7 +524,7 @@ aside.tweets>iframe {
 
 main.body>section.intro {
     width: calc(100% - 300px);
-    padding: 0 50px 150px 0;
+    padding: 0 50px 0px 0;
     text-align: justify
 }
 
