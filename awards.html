@@ -5,7 +5,6 @@
   <script language="javascript">
     let slideIndex = 1;
     showSlides(slideIndex);
-
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
@@ -31,7 +30,6 @@
     }
   </script>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -44,23 +42,99 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="http://localhost/icde/"> <!-- // CHANGE THIS BEFORE GOING LIVE -->
+  <link rel="canonical" href="http://localhost/icde/">
 
   <style>
     body {
       visibility: hidden
     }
+
+    .timetable {
+      width: 100%;
+      table-layout: fixed; 
+      border-collapse: collapse;
+      margin-bottom: 50px;
+    }
+    
+    .timetable th, .timetable td {
+      border: 1px solid #dcdcdc;
+      padding: 8px 4px; 
+      text-align: center;
+      vertical-align: top;
+      
+      white-space: normal !important; 
+      word-wrap: break-word !important; 
+      overflow-wrap: break-word !important;
+      word-break: keep-all; 
+      font-size: 0.95em; /* increasing the font size */
+      line-height: 1.3;
+    }
+
+    .timetable th {
+      background-color: #f0f4f8;
+      font-weight: bold;
+      vertical-align: middle;
+      font-size: 1em; /* increasing the font size */
+      color: #333;
+    }
+
+    
+    .timetable th:first-child, .timetable td:first-child {
+      width: 6%;
+      vertical-align: middle;
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    .daystyle {
+      font-weight: bold;
+      font-size: 1.3em !important;
+      background-color: #c51c2b !important; 
+      padding: 12px !important;
+      color: #ffffff !important;
+    }
+
+    
+    .session-link {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+    .session-link:hover {
+      text-decoration: underline;
+      color: #c51c2b;
+    }
+    .sub-title {
+      font-size: 0.9em; /* increasing the font size */
+      font-weight: normal;
+      display: block;
+      margin-top: 5px;
+      color: #555;
+    }
+    .span-event {
+      background-color: #fde8ea; 
+      font-weight: normal;
+      vertical-align: middle !important;
+      font-size: 1em !important;
+    }
+
+    /* The green color of the Research session is going to be lighter */
+    .rrcell {
+      background-color: #f0f4f8 !important; 
+    }
   </style>
+  
   <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-  <title>Demonstrations Track</title>
+  <title>Awards</title>
   <meta name="description" content="" />
 
   <link rel="stylesheet" href="css/min.css">
   <link rel="stylesheet" href="css/extra.css"> 
+  <link rel="stylesheet" href="css/table.css"> 
 </head>
 
 <body>
@@ -74,6 +148,7 @@
     </div>
 
     <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+   
       <figure class="logo">
         <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
         <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
@@ -85,6 +160,7 @@
         General Information
         <div class="menu">
           <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+   
           <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
           <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
         </div>
@@ -96,19 +172,21 @@
           <a href="program_details.html" itemprop="url"><span itemprop="name">Program Details</span></a>
           <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
          <hr>
-
           <a href="accepted-papers.html" itemprop="url"><span itemprop="name">Accepted Research Papers</span></a>
           <a href="ia-papers.html" itemprop="url"><span itemprop="name">Accepted Industry <br> and Application Papers</span></a>
           <a href="demo-papers.html" itemprop="url"><span itemprop="name">Accepted Demo Papers</span></a>
           <a href="tkde-papers.html" itemprop="url"><span itemprop="name">Accepted TKDE Posters</span></a>
-          <a href="deft-papers.html" itemprop="url"><span itemprop="name">Accepted DEFT Papers</span></a>          
+          <a href="deft-papers.html" itemprop="url"><span 
+itemprop="name">Accepted DEFT Papers</span></a>         
           <a href="lightning-talks.html" itemprop="url"><span itemprop="name">Accepted Lightning Talks</span></a>
           <a href="tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
-          <a href="phd-papers.html" itemprop="url"><span itemprop="name">Accepted Ph.D. Symposium</span></a>
+          <a href="phd-papers.html" itemprop="url"><span itemprop="name">Accepted Ph.D.
+Symposium</span></a>
           <hr>
           <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
           <hr>
           <a href="awards.html" itemprop="url"><span itemprop="name">Awards</span></a>
+          
         </div>
       </div>
       <div>
@@ -116,12 +194,14 @@
         <div class="menu">
           <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
           <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
-          <hr>
+       
+           <hr>
           <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
           <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
           <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
           <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
-          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D. Symposium</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D.
+Symposium</span></a>
           <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
           <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
         </div>
@@ -131,22 +211,20 @@
         <div class="menu">
           <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
           <hr>
+         
           <a href="visa-guidelines.html" itemprop="url"><span itemprop="name">Visa Guidelines</span></a>
           <hr>
           <a href="travel.html" itemprop="url"><span itemprop="name">Travel</span></a>
-          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel &amp; Conference Venue</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel &amp;
+Conference Venue</span></a>
           <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
-          <!--- <a href="local-attractions.html" itemprop="url"><span itemprop="name">Local Attractions</span></a>
-          <a href="transportation.html" itemprop="url"><span itemprop="name">Transportation</span></a>-->
         </div> 
       </div>
-
       <div>
-        Dates &amp; Guidelines
+        Dates &amp;Guidelines
         <div class="menu">
           <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
           <hr />
-          <!-- <a href="formatting-guidelines.html" itemprop="url"><span itemprop="name">Formatting Guidelines</span></a> -->
           <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
         </div>
       </div>
@@ -156,101 +234,59 @@
           <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
           <hr />
           <a href="sponsors.html" itemprop="url"><span itemprop="name">Our Sponsors</span></a>
+  
         </div>
       </div>
-
     </nav>
-    <section style="text-align: center;" class="carousel small" data-images='[
+    <section style="text-align: center;"
+class="carousel small" data-images='[
     {"i":"./img/montreal/1.jpg"},
     {"i":"./img/montreal/2.jpg"},
-    {"i":"./img/montreal/3.jpg"},
-    {"i":"./img/montreal/4.jpg"},
-    {"i":"./img/montreal/5.jpg"},
-    {"i":"./img/montreal/6.jpg"}
+    {"i":"./img/montreal/3.jpg"}
   ]'>
-      <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data
-        Engineering (ICDE)</span>
+      <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
       <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
-      <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;">
-      </div>
+      <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
     </section>
-
   </header>
 
   <main class="body">
-    <style>
-      .boxstyle {
-        border: 0;
-        background: #eee;
-        color: #383838;
-        display: block;
-        height: 300px;
-        overflow-y: auto;
-        padding: 5px;
-        border-radius: 5px;
-      }
-    </style>
-    <section class="call-for-demonstrations" style="font-size: 17px; padding: 0 50px 150px 0;">
+    <section class="call-for-demonstrations" style="font-size: 16px; padding: 0 50px 150px 0;">
       <br />
-      <h2 style="color: #c51c2b;">Call for Contributions - Demonstrations Track</h2>
-      <!-- <h3 style="color: #366598;">Topics of Interest</h3> -->
-      <p>The Demonstrations Track of ICDE 2026 invites exciting and highly interactive demonstrations on data engineering research. We solicit demo proposals in all areas of data and knowledge engineering, including but not limited to, database systems, data management and processing techniques, and data-intensive applications. We also encourage submissions from related areas such as DB + X, where X is ML/AI, health, education, visualization, systems, privacy, etc. All demonstration submissions must:</p>
+      <h2 style="color: #c51c2b;">TCDE Awards</h2>
 
-      <div class="elementor-widget-container">
-        <ul>
-          <li> Motivate the demonstrated concept(s).</li>
-          <li>Describe the presented system and underlying technology.</li>
-          <li>Explain what features and scenarios will be demonstrated.</li>
-          <li>Justify the novelty and significance of the contribution of the work.</li>
-        </ul>
-      </div>
+      <h4 style="color: #366598;">IEEE TCDE Ramez Elmasri Outstanding Database Education Award</h4>
+      <p style="font-size: 1.2em;"><strong>Andy Pavlo</strong>, CMU <br>
+        For contributions to online database education through widely adopted courses, accessible instructional platforms, and open  educational resources.
+      </p>
 
-      <h3 style="color: #366598;">Demonstration Track Highlights</h3>
-      <p>Demonstrations will be presented at the ICDE 2026 conference and the accompanying manuscripts will be published in the ICDE 2026 proceedings. We encourage submissions to include a demonstration video and to creatively apply the demonstrated system to several scenarios, datasets and use cases Submissions are limited to 4 pages, including references.</p>
+      <h4 style="color: #366598;">IEEE TCDE Impact Award</h4>
+      <p style="font-size: 1.2em;"><strong>Sharad Mehrotra</strong>, University of California at Irvine<br>
+        For foundational contributions to cloud data management and multimedia indexing and information retrieval.
+      </p>
 
-      <h3 style="color: #366598;">Video Submission</h3>
-      <p>We highly encourage the submission of a demonstration video (of up to 5 minutes, 50MB max. file size). The purpose of the video is to convey an impression of what will be demonstrated. Both the demonstration proposal and the video will be accessible by the reviewers and both will be used to rate the submission. Your video could summarize your demonstration and also audio-visually highlight its most important aspects, such as the user interface, options for user interactions, the system setup, etc. The video should be submitted in MPEG/AVI/MP4 format and be playable by common media players. Please note that you will need to first finish your demo proposal submission, and then edit it to add the video as a supplementary file.</p>
-
-      <h3 style="color: #366598;">Important Dates</h3>
-      <p> All deadlines are 5:00 pm Pacific Time (PT). </p>
-      <div class="elementor-widget-container">
-        <ul>
-          <li>Demo submission due: <strong>November 01, 2025</strong></li>
-          <li>Notification of acceptance: <strong>December 19, 2025</strong></li>
-          <li>Camera-ready due: <strong>February 01, 2026</strong></li>
-        </ul>
-      </div>
-
-      <h3 style="color: #366598;">Selection Criteria</h3>
-      <p>Demonstration proposals will be selected based on several criteria, including <strong>(i)</strong> relevance,  <strong>(ii)</strong> novelty,  <strong>(iii)</strong> depth,  <strong>(iv)</strong> and the “wow” factor of the proposed demonstration. The proposal must clearly describe the functionality that will be demonstrated, and how the audience will be able to interact with the proposed system. Reviewers will be encouraged to take the video submissions into account when rating a demonstration proposal.</p>
-     
-      <h3 style="color: #366598;">Submission</h3>
-      <p>Manuscripts must be prepared in accordance with the IEEE format available at <a href="https://www.ieee.org/conferences/publishing/templates">https://www.ieee.org/conferences/publishing/templates</a></p>
-
-      <p>The length of demo papers is 4 pages, including references. Only electronic submissions in PDF format will be considered. Please upload your submission to the ICDE 2026 Demos Track through the CMT submission site prior to the deadline: <a href="https://cmt3.research.microsoft.com/ICDEDEMO2026/">https://cmt3.research.microsoft.com/ICDEDEMO2026/</a></p>
-
-      <p>Please refer to the COI, use of GenAI, Diversity and Inclusion in writing instructions as detailed in <a href="https://icde2026.github.io/cf-research-papers.html">https://icde2026.github.io/cf-research-papers.html</a></p>
-
+      <br>
+      <p style="font-size: 1.2em;">The awards will be presented to the recipients on <strong> May 6, 2026, at 1:30 p.m</strong>. during the IEEE International Conference on Data Engineering (ICDE) in Montreal.</p>
+         
     </section>
-
-    <div class="spinner"></div>
-
   </main>
 
-<footer>
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <span><img src="img/icde2026_footer.png"></span>
-    <span>
-      <p>
-        <span>42<sup>nd</span> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
-          &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
-            <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
-            A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
-
-      </p>      
-    </span>
-  </div>
-</footer>
+ 
+  <footer>
+    <div style="display: flex; align-items: center;
+justify-content: center;">
+      <span><img src="img/icde2026_footer.png"></span>
+      <span>
+        <p>
+          <span>42<sup>nd</sup> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+            &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+              <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+      
+          A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+        </p>       
+      </span>
+    </div>
+  </footer>
 
   <link rel="stylesheet" href="css/min.css">
   <script async src="js/min.js"></script>
@@ -260,36 +296,36 @@
     (function () {
       var last = 0,
         docBody = document.body,
+   
         header = document.querySelector('body>header'),
         nav = header && header.querySelector('nav'),
-        requestAnimationFrame = window.requestAnimationFrame || function (callback, element) {
+        requestAnimationFrame = window.requestAnimationFrame ||
+function (callback, element) {
           var now = Date.now(),
             next = Math.max(0, 16 - (now - last)),
             id = window.setTimeout(function () {
               callback(now + next);
             }, next);
-          last = now + next;
+last = now + next;
           return id;
         },
-        cancelAnimationFrame = window.cancelAnimationFrame || function (id) {
+        cancelAnimationFrame = window.cancelAnimationFrame ||
+function (id) {
           clearTimeout(id);
-        },
+},
         update = function () {
           if (!nav) return;
-
-          var isStatic = docBody.classList.contains('static');
+var isStatic = docBody.classList.contains('static');
           if (header.getBoundingClientRect().bottom > 70) {
             if (isStatic) docBody.classList.remove('static');
-          } else if (!isStatic) docBody.classList.add('static');
+} else if (!isStatic) docBody.classList.add('static');
         },
         lid;
-
-      window.addEventListener('scroll', function (e) {
+window.addEventListener('scroll', function (e) {
         if (lid) cancelAnimationFrame(lid);
         lid = requestAnimationFrame(update);
       });
-
-      update();
+update();
     }());
   </script>
 </body>
