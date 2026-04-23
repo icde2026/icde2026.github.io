@@ -61,6 +61,41 @@
 
   <link rel="stylesheet" href="css/min.css">
   <link rel="stylesheet" href="css/extra.css"> 
+  <link rel="stylesheet" href="css/table.css"> 
+
+  <!-- Copilot overrides (two-column per session, sticky meta; no side-by-side sessions) -->
+<style id="copilot-overrides">
+  :root { --sticky-offset: 72px; }
+  body { visibility: visible !important; }
+  .by-day-note { margin: 8px 0 16px; color: #475569; font-size: 0.95rem; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+  .day-nav a { text-decoration: none; padding: 6px 10px; border: 1px solid #e2e8f0; border-radius: 6px; color: #0f172a; background: #f8fafc; }
+  h2.day-header { margin: 28px 0 10px; border-left: 5px solid #c51c2b; padding-left: 10px; color: #0f172a; }
+  h3.timeslot-header { margin: 18px 0 10px; color: #1f2937; font-size: 1.05rem; font-weight: 600; }
+
+  /* Session row: meta (left) + content (right) */
+  .session-row { display: grid; grid-template-columns: 280px minmax(0,1fr); gap: 18px; align-items: flex-start; padding: 12px 0 20px; border-bottom: 1px solid #e5e7eb; }
+  .session-row:last-child { border-bottom: none; }
+  .session-row .meta { position: sticky; top: var(--sticky-offset); align-self: start; }
+  .session-row .meta .label { font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .session-row .meta .time { color: #334155; font-size: .95rem; margin-bottom: 2px; }
+  .session-row .meta .room { color: #475569; font-size: .95rem; }
+  .session-row .content .session-title { font-size: 1.15em !important; color: #1f2d3d !important; margin: 0 0 6px; }
+  .session-row .content .session-meta { font-size: 1.0rem !important; color: #334155 !important; line-height: 1.45; }
+  .session-row .content .session-meta strong { color: #0f172a !important; font-weight: 700; letter-spacing: .2px; }
+
+  /* Keep whole page single flow: no side-by-side sessions across the page */
+  .timeslot-stack { display: block; }
+
+  /* Hide original per-track headers to avoid duplicate content */
+  h2.track-header { display: none !important; }
+
+  /* Mobile: stack meta above content; disable sticky */
+  @media (max-width: 900px) {
+    .session-row { grid-template-columns: 1fr; }
+    .session-row .meta { position: static; margin-bottom: 8px; }
+  }
+</style>
 </head>
 
 <body>
@@ -195,6 +230,51 @@
         border-radius: 5px;
       }
     </style>
+    <style>
+      div.session-box {
+        background: #fdfdfd;
+        border: 1px solid #c51c2b;
+        border-left: 5px solid #c51c2b; 
+        border-radius: 6px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      }
+      div.session-box.industry { border-left-color: #e67e22; }
+      div.session-box.demo { border-left-color: #27ae60; }
+      
+      .session-title {
+        padding: 15px; 
+        font-size: 1.1em; 
+        font-weight: bold;
+        color: #2c3e50;
+        background-color: #f7f9fa; 
+        border-radius: 6px 6px 0 0;
+        border-bottom: 1px solid #ecf0f1;
+      }
+
+      .session-content {
+        padding: 15px; 
+      }
+      
+      .session-meta { font-size: 1em; color: #030303; margin-bottom: 12px; font-weight: 500; }
+      .paper-list { list-style: none; padding-left: 0; margin: 0; }
+      .paper-item { padding: 10px 0; border-bottom: 1px dashed #ecf0f1; display: flex; align-items: flex-start; }
+      .paper-item:last-child { border-bottom: none; padding-bottom: 0; }
+      
+      .paper-id {
+        background: #34495e;
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.8em; 
+        font-weight: bold;
+        margin-right: 15px;
+        min-width: 45px;
+        text-align: center;
+      }
+      .paper-title { font-weight: 500; font-size: 1em; color: #070707; }
+      .paper-authors { font-size: 0.85em; color: #7f8c8d; margin-top: 5px; } 
+    </style>
     <section class="call-for-phd-symposium" style="font-size: 17px; padding: 0 50px 150px 0;">
       <br />
       <h2 style="color: #c51c2b;">ICDE 2026 Ph.D. Symposium</h2>
@@ -254,6 +334,46 @@
         
         </ul>
       </p>
+
+      <h2 class="track-header" >PhD Symposium</h2>
+        <div class="session-box" id="phd-symposium-program">
+        <div class="session-title">PhD Symposium Detailed Program</div>
+        <div class="session-content">
+          <div class="session-meta">
+            <strong>Time:</strong> Monday, May 4, 11am-12:30<br>
+            <strong>Room:</strong> Rue Saint-Denis<br>
+          </div>
+          <hr>
+          <ul class="paper-list">
+            <li class="paper-item" style="flex-direction: column;">           
+              <div class="paper-title"><span class="icon">&#9679;</span> Private Set Operations Using Doubly Oblivious Radix Partitioning</div>
+              <div class="paper-authors" style="font-size: 0.9em; color: #366598; margin-top: 5px;">Idil Kara (University of Waterloo)</div>
+            </li>
+            <li class="paper-item" style="flex-direction: column;">
+              <div class="paper-title"><span class="icon">&#9679;</span> Semantic-Driven Temporal Order Reconstruction</div>
+              <div class="paper-authors" style="font-size: 0.9em; color: #366598; margin-top: 5px;">Wongyu Kim (McMaster University)</div>
+            </li>
+            <li class="paper-item" style="flex-direction: column;">
+              <div class="paper-title"><span class="icon">&#9679;</span> Fed-TTC: A Pareto-Efficient Hierarchical Federated Learning Framework</div>
+              <div class="paper-authors" style="font-size: 0.9em; color: #366598; margin-top: 5px;">Seyed Salar Ghazi (École de technologie supérieure - ÉTS Montréal)</div>
+            </li>
+            <li class="paper-item" style="flex-direction: column;">
+              <div class="paper-title"><span class="icon">&#9679;</span> How Private Are Genomic Embeddings? Assessing and Mitigating Reconstruction Attacks on Transformer-Based DNA Language Models Embeddings (Remote)</div>
+              <div class="paper-authors" style="font-size: 0.9em; color: #366598; margin-top: 5px;">Reem Al-Saidi (University of Windsor)</div>
+            </li>
+            <li class="paper-item" style="flex-direction: column;">
+              <div class="paper-title"><span class="icon">&#9733;</span> <strong style="font-weight: 600; font-size: 1em; color: #c51c2b;">Panel:</strong> How to Start a Data Management Research Career in the Age of AI</div>
+              <div class="paper-authors" style="font-size: 0.9em; color: #366598; margin-top: 5px;">Melanie Herschel (Nanyang Technological University, Singapore), Niv Dayan (The University of Toronto, Canada)</div>
+            </li>
+
+             <li class="paper-item" style="flex-direction: column;">
+              <div class="paper-title" style="font-weight: 600; font-size: 1em; color: #c51c2b;"><span class="icon">&#9733;</span> 12:30-14:00 Mentoring lunch (Rue Saint Denis)</div>
+            </li>
+           
+            
+          </ul>
+        </div>
+      </div>
 
 
       <div class="officers" style="font-size: 17px; ">
