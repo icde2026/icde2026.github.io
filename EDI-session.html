@@ -2,33 +2,6 @@
 <html lang="en">
 
 <head>
-  <script language="javascript">
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-  </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
   <script>
@@ -38,11 +11,6 @@
 
     gtag('config', 'G-6ZQ880VLVF');
   </script>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="http://localhost/icde/">
 
   <style>
     body {
@@ -124,6 +92,11 @@
       background-color: #f0f4f8 !important; 
     }
   </style>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://localhost/icde/">
   
   <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,7 +107,7 @@
 
   <link rel="stylesheet" href="css/min.css">
   <link rel="stylesheet" href="css/extra.css"> 
-  <link rel="stylesheet" href="css/table.css"> 
+  <!-- <link rel="stylesheet" href="css/table.css">  -->
 </head>
 
 <body>
@@ -255,13 +228,18 @@ class="carousel small" data-images='[
   </header>
 
   <main class="body">
-    <section class="keynotes-section" style="font-size: 16px; padding: 0 50px 150px 0;">
+
+    <section class="keynotes-section" style="font-size: 16px;">
       <br />
       <h2 style="color: #c51c2b; font-size: 2em;">Research diversity, equity, and inclusion in academia and industry</h2>
-      <h3><strong>Keynote Session:</strong> Tuesday, May 5 | from 13:30-15:00 <br></h3>
-
+      <nav class="day-nav" style="font-size: 1.3em;">
+        <a href="#keynotestalks" target="_parent"><strong>Keynote Session:</strong> Tuesday, May 5 | from 13:30-15:00</a> <br>
+        <a href="#panelsession"><strong>Panel Session:</strong> Wednesday, May 6 | from 15:30-17:00</a>
+      </nav>
+        </section>
+    <section class="keynotes-section" style="font-size: 16px; padding: 0 50px 20px 0; scroll-margin-top: 130px;" id="keynotestalks">
       <div class="daystyle" style="margin-top: 40px; margin-bottom: 20px; text-align: left; border-radius: 4px;" id="BettinaKemme">
-        <!-- Keynote -->
+        Invited Keynote Talks
       </div>
       <div style="margin-bottom: 40px; padding: 25px; border: 1px solid #dcdcdc; background-color: #f9f9f9; border-radius: 5px;" >
         <!-- <h3 style="color: #c51c2b; margin-top: 0; font-size: 1.4em;">NebulaStream – Data Stream Processing for the Sensor-Edge-Cloud-Continuum</h3> -->
@@ -292,9 +270,8 @@ class="carousel small" data-images='[
       </div>
 
 
-      <div class="daystyle" style="margin-top: 40px; margin-bottom: 20px; text-align: left; border-radius: 4px;" id="KavithaSrinivas">
-        <!-- Keynote -->
-      </div>
+      <!-- <div class="daystyle" style="margin-top: 40px; margin-bottom: 20px; text-align: left; border-radius: 4px;" id="KavithaSrinivas">
+      </div> -->
       <div style="margin-bottom: 40px; padding: 25px; border: 1px solid #dcdcdc; background-color: #f9f9f9; border-radius: 5px;" >
         <p style="font-size: 1.2em;">
           <strong>Title:</strong> A case for jumping off cliffs in one's career<br>
@@ -321,9 +298,8 @@ class="carousel small" data-images='[
 
       
 
-      <div class="daystyle" style="margin-top: 40px; margin-bottom: 20px; text-align: left; border-radius: 4px;" id="AngelaBonifati">
-        <!-- Keynote -->
-      </div>
+      <!-- <div class="daystyle" style="margin-top: 40px; margin-bottom: 20px; text-align: left; border-radius: 4px;" id="AngelaBonifati">
+      </div> -->
       <div style="margin-bottom: 40px; padding: 25px; border: 1px solid #dcdcdc; background-color: #f9f9f9; border-radius: 5px;" >
         <p style="font-size: 1.2em;">
           <strong>Title:</strong> The Long Road to Mid-Career: Growth, Challenges, and Changing Perspectives in Academia<br>
@@ -354,6 +330,89 @@ Her current research interests span several aspects of data management, includin
 She is an ACM Fellow and the recipient of a European Research Council Advanced Grant (2024). Her work has been recognized with the VLDB Women in DB Research Award (2025), the IEEE TCDE Impact Award (2023), and an ACM SIGMOD Research Highlights Award (2023).
 She is the General Chair of VLDB 2026 and has previously served as Program Chair of IEEE ICDE 2025, ACM SIGMOD 2022, and EDBT 2020. She is currently an Associate Editor for the Proceedings of the VLDB (Volume 19), IEEE TKDE, and ACM TODS. She is also the President of ACM SIGMOD (2025–2029), a member of the IEEE Technical Committee on Data Engineering (2024–2029), and a member of the PVLDB Board of Trustees (2024–2029).
           </p>
+        </div>
+      </div>
+      
+    </section>
+
+  <!------------------------------------------------------------------------------>
+      <section class="keynotes-section" style="font-size: 16px; padding: 0 10px 150px 0;" >
+        <div class="daystyle" style="margin-top: 40px; margin-bottom: 0px; text-align: left; border-radius: 4px; scroll-margin-top: 130px;" id="panelsession">
+        Panel
+      </div>
+      <br />
+       <div style="margin-bottom: 10px; padding: 25px; border: 1px solid #dcdcdc; background-color: #f9f9f9;" >
+        <p style="font-size: 1.2em;">
+          <h4 style="font-size: 1.3em;"> <b style="color: #c51c2b;"> Panel Session:</b> Wednesday, May 6 | from 15:30-17:00</h4>
+          <h4 style="font-size: 1.3em;"><b style="color: #c51c2b;">Panel Title:</b> Now What? Building Your Research Career After the PhD</h4>
+        </p>
+        
+        <div style="overflow: auto;">          
+          <p>
+          Transitioning from the PhD to the next stage of one’s career can be both exciting and uncertain. This panel brings together experienced researchers from academia and industry to share practical advice for early-career researchers on establishing a research identity, choosing and evolving research directions, building collaborations, and navigating different career paths. Through panel discussion and audience Q&A, attendees will gain perspectives on how to turn the momentum of graduate training into a fulfilling long-term career. We are very excited to have the following distinguished panelists:
+          </p>
+           <hr style="border: 0; border-top: 1px solid #dcdcdc; margin: 25px 0;">
+            <p style="font-size: 1.2em;">
+          <strong>Prof. Anastasia Ailamaki</strong> 
+        </p>
+        
+        <div style="overflow: auto;">
+          <img src="img/Anastasia-Ailamaki.jpeg" alt="Photo of Anastasia Ailamaki" style="width: 150px; min-height: 180px; float: right; margin: 0 0 15px 20px; background-color: #e0e0e0; border-radius: 5px; border: 1px solid #ccc;">
+          <p>
+           <b>Bio.</b> Anastasia Ailamaki is a professor at EPFL, where she directs the Data-Intensive Applications and Systems (DIAS) Laboratory. Her research focuses on database systems, data-intensive computing, and optimizing modern data platforms for emerging hardware architectures. She is recognized for influential contributions to high-performance data management and real-time analytics, and has co-founded RAW Labs. Ailamaki is an ACM and IEEE Fellow, and received the prestigious ACM SIGMOD Edgar F. Codd Innovations Award for her lasting impact on database systems research.
+          </p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #dcdcdc; margin: 25px 0;">
+        <p style="font-size: 1.2em;">
+          <strong>Dr. Oktie Hassanzadeh</strong> 
+        </p>
+        
+        <div style="overflow: auto;">
+          <img src="img/Hassanzadeh_Oktie.jpg" alt="Photo of Oktie Hassanzadeh" style="width: 150px; min-height: 180px; float: right; margin: 0 0 15px 20px; background-color: #e0e0e0; border-radius: 5px; border: 1px solid #ccc;">
+          <p>
+           <b>Bio.</b> Oktie Hassanzadeh is a Senior Research Scientist at IBM’s Software Innovation Lab, working at the intersection of data management, knowledge graphs, and AI, with a focus on large-scale data integration and enabling large language models (LLMs) to understand and reason over structured data. He has authored over 150 publications and holds numerous patents, with contributions spanning data lakes, semantic data discovery, and knowledge-driven AI systems. He is the recipient of several academic and corporate awards, including best paper awards at ISWC and ESWC, a top prize at the Semantic Web Challenge (ISWC), a top prize at the FinCausal 2022 Shared Task, and two first prizes at the Triplification Challenge (SEMANTiCS). He earned his Ph.D. in Computer Science from the University of Toronto, where he received the IBM PhD Fellowship and the Yahoo! Key Scientific Challenges Award. He co-organizes the TaDA workshop at VLDB and the SemTab challenge at ISWC, and regularly serves on program committees and review boards of leading conferences, including VLDB, IJCAI, AAAI, and ISWC.
+          </p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #dcdcdc; margin: 25px 0;">
+        <p style="font-size: 1.2em;">
+          <strong>Prof. M. Tamer Özsu</strong> 
+        </p>
+        
+        <div style="overflow: auto;">
+          <img src="img/tamer-ozsu.jpg" alt="Photo of Tamer Özsu" style="width: 150px; min-height: 180px; float: right; margin: 0 0 15px 20px; background-color: #e0e0e0; border-radius: 5px; border: 1px solid #ccc;">
+          <p>
+           <b>Bio.</b> M. Tamer Özsu is a University Professor at the Cheriton School of Computer Science at the University of Waterloo. Previously, he was the Director of the Cheriton School and Associate Dean (Research) of the Faculty of Mathematics. His research is on data engineering aspects of data science, focusing on distributed data management and the management of non-conventional data. He is a Fellow of the Royal Society of Canada, American Association for the Advancement of Science, Asia-Pacific Artificial Intelligence Association, Balsillie School of International Affairs, and an elected member of the Science Academy, Türkiye. He is also a Life Fellow of the Association for Computing Machinery and the Institute of Electrical and Electronics Engineers. Dr. Özsu is the recipient of the University of Waterloo Award of Excellence in Graduate Supervision (2025), ACM Presidential Award (2024), IEEE TCDE Education Award (2024), IEEE Innovation in Societal Infrastructure Award (2022), CS-Can/Info-Can Lifetime Achievement Award (2018), ACM SIGMOD Test-of-Time Award (2015), the ACM SIGMOD Contributions Award (2006), and the Ohio State University College of Engineering Distinguished Alumnus Award (2008). He is the Founding Editor-in-Chief of ACM Books (2014-2020) and the Founding Series Editor of Synthesis Lectures on Data Management (2009-2014). He serves on the editorial boards of three journals and one book series.
+ 
+          </p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #dcdcdc; margin: 25px 0;">
+         <p style="font-size: 1.2em;">
+          <strong>Dr. Kavitha Srinivas</strong> 
+        </p>
+        
+        <div style="overflow: auto;">
+          <img src="img/kavitha.jpg" alt="Photo of Kavitha Srinivas" style="width: 150px; min-height: 180px; float: right; margin: 0 0 15px 20px; background-color: #e0e0e0; border-radius: 5px; border: 1px solid #ccc;">
+          <p>
+           <b>Bio.</b>Kavitha Srinivas is a researcher specializing in semantic data management and knowledge graphs.  Her work spans areas in cognitive science (studying human memory) to applications of AI to data management.  She has worked in academia as a professor of Cognitive Psychology, as a CTO of a data integration startup and as a researcher in the field of artificial intelligence at IBM Research.
+ 
+          </p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #dcdcdc; margin: 25px 0;">
+        <p style="font-size: 1.2em;">
+          <strong>Prof. Tianzheng Wang</strong> 
+        </p>
+        
+        <div style="overflow: auto;">
+          <img src="img/tianzheng-wang.jpg" alt="Photo of Tianzheng Wang" style="width: 150px; min-height: 180px; float: right; margin: 0 0 15px 20px; background-color: #e0e0e0; border-radius: 5px; border: 1px solid #ccc;">
+          <p>
+           <b>Bio.</b>Tianzheng Wang is an associate professor in the School of Computing Science at Simon Fraser University in Metro Vancouver, Canada. His research centres around the making of database systems in the context of modern hardware, new programming primitives, and new applications. His work also often extends to related areas such as operating systems, parallel programming and distributed systems. Tianzheng Wang received his Ph.D. (2017) and M.Sc. (2014) degrees in Computer Science from the University of Toronto, and B.Sc. (2012) in Computing degree (First Class Honours) from Hong Kong Polytechnic University. His work has been assimilated by cloud vendors and startups, and recognized by awards such as ACM SIGMOD Best Paper Award (2025), ACM SIGMOD Research Highlight Awards (2021 and 2023), and 2019 IEEE TCSC Award for Excellence in Scalable Computing (Early Career Researchers).
+ 
+          </p>
+        </div>
         </div>
       </div>
       
@@ -416,6 +475,23 @@ window.addEventListener('scroll', function (e) {
       });
 update();
     }());
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var nav = document.querySelector('.day-nav');
+      if (!nav) return;
+      nav.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        var id = a.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          try { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (_) { target.scrollIntoView(true); }
+          if (history.pushState) { history.pushState(null, '', '#' + id); } else { location.hash = '#' + id; }
+        }
+      }, { passive: false });
+    });
   </script>
 </body>
 
