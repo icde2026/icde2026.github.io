@@ -77,12 +77,14 @@
   .session-row { display: grid; grid-template-columns: 280px minmax(0,1fr); gap: 18px; align-items: flex-start; padding: 12px 0 20px; border-bottom: 1px solid #e5e7eb; }
   .session-row:last-child { border-bottom: none; }
   .session-row .meta { position: sticky; top: var(--sticky-offset); align-self: start; }
-  .session-row .meta .label { font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .session-row .meta .label { font-weight: 700; color: #0f172a; margin-bottom: 6px; font-size: .95rem;}
   .session-row .meta .time { color: #334155; font-size: .95rem; margin-bottom: 2px; }
   .session-row .meta .room { color: #475569; font-size: .95rem; }
   .session-row .content .session-title { font-size: 1.15em !important; color: #1f2d3d !important; margin: 0 0 6px; }
   .session-row .content .session-meta { font-size: 1.0rem !important; color: #334155 !important; line-height: 1.45; }
   .session-row .content .session-meta strong { color: #0f172a !important; font-weight: 700; letter-spacing: .2px; }
+  .chair-label { font-weight: 600; color: #c51c2b; }
+  .chair-row { margin-top: 10px; }
 
   /* Keep whole page single flow: no side-by-side sessions across the page */
   .timeslot-stack { display: block; }
@@ -247,6 +249,7 @@
       }
       
       .session-meta { font-size: 0.85em; color: #7f8c8d; margin-bottom: 12px; font-weight: 500; }
+      .session-meta strong { color: #555; }
       .paper-list { list-style: none; padding-left: 0; margin: 0; }
       .paper-item { padding: 10px 0; border-bottom: 1px dashed #ecf0f1; display: flex; align-items: flex-start; }
       .paper-item:last-child { border-bottom: none; padding-bottom: 0; }
@@ -287,7 +290,7 @@
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Duluth<br>
             <strong>Track:</strong> Query Processing, Indexing, and Optimization<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Zhuoyue Zhao
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -329,7 +332,7 @@
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue McGill<br>
             <strong>Track:</strong> Spatial Databases and Temporal Databases<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Vincent Oria
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -371,7 +374,7 @@
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue Sherbrooke<br>
             <strong>Track:</strong> AI-based DB Tuning, Benchmarks and Performances<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Gao Cong
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -413,7 +416,7 @@
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue Mansfield<br>
             <strong>Track:</strong> Information Integration and Data Quality<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Reynold Cheng
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -455,7 +458,7 @@
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue Crescent<br>
             <strong>Track:</strong> Distributed Ledgers and Blockchains<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Jelle Hellings
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -497,7 +500,7 @@
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Av. Duluth<br>
             <strong>Track:</strong> AI for Data Management<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Ibrahim Sabek
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -531,7 +534,7 @@
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Rue McGill<br>
             <strong>Track:</strong> Query Processing, Indexing, and Optimizatio<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Chao Zhang
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -565,7 +568,7 @@
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Rue Sherbrooke<br>
             <strong>Track:</strong> Information Integration and Data Quality<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Jia Zou
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -599,7 +602,7 @@
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Rue Mansfield<br>
             <strong>Track:</strong> Data Stream Systems and Edge Computing<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Riccardo Tommasini
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -633,7 +636,7 @@
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Rue Crescent<br>
             <strong>Track:</strong> Modern Hardware and In-Memory Database Systems<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Chrysanthi Kosyfaki
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -667,7 +670,7 @@
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue McGill<br>
             <strong>Track:</strong> Graph Structure Analytics<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Gunes Aluc
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -701,7 +704,7 @@
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue Sherbrooke<br>
             <strong>Track:</strong> Query Processing, Indexing, and Optimization<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Genoveva Vargas-Solar
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -735,7 +738,7 @@
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue Mansfield<br>
             <strong>Track:</strong> Distributed, Parallel and P2P Data Management<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Tilmann Rabl
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -769,7 +772,7 @@
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue Crescent<br>
             <strong>Track:</strong> Data Stream Systems and Edge Computing<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Nikos Mamoulis
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -803,7 +806,7 @@
             <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Duluth<br>
             <strong>Track:</strong> AI for Data Management<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <strong>Session Chair:</strong> Tilmann Rabl
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -845,7 +848,7 @@
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue McGill<br>
           <strong>Track:</strong> Spatial Databases and Temporal Databases<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Jianliang Xu
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -887,7 +890,7 @@
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue Sherbrooke<br>
           <strong>Track:</strong> AI-based DB Tuning, Benchmarks and Performances<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Xiaohui Yu
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -929,7 +932,7 @@
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue Mansfield<br>
           <strong>Track:</strong> Data Mining and Knowledge Discovery<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Paul Boniol
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -941,6 +944,10 @@
             <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Zuohan Wu* (the Hong Kong Unversity of Science and Technology (Guangzhou)), Jiachuan Wang (the Hong Kong Unversity of Science and Technology), Libin Zheng (Sun Yat-sen University), Yongqi Zhang (the Hong Kong Unversity of Science and Technology (Guangzhou)), Shuangyin Li (South China Normal University), Lei Chen (the Hong Kong Unversity of Science and Technology and the Hong Kong Unversity of Science and Technology (Guangzhou))</div>
           </li>
           <li class="paper-item" style="flex-direction: column;">
+            <div class="paper-title">SLGParser: Practical and Efficient Label-Free Log Parsing Using Large Language Models</div>
+            <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Yibing Hu* (Institute of Information Engineering, CAS), Cong Wang (Institute of Information Engineering, CAS), Lixin Zhao (Institute of Information Engineering, CAS), Aimin Yu (Institute of Information Engineering, CAS)</div>
+          </li>
+          <li class="paper-item" style="flex-direction: column;">
             <div class="paper-title">An Encode-then-Decompose Approach to Unsupervised Time Series Anomaly Detection on Contaminated Training Data</div>
             <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Buang Zhang* (ECNU), Tung Kieu (Aalborg University), Xiangfei Qiu (East China Normal University), Chenjuan Guo (East China Normal University), Jilin Hu (East China Normal University), Aoying Zhou (East China Normal University), Christian S. Jensen (Aalborg University), Bin Yang (East China Normal University)</div>
           </li>
@@ -948,10 +955,7 @@
             <div class="paper-title">Krone: Hierarchical and Modular Log Anomaly Detection</div>
             <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Lei Ma* (WPI), Jinyang Liu (Bytedance), Tieying Zhang (Bytedance), Peter VanNostrand (WPI), Dennis Hofmann (WPI), Lei Cao (Arizona University), Elke Rundensteiner (WPI), Jianjun Chen (Bytedance)</div>
           </li>
-          <li class="paper-item" style="flex-direction: column;">
-            <div class="paper-title">SLGParser: Practical and Efficient Label-Free Log Parsing Using Large Language Models</div>
-            <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Yibing Hu* (Institute of Information Engineering, CAS), Cong Wang (Institute of Information Engineering, CAS), Lixin Zhao (Institute of Information Engineering, CAS), Aimin Yu (Institute of Information Engineering, CAS)</div>
-          </li>
+          
           <li class="paper-item" style="flex-direction: column;">
             <div class="paper-title">Toward scalable Tucker decomposition: skew-aware multi-level partitioning with GPU–storage co-processing</div>
             <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Seung Hyeon Song (KOREATECH), Jihye Lee (ETRI), Chanki Kim (Jeonbuk National University), Kang-Wook Chon* (KOREATECH)</div>
@@ -971,7 +975,7 @@
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue Crescent<br>
           <strong>Track:</strong> Graph Learning and Mining<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Ziawasch Abedjan
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1047,7 +1051,7 @@
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
           <strong>Location:</strong> Rue Sherbrooke<br>
           <strong>Track:</strong> Query Processing, Indexing, and Optimization<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Parke Godfrey
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1081,7 +1085,7 @@
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
           <strong>Location:</strong> Rue Mansfield<br>
           <strong>Track:</strong> Information Integration and Data Quality<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Mostafa Milani
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1115,7 +1119,7 @@
           <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
           <strong>Location:</strong> Rue Crescent<br>
           <strong>Track:</strong> Database Security and Privacy<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Nikos Mamoulis
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1149,7 +1153,7 @@
           <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
           <strong>Location:</strong> Av. Duluth<br>
           <strong>Track:</strong> Data Management for AI<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Yifan Wang
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1191,7 +1195,7 @@
           <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue McGill<br>
           <strong>Track:</strong> Graph Structure Analytics<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Amine Mhedhbi
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1233,7 +1237,7 @@
           <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue Sherbrooke<br>
           <strong>Track:</strong> Data Mining and Knowledge Discovery<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Arijit Khan
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1275,7 +1279,7 @@
               <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
               <strong>Location:</strong> Rue Mansfield<br>
               <strong>Track:</strong> Uncertain Databases, Graphs and Streaming<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Mostafa Milani
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1317,7 +1321,7 @@
               <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
               <strong>Location:</strong> Rue Crescent<br>
               <strong>Track:</strong> Cloud Data Management<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Kaisong Huang
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1359,7 +1363,7 @@
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
               <strong>Location:</strong> Av. Duluth<br>
               <strong>Track:</strong> Modern Hardware and In-Memory Database Systems<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Tamer Ozsu
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1393,7 +1397,7 @@
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
               <strong>Location:</strong> Rue McGill<br>
               <strong>Track:</strong> AI for Data Management<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Ashraf Aboulnaga
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1427,7 +1431,7 @@
           <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
           <strong>Location:</strong> Rue Sherbrooke<br>
           <strong>Track:</strong> Graph Structure Analytics<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Chao Zhang
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1461,7 +1465,7 @@
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
               <strong>Location:</strong> Rue Mansfield<br>
               <strong>Track:</strong> Graph Queries, Entity Alignment and Learning<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Bojana Bislimovska
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1495,7 +1499,7 @@
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
               <strong>Location:</strong> Rue Crescent<br>
               <strong>Track:</strong> Explainability, Fairness, and Trust in Data Systems and Analysis<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Avigdor Gal
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1529,7 +1533,7 @@
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
               <strong>Location:</strong> Rue McGill<br>
               <strong>Track:</strong> Graph Structure Analytics<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Chrysanthi Kosyfaki
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1563,7 +1567,7 @@
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
               <strong>Location:</strong> Rue Sherbrooke<br>
               <strong>Track:</strong> AI for Data Management<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Suprio Ray
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1597,7 +1601,7 @@
           <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
           <strong>Location:</strong> Rue Mansfield<br>
           <strong>Track:</strong> Spatial Databases and Temporal Databases<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Tsz Nam Chan
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1631,7 +1635,7 @@
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
               <strong>Location:</strong> Rue Crescent<br>
               <strong>Track:</strong> Database Security & Privacy<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Barbara Carminati
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1665,7 +1669,7 @@
               <strong>Time:</strong> Friday, May 8, 10:00 - 12:00<br>
               <strong>Location:</strong> Av. Duluth<br>
               <strong>Track:</strong> Query Processing, Indexing, and Optimization<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Bettina Kemme
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1718,10 +1722,7 @@
                 <div class="paper-title">Efficient Model-Agnostic Continual Learning for Next POI Recommendation</div>
                 <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Chenhao Wang* (UESTC), Shanshan Feng (Wuhan University), Lisi Chen (UESTC), Fan Li (The Hong Kong Polytechnic University), Shuo Shang (UESTC)</div>
               </li>
-              <li class="paper-item" style="flex-direction: column;">
-                <div class="paper-title">PORCA: Root Cause Analysis with Partially Observed Data</div>
-                <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Chang Gong (Institute of Computing Technology, Chinese Academy of Sciences), Di Yao* (Institute of Computing Technology, Chinese Academy of Sciences), Jin Wang (Megagon Labs), Wenbin Li (Institute of Computing Technology, Chinese Academy of Sciences), Lanting Fang (Beijing Institute of Technology), Yongtao Xie (Southeast University), Kaiyu Feng (Beijing Institute of Technology), Peng Han (University of Electronic Science andTechnology of China), Jingping Bi (Institute of Computing Technology, Chinese Academy of Sciences)</div>
-              </li>
+             
               <li class="paper-item" style="flex-direction: column;">
                 <div class="paper-title">Trajectory–User Linking via Heterogeneous Preference Graph and Dual-Encoder Mutual Distillation</div>
                 <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">ZEMING TIAN (Sun Yat-sen University), Zixin Qin (Sun Yat-sen University), Huaijie Zhu* (Sun Yat-sen University), Ningning Cui (Chang'an University), Wei Liu (Sun Yat-sen University), Jianxing Yu (Sun Yat-sen University), Jian Yin (Sun Yat-sen University)</div>
@@ -1729,6 +1730,10 @@
               <li class="paper-item" style="flex-direction: column;">
                 <div class="paper-title">FedCurrMM: A Federated Map Matching Framework with Curriculum-aware Client Selection</div>
                 <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Minxiao Chen* (Beijing University of Posts and Telecommunications), Haitao Yuan (Nanyang Technological University), Haoning Wang (National University of Singapore), Nan Jiang (Nanyang Technological University), Zhihan Zheng (Beijing University of Posts and Telecommunications), Ao Zhou (Beijing University of Posts and Telecommunications), Shangguang Wang (State Key Laboratory of Networking and Switching Technology)</div>
+              </li>
+               <li class="paper-item" style="flex-direction: column;">
+                <div class="paper-title">PORCA: Root Cause Analysis with Partially Observed Data</div>
+                <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Chang Gong (Institute of Computing Technology, Chinese Academy of Sciences), Di Yao* (Institute of Computing Technology, Chinese Academy of Sciences), Jin Wang (Megagon Labs), Wenbin Li (Institute of Computing Technology, Chinese Academy of Sciences), Lanting Fang (Beijing Institute of Technology), Yongtao Xie (Southeast University), Kaiyu Feng (Beijing Institute of Technology), Peng Han (University of Electronic Science andTechnology of China), Jingping Bi (Institute of Computing Technology, Chinese Academy of Sciences)</div>
               </li>
               <li class="paper-item" style="flex-direction: column;">
                 <div class="paper-title">Geography-Aware Large Language Model for Next POI Recommendation</div>
@@ -1791,7 +1796,7 @@
           <strong>Time:</strong> Friday, May 8, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue Mansfield<br>
           <strong>Track:</strong> AI for Data Management<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Parke Godfrey
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -1825,7 +1830,7 @@
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
               <strong>Location:</strong> Av. Duluth<br>
               <strong>Track:</strong> AI for Data Management<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Bojana Bislimovska
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1859,7 +1864,7 @@
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
               <strong>Location:</strong> Rue McGill<br>
               <strong>Track:</strong> Graph Structure Analytics<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Raymond Chi-Wing Wong
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1893,7 +1898,7 @@
               <strong>Time:</strong> Friday, May 8, 13:30 - 15:00<br>
               <strong>Location:</strong> Rue Sherbrooke<br>
               <strong>Track:</strong> Distributed, Parallel and P2P Data Management<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Jelle Hellings
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -1963,7 +1968,7 @@
           <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
           <strong>Location:</strong> Av. Van-Horne<br>
           <strong>Track:</strong> Industry & Application<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <strong>Session Chair:</strong> Praveen Rao
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -2005,7 +2010,7 @@
               <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
               <strong>Location:</strong> Av. Van-Horne<br>
               <strong>Track:</strong> Industry & Application<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Khaled Ammar
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -2039,7 +2044,7 @@
               <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
               <strong>Location:</strong> Av. Van-Horne<br>
               <strong>Track:</strong> Industry & Application<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Tianzheng Wang
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -2073,7 +2078,7 @@
               <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
               <strong>Location:</strong> Av. Van-Horne<br>
               <strong>Track:</strong> Industry & Application<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Mayuresh Kunjir
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -2146,7 +2151,7 @@
               <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
               <strong>Location:</strong> Av. Van-Horne<br>
               <strong>Track:</strong> Industry & Application<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Vaibhav Arora
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -2180,7 +2185,7 @@
               <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
               <strong>Location:</strong> Av. Van-Horne<br>
               <strong>Track:</strong> Industry & Application<br>
-              <strong>Session Chair:</strong> [To Be Announced]
+              <strong>Session Chair:</strong> Gunes Aluc
             </div>
             <ul class="paper-list">
               <li class="paper-item" style="flex-direction: column;">
@@ -2216,7 +2221,7 @@
           <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
           <strong>Location:</strong> Rue Notre-Dame<br>
           <strong>Track:</strong> Lightning Talks<br>
-          <strong>Session Chair:</strong> [To Be Announced]
+          <!-- <strong>Session Chair:</strong> [To Be Announced] -->
         </div>
         <ul class="paper-list">
           <li class="paper-item" style="flex-direction: column;">
@@ -2285,13 +2290,13 @@
 
       <h2 class="track-header">Demos</h2>
         <div class="session-box" id="Demo-A-1">
-        <div class="session-title">[Demo A] Accepted Demo Papers - Group A</div>
+        <div class="session-title">Demo Papers - Group A</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Laurier<br>
             <strong>Track:</strong> Demonstrations<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2340,13 +2345,13 @@
 
       <h2 class="track-header">Demos</h2>
         <div class="session-box" id="Demo-A-2">
-        <div class="session-title">[Demo A] Accepted Demo Papers - Group A</div>
+        <div class="session-title">Demo Papers - Group A</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Av. Laurier<br>
             <strong>Track:</strong> Demonstrations<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2394,13 +2399,13 @@
       </div>
       
       <div class="session-box" id="Demo-B-1">
-        <div class="session-title">[Demo B] Accepted Demo Papers - Group B</div>
+        <div class="session-title">Demo Papers - Group B</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Av. Laurier<br>
             <strong>Track:</strong> Demonstrations<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2448,13 +2453,13 @@
       </div>
 
       <div class="session-box" id="Demo-B-2">
-        <div class="session-title">[Demo B] Accepted Demo Papers - Group B</div>
+        <div class="session-title">Demo Papers - Group B</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Laurier<br>
             <strong>Track:</strong> Demonstrations<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2503,13 +2508,13 @@
 
       <h2 class="track-header">TKDE Posters</h2>
         <div class="session-box" id="TKDE-Poster-A-1">
-        <div class="session-title">[TKDE Poster A] Accepted TKDE Posters - Group A</div>
+        <div class="session-title">TKDE Posters - Group A</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Viger<br>
             <strong>Track:</strong> TKDE Posters<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2517,16 +2522,8 @@
               <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Yang Liu (Harbin Institute of Technology, Shenzhen), Hejiao Huang (Harbin Institute of Technology, Shenzhen), Kaiqiang Yu (Nanjing University), Shengxin Liu* (Harbin Institute of Technology, Shenzhen), Cheng Long (Nanyang Technological University)</div>
             </li>
             <li class="paper-item" style="flex-direction: column;">
-              <div class="paper-title">PiTruss Community Search for Multilayer Graphs</div>
-              <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Run-An Wang (Harbin Institute of Technology), Zhaonian Zou* (Harbin Institute of Technology), Dandan Liu (Harbin Institute of Technology), Xudong Liu (Harbin Institute of Technology)</div>
-            </li>
-            <li class="paper-item" style="flex-direction: column;">
               <div class="paper-title">Graph2Region: Efficient Graph Similarity Learning with Structure and Scale Restoration</div>
               <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Zhouyang Liu* (National University of Defense Technology), Yixin Chen (National University of Defense Technology), Ning Liu (Information Support Force Engineering University), Jiezhong He (National University of Defense Technology), Dongsheng Li (National University of Defense Technology)</div>
-            </li>
-            <li class="paper-item" style="flex-direction: column;">
-              <div class="paper-title">Structural Clustering of Multi-layer Graphs</div>
-              <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Xudong Liu (Harbin Institute of Technology), Zhaonian Zou* (Harbin Institute of Technology), Run-An Wang (Harbin Institute of Technology), Dandan Liu (Harbin Institute of Technology)</div>
             </li>
             <li class="paper-item" style="flex-direction: column;">
               <div class="paper-title">Jet-BGC: Joint Latent Embedding and Structural Fusion Bipartite Graph Clustering</div>
@@ -2554,13 +2551,13 @@
 
       <h2 class="track-header">TKDE Posters</h2>
         <div class="session-box" id="TKDE-Poster-A-2">
-        <div class="session-title">[TKDE Poster A] Accepted TKDE Posters - Group A</div>
+        <div class="session-title">TKDE Posters - Group A</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Av. Viger<br>
             <strong>Track:</strong> TKDE Posters<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2604,13 +2601,13 @@
       </div>
       
       <div class="session-box" id="TKDE-Poster-B-1">
-        <div class="session-title">[TKDE Poster B] Accepted TKDE Posters - Group B</div>
+        <div class="session-title">TKDE Posters - Group B</div>
         <div class="session-content">
           <div class="session-meta">
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00<br>
             <strong>Location:</strong> Av. Viger<br>
             <strong>Track:</strong> TKDE Posters<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2624,10 +2621,6 @@
             <li class="paper-item" style="flex-direction: column;">
               <div class="paper-title">Hierarchy-Aware Neural Subgraph Matching with Enhanced Similarity Measure</div>
               <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Zhouyang Liu* (National University of Defense Technology), Ning Liu (Information Support Force Engineering University), Yixin Chen (National University of Defense Technology), Jiezhong He (National University of Defense Technology), Menghan Jia (National University of Defense Technology), Dongsheng Li (National University of Defense Technology)</div>
-            </li>
-            <li class="paper-item" style="flex-direction: column;">
-              <div class="paper-title">Can Uncertainty Quantification Improve Learned Index Benefit Estimation?</div>
-              <div class="paper-authors" style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">Tao Yu (Harbin Institute of Technology), Zhaonian Zou* (Harbin Institute of Technology), Hao Xiong (Harbin Institute of Technology)</div>
             </li>
             <li class="paper-item" style="flex-direction: column;">
               <div class="paper-title">Intent Propagation Contrastive Collaborative Filtering</div>
@@ -2660,7 +2653,7 @@
             <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Viger<br>
             <strong>Track:</strong> TKDE Posters<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2711,7 +2704,7 @@
             <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
             <strong>Location:</strong> Av. Van-Horne<br>
             <strong>Track:</strong> Data Engineering Future Technologies (DEFT)<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2751,7 +2744,8 @@
             <strong>Time:</strong> Tuesday, May 5, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue Saint-Denis<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 1.5 Hours
+            <strong>Length:</strong> 1.5 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2774,7 +2768,8 @@
             <strong>Time:</strong> Wednesday, May 6, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue Saint-Denis<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 1.5 Hours
+            <strong>Length:</strong> 1.5 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2796,7 +2791,8 @@
             <strong>Time:</strong> Tuesday, May 5, 13:30 - 15:00 (Part I) & 15:30 - 17:00 (Part II)<br>
             <strong>Location:</strong> Rue Saint-Denis<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 3 Hours
+            <strong>Length:</strong> 3 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2818,7 +2814,8 @@
             <strong>Time:</strong> Wednesday, May 6, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue Saint-Denise<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 1.5 Hours
+            <strong>Length:</strong> 1.5 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2840,7 +2837,8 @@
             <strong>Time:</strong> Thursday, May 7, 10:00 - 12:00<br>
             <strong>Location:</strong> Rue Saint-Denis<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 1.5 Hours
+            <strong>Length:</strong> 1.5 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2864,7 +2862,8 @@
             <strong>Time:</strong> Thursday, May 7, 13:30 - 15:00<br>
             <strong>Location:</strong> Rue Saint-Denis<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 1.5 Hours
+            <strong>Length:</strong> 1.5 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2887,7 +2886,8 @@
             <strong>Time:</strong> Thursday, May 7, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue Saint-Denis<br>
             <strong>Track:</strong> Tutorials<br>
-            <strong>Length:</strong> 1.5 Hours
+            <strong>Length:</strong> 1.5 Hours<br>
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
           <ul class="paper-list">
             <li class="paper-item" style="flex-direction: column;">
@@ -2911,7 +2911,7 @@
             <strong>Time:</strong> Tuesday, May 5, 15:30 - 17:00<br>
             <strong>Location:</strong> Rue Notre-Dame<br>
             <strong>Track:</strong> Sponsors Talk<br>
-            <strong>Session Chair:</strong> [To Be Announced]
+            <!-- <strong>Session Chair:</strong> [To Be Announced] -->
           </div>
       
           <ul class="paper-list">
@@ -3074,8 +3074,11 @@
     
     const trackMatch = txt.match(/Track\s*:\s*([^\n]+)/i);
     const track = trackMatch ? trackMatch[1].trim() : '';
-    
-    return { dayRaw, ranges, location, track };
+
+    const chairMatch = txt.match(/Session Chair\s*:\s*([^\n]+)/i);
+    const chair = chairMatch ? chairMatch[1].trim() : '';
+
+    return { dayRaw, ranges, location, track, chair };
   }
   function sessionLabelFromTitle(box){
     const t = box.querySelector('.session-title'); if(!t) return '';
@@ -3142,22 +3145,17 @@
           const time = (dayObj.short ? (dayObj.short + ' ') : '') + (slot.pretty || slot.key);
           const locationHtml = info.location ? `<div class="room">Location: ${info.location}</div>` : '';
           const trackHtml = info.track ? `<div class="room">Track: ${info.track}</div>` : '';
+          const chairHtml = info.chair ? `<div class="room chair-row"><span class="chair-label">Session Chair:</span> <strong>${info.chair}</strong></div>` : '';
 
           meta.innerHTML = `<div class="label">${label}</div>`+
                            `<div class="time">${time}</div>`+
-                           locationHtml + 
-                           trackHtml;
+                           locationHtml +
+                           trackHtml +
+                           chairHtml;
 
-          // Move session box into content
+          // Hide session-meta in right content — all info is now in the left rail
           const rightMeta = node.querySelector('.session-meta');
-          if (rightMeta) {
-            const chairMatch = rightMeta.innerHTML.match(/(<strong>Session Chair:<\/strong>.*?)(?:<br>|<|$)/i);
-            if (chairMatch) {
-              rightMeta.innerHTML = chairMatch[1];
-            } else {
-              rightMeta.style.display = 'none';
-            }
-          }
+          if (rightMeta) rightMeta.style.display = 'none';
 
           // Move session box into content
           content.appendChild(node);
