@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZQ880VLVF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6ZQ880VLVF');
+  </script>
+
+  <style>
+    body {
+      visibility: hidden
+    }
+
+    .timetable {
+      width: 100%;
+      table-layout: fixed; 
+      border-collapse: collapse;
+      margin-bottom: 50px;
+    }
+    
+    .timetable th, .timetable td {
+      border: 1px solid #dcdcdc;
+      padding: 8px 4px; 
+      text-align: center;
+      vertical-align: top;
+      
+      white-space: normal !important; 
+      word-wrap: break-word !important; 
+      overflow-wrap: break-word !important;
+      word-break: keep-all; 
+      font-size: 0.95em; /* increasing the font size */
+      line-height: 1.3;
+    }
+
+    .timetable th {
+      background-color: #f0f4f8;
+      font-weight: bold;
+      vertical-align: middle;
+      font-size: 1em; /* increasing the font size */
+      color: #333;
+    }
+
+    
+    .timetable th:first-child, .timetable td:first-child {
+      width: 6%;
+      vertical-align: middle;
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    .daystyle {
+      font-weight: bold;
+      font-size: 1.3em !important;
+      background-color: #c51c2b !important; 
+      padding: 12px !important;
+      color: #ffffff !important;
+    }
+
+    
+    .session-link {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+    .session-link:hover {
+      text-decoration: underline;
+      color: #c51c2b;
+    }
+    .sub-title {
+      font-size: 0.9em; /* increasing the font size */
+      font-weight: normal;
+      display: block;
+      margin-top: 5px;
+      color: #555;
+    }
+    .span-event {
+      background-color: #fde8ea; 
+      font-weight: normal;
+      vertical-align: middle !important;
+      font-size: 1em !important;
+    }
+
+    /* The green color of the Research session is going to be lighter */
+    .rrcell {
+      background-color: #f0f4f8 !important; 
+    }
+  </style>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://localhost/icde/">
+  
+  <link rel="icon" type="image/png" href="img/icde2026_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <title>Panel Sessions</title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="css/min.css">
+  <link rel="stylesheet" href="css/extra.css"> 
+  <!-- <link rel="stylesheet" href="css/table.css">  -->
+</head>
+
+<body>
+
+  <header>
+    <div class="small-menu"><a class="hamburger"></a></div>
+    <div class="small-header">
+      <figure class="logo">
+        <a href="index.html"><img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada"></a>
+      </figure>
+    </div>
+
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+   
+      <figure class="logo">
+        <img src="img/icde2026_logo_full.png" alt="ICDE 2026 Montreal, Canada">
+        <img src="img/icde2026_logo_simple.png" alt="ICDE 2026 Montreal, Canada">
+      </figure>
+      <div>
+        <a href="index.html" itemprop="url"><span itemprop="name">Home</span></a>
+      </div>
+      <div>
+        General Information
+        <div class="menu">
+          <a href="index.html" itemprop="url"><span itemprop="name">Conference Overview</span></a>
+   
+          <a href="officers.html" itemprop="url"><span itemprop="name">Conference Officers</span></a>
+          <a href="pc-chairs.html" itemprop="url"><span itemprop="name">Program Committees</span></a>
+        </div>
+      </div>
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conference Program&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="menu">
+          <a href="program_structure.html" itemprop="url"><span itemprop="name">Program Overview</span></a>
+          <a href="program_details.html" itemprop="url"><span itemprop="name">Program Details</span></a>
+          <a href="keynotes.html" itemprop="url"><span itemprop="name">Keynotes</span></a>
+         <hr>
+          <a href="accepted-papers.html" itemprop="url"><span itemprop="name">Accepted Research Papers</span></a>
+          <a href="ia-papers.html" itemprop="url"><span itemprop="name">Accepted Industry <br> and Application Papers</span></a>
+          <a href="demo-papers.html" itemprop="url"><span itemprop="name">Accepted Demo Papers</span></a>
+          <a href="tkde-papers.html" itemprop="url"><span itemprop="name">Accepted TKDE Posters</span></a>
+          <a href="deft-papers.html" itemprop="url"><span 
+itemprop="name">Accepted DEFT Papers</span></a>         
+          <a href="lightning-talks.html" itemprop="url"><span itemprop="name">Accepted Lightning Talks</span></a>
+          <a href="tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="phd-papers.html" itemprop="url"><span itemprop="name">Accepted Ph.D.
+Symposium</span></a>
+          <hr>
+          <a href="EDI-session.html" itemprop="url"><span itemprop="name">Diversity, Equity, and Inclusion </span></a>
+          <hr>
+          <a href="workshops.html" itemprop="url"><span itemprop="name">Workshops</span></a>
+          <hr>
+          <a href="panels.html" itemprop="url"><span itemprop="name">Panel Sessions</span></a>
+          <hr>
+          <a href="awards.html" itemprop="url"><span itemprop="name">Awards</span></a>
+          
+        </div>
+      </div>
+      <div>
+        Call for Contributions
+        <div class="menu">
+          <a href="cf-research-papers.html" itemprop="url"><span itemprop="name">Research Paper</span></a>  
+          <a href="cf-industry-track.html" itemprop="url"><span itemprop="name">Industry and Application</span></a>
+       
+           <hr>
+          <a href="cf-demonstrations.html" itemprop="url"><span itemprop="name">Demonstrations</span></a>
+          <a href="cf-workshop-proposals.html" itemprop="url"><span itemprop="name">Workshop Proposals</span></a>
+          <a href="cf-tutorials.html" itemprop="url"><span itemprop="name">Tutorials</span></a>
+          <a href="cf-tkde-poster.html" itemprop="url"><span itemprop="name">TKDE Poster</span></a>
+          <a href="cf-phd-symposium.html" itemprop="url"><span itemprop="name">Ph.D.
+Symposium</span></a>
+          <a href="cf-lightning-talks.html" itemprop="url"><span itemprop="name">Lightning Talks</span></a>
+          <a href="cf-future.html" itemprop="url"><span itemprop="name">Data Engineering <br>Future Technologies</span></a>
+        </div>
+      </div>
+      <div>
+        Participant Information
+        <div class="menu">
+          <a href="registration.html" itemprop="url"><span itemprop="name">Registration</span></a>
+          <hr>
+          <a href="presentation-instructions.html" itemprop="url"><span itemprop="name">Presentation Instructions</span></a>
+          <hr>
+         
+          <a href="visa-guidelines.html" itemprop="url"><span itemprop="name">Visa Guidelines</span></a>
+          <hr>
+          <a href="travel.html" itemprop="url"><span itemprop="name">Travel</span></a>
+          <a href="hotel.html" itemprop="url"><span itemprop="name">Hotel &amp;
+Conference Venue</span></a>
+          <a href="travel-grants.html" itemprop="url"><span itemprop="name">Student Travel Grants</span></a>
+        </div> 
+      </div>
+      <div>
+        Dates &amp;
+Guidelines
+        <div class="menu">
+          <a href="important-dates.html" itemprop="url"><span itemprop="name">Important Dates</span></a>
+          <hr />
+          <a href="submission-guidelines.html" itemprop="url"><span itemprop="name">Submission Guidelines</span></a>
+        </div>
+      </div>
+      <div>
+        Sponsorship
+        <div class="menu">
+          <a href="sponsorship-opportunities.html" itemprop="url"><span itemprop="name">Opportunities</span></a>
+          <hr />
+          <a href="sponsors.html" itemprop="url"><span itemprop="name">Our Sponsors</span></a>
+        </div>
+      </div>
+    </nav>
+    <section style="text-align: center;"
+class="carousel small" data-images='[
+    {"i":"./img/montreal/1.jpg"},
+    {"i":"./img/montreal/2.jpg"},
+    {"i":"./img/montreal/3.jpg"}
+  ]'>
+      <span style="text-align: center; display: block;">42<sup>nd</sup> IEEE International Conference on Data Engineering (ICDE)</span>
+      <span style="background: #c51c2b;">Montréal, Canada - May 4-8, 2026</span>
+      <div data-url="./img/montreal/1.jpg" style="background-image: url(&quot;./img/montreal/1.jpg&quot;); opacity: 1;"></div>
+    </section>
+  </header>
+
+  <main class="body">
+
+    <section class="keynotes-section" style="font-size: 16px;">
+      <br />
+      <h2 style="color: #c51c2b; font-size: 2em;">ICDE 2026: Panel Sessions</h2>
+      <nav class="day-nav" style="font-size: 1.3em;">
+        <a href="#panel1" target="_parent"><strong>Panel #1: What Can Agentic AI Do for Databases?</strong> Tuesday, May 5 | from 15:30-17:00</a> <br>
+        <!-- <a href="#panel2"><strong>Panel #2:</strong> Thursday, May 7 | from 15:30-17:00</a> -->
+      </nav>
+        </section>
+
+
+  <!------------------------------------------------------------------------------>
+      <section class="keynotes-section" style="font-size: 16px; padding: 0 10px 150px 0;" >
+        <div class="daystyle" style="margin-top: 40px; margin-bottom: 0px; text-align: left; border-radius: 4px 4px 0 0; scroll-margin-top: 130px;" id="panel1">
+        Panel #1: What Can Agentic AI Do for Databases?
+      </div>
+       <div style="margin-bottom: 10px; padding: 25px; border: 1px solid #dcdcdc; border-top: none; background-color: #f9f9f9; border-radius: 0 0 4px 4px;" >
+        <p style="font-size: 1.2em;">
+          <b style="color: #c51c2b;">Panel Session:</b> Tuesday, May 5 | from 15:30-17:00<br>
+          <b style="color: #c51c2b;">Moderator:</b> Fatma Ozcan
+        </p>
+         <hr style="border: 0; border-top: 1px solid #dcdcdc; margin: 25px 0;">
+        
+        <div style="display: flex; gap: 24px; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
+
+          <div style="text-align: center; flex: 1; min-width: 140px; max-width: 200px;">
+            <img src="img/AdityaParameswaran.jpg" alt="Photo of Aditya Parameswaran" style="width: 150px; height: 180px; object-fit: cover; border-radius: 5px; border: 1px solid #ccc; background-color: #e0e0e0;">
+            <p style="font-weight: bold; margin: 10px 0 4px; font-size: 1em;">Aditya Parameswaran</p>
+            <p style="color: #555; margin: 0 0 6px; font-size: 0.9em;">UC Berkeley, USA</p>
+            <a href="https://people.eecs.berkeley.edu/~adityagp/" style="color: #c51c2b; font-size: 0.9em;">Profile</a>
+          </div>
+
+          <div style="text-align: center; flex: 1; min-width: 140px; max-width: 200px;">
+            <img src="img/BolinDing.jpg" alt="Photo of Bolin Ding" style="width: 150px; height: 180px; object-fit: cover; border-radius: 5px; border: 1px solid #ccc; background-color: #e0e0e0;">
+            <p style="font-weight: bold; margin: 10px 0 4px; font-size: 1em;">Bolin Ding</p>
+            <p style="color: #555; margin: 0 0 6px; font-size: 0.9em;">Alibaba, China</p>
+            <a href="https://bolinding.github.io/" style="color: #c51c2b; font-size: 0.9em;">Profile</a>
+          </div>
+
+          <div style="text-align: center; flex: 1; min-width: 140px; max-width: 200px;">
+            <img src="img/EssamMansour.jpg" alt="Photo of Essam Mansour" style="width: 150px; height: 180px; object-fit: cover; border-radius: 5px; border: 1px solid #ccc; background-color: #e0e0e0;">
+            <p style="font-weight: bold; margin: 10px 0 4px; font-size: 1em;">Essam Mansour</p>
+            <p style="color: #555; margin: 0 0 6px; font-size: 0.9em;">Concordia University, Canada</p>
+            <a href="https://emansour.com/" style="color: #c51c2b; font-size: 0.9em;">Profile</a>
+          </div>
+
+          <div style="text-align: center; flex: 1; min-width: 140px; max-width: 200px;">
+            <img src="img/WenjieZhang.jpeg" alt="Photo of Wenjie Zhang" style="width: 150px; height: 180px; object-fit: cover; border-radius: 5px; border: 1px solid #ccc; background-color: #e0e0e0;">
+            <p style="font-weight: bold; margin: 10px 0 4px; font-size: 1em;">Wenjie Zhang</p>
+            <p style="color: #555; margin: 0 0 6px; font-size: 0.9em;">University of New South Wales, Australia</p>
+            <a href="https://www.unsw.edu.au/staff/wenjie-zhang" style="color: #c51c2b; font-size: 0.9em;">Profile</a>
+          </div>
+
+        </div>
+      </div>
+      
+    </section>
+
+         
+      
+    </section>
+  </main>
+
+ 
+  <footer>
+    <div style="display: flex; align-items: center;
+justify-content: center;">
+      <span><img src="img/icde2026_footer.png"></span>
+      <span>
+        <p>
+          <span>42<sup>nd</sup> IEEE International Conference on Data Engineering, Montreal, Canada - May 4-8, 2026.<br>
+            &#169; IEEE ICDE 2026. All rights reserved. Use of this website signifies your agreement to the 
+              <a href="http://www.ieee.org/site_terms_conditions.html" target="_blank" rel="noopener" style="color: #c51c2b;">IEEE Terms and Conditions</a>. <br>
+      
+          A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.    
+        </p>       
+      </span>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="css/min.css">
+  <script async src="js/min.js"></script>
+
+  <script async src="https://platform.twitter.com/widgets.js"></script>
+  <script>
+    (function () {
+      var last = 0,
+        docBody = document.body,
+   
+        header = document.querySelector('body>header'),
+        nav = header && header.querySelector('nav'),
+        requestAnimationFrame = window.requestAnimationFrame ||
+function (callback, element) {
+          var now = Date.now(),
+            next = Math.max(0, 16 - (now - last)),
+            id = window.setTimeout(function () {
+              callback(now + next);
+            }, next);
+last = now + next;
+          return id;
+        },
+        cancelAnimationFrame = window.cancelAnimationFrame ||
+function (id) {
+          clearTimeout(id);
+},
+        update = function () {
+          if (!nav) return;
+var isStatic = docBody.classList.contains('static');
+          if (header.getBoundingClientRect().bottom > 70) {
+            if (isStatic) docBody.classList.remove('static');
+} else if (!isStatic) docBody.classList.add('static');
+        },
+        lid;
+window.addEventListener('scroll', function (e) {
+        if (lid) cancelAnimationFrame(lid);
+        lid = requestAnimationFrame(update);
+      });
+update();
+    }());
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var nav = document.querySelector('.day-nav');
+      if (!nav) return;
+      nav.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        var id = a.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          try { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (_) { target.scrollIntoView(true); }
+          if (history.pushState) { history.pushState(null, '', '#' + id); } else { location.hash = '#' + id; }
+        }
+      }, { passive: false });
+    });
+  </script>
+</body>
+
+</html>
